@@ -1,10 +1,8 @@
 
-const Home = () => {
+const Home = async () => {
 
     return (
-        <>
-
-        </>
+        <></>
     );
 
 };
