@@ -7,6 +7,17 @@ const Home = () => {
 
     const {user} = useUser();
 
+    const handleClick = async () => {
+        const response = await fetch('/api/auth/saveUser', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        const data = await response.json();
+        console.log(data);
+    }
+
     if (!user) {
         return (
             <div className="flex flex-col items-center justify-center min-h-screen">
@@ -34,6 +45,7 @@ const Home = () => {
                 >
                     Logout
                 </Link>
+                <button onClick={handleClick}>Try endpoint</button>
             </div>
         </div>
     );
