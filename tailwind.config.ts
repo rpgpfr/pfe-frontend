@@ -8,6 +8,12 @@ const config: Config = {
     theme: {
         extend: {
             colors: {
+                primaryGreen: 'var(--primary-green)',
+                secondaryGreen: 'var(--secondary-green)',
+                smoothGreen: 'var(--smooth-green)',
+                smoothBeige: 'var(--smooth-beige)',
+                beige: 'var(--beige)',
+                primaryBrown: 'var(--primary-brown)',
                 background: 'hsl(var(--background))',
                 foreground: 'hsl(var(--foreground))',
                 card: {

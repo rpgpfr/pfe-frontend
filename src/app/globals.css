@@ -2,3 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --primary-green: #4D624E;
+    --secondary-green: #86AC87;
+    --smooth-green: #E9EDC8;
+    --smooth-beige: #FEFAE1;
+    --beige: #FAEDCD;
+    --primary-brown: #D4A373;
+}
