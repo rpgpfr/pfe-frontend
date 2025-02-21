@@ -8,9 +8,12 @@ const config: Config = {
     theme: {
         extend: {
             colors: {
-                primary: {
-                    green: 'var(--primary-green)'
-                },
+                primaryGreen: 'var(--primary-green)',
+                secondaryGreen: 'var(--secondary-green)',
+                smoothGreen: 'var(--smooth-green)',
+                smoothBeige: 'var(--smooth-beige)',
+                beige: 'var(--beige)',
+                primaryBrown: 'var(--primary-brown)',
                 darkGreen: 'var(--dark-green)',
                 beige: 'var(--beige)',
                 white: 'var(--white)',
