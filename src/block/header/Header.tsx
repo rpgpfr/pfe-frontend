@@ -1,7 +1,7 @@
 
 import Link from 'next/link';
 
-import styles from '@/app/components/Header.module.css';
+import styles from '@/block/header/header.module.css';
 
 const Header = () => {
     return (
