@@ -1,4 +1,6 @@
+
 import Link from 'next/link';
+
 import styles from '@/app/components/Header.module.css';
 
 const Header = () => {
