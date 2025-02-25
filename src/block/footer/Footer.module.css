@@ -1,0 +1,21 @@
+.footer {
+    @apply bg-primaryGreen py-6 px-10 flex items-center justify-between shadow-md;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+}
+
+.footerlist {
+    font-family: "Source Sans Pro", sans-serif;
+    @apply text-[#ffffff]
+}
+
+.content {
+    font-family: "Source Sans Pro", sans-serif;
+    @apply text-[#ffffff]
+}
+
+.footertitle {
+    font-family: "Wonderbar", sans-serif;
+    @apply text-[40px];
+}
