@@ -16,9 +16,8 @@
     @apply bg-[#ffffff] py-6 px-10 flex items-center justify-between shadow-md;
 }
 
-.accueil {
-    font-family: "Wonderbar", sans-serif;
-    @apply pl-20 flex-1 text-[32px];
+.title {
+    @apply pl-20 flex-1 text-[40px] font-black;
 }
 
 .nav {

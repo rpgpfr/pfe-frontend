@@ -1,0 +1,20 @@
+@font-face {
+    font-family: "Source Sans Pro";
+    src: url("/fonts/SourceSansPro-Semibold.otf") format("opentype");
+    font-weight: 900;
+    font-style: normal;
+}
+
+.header {
+    @apply text-white text-center p-[50px_20px] w-screen h-screen flex flex-col justify-center items-center;
+}
+
+.links {
+    @apply bg-secondaryGreen flex space-x-4 p-3;
+    font-family: "Source Sans Pro", sans-serif;
+}
+
+.hero {
+    @apply bg-cover bg-center h-screen flex items-center justify-center;
+    background-image: url('/images/hero.jpg');
+}
