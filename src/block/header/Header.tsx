@@ -2,7 +2,6 @@ import Link from 'next/link';
 import { Aladin } from 'next/font/google';
 import styles from '@/block/header/Header.module.css';
 
-// Correct font import with weight parameter
 const aladin = Aladin({
   subsets: ['latin'],
   weight: '400',

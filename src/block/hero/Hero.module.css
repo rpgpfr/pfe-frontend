@@ -18,3 +18,7 @@
     @apply bg-cover bg-center h-screen flex items-center justify-center;
     background-image: url('/images/hero.jpg');
 }
+
+.header_title {
+    @apply text-[75px] font-black;
+}
