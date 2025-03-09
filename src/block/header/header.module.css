@@ -17,7 +17,7 @@
 }
 
 .title {
-    @apply pl-20 flex-1 text-[40px] font-black;
+    @apply pl-20 flex-1 text-[30px] font-black;
 }
 
 .nav {
