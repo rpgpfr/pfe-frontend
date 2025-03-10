@@ -1,0 +1,31 @@
+.card {
+    @apply border rounded-[4px] p-2 bg-white h-full;
+}
+
+.title {
+    @apply font-aladdin text-base mb-1 truncate;
+}
+
+.date {
+    @apply text-xs text-gray-500 mb-2;
+}
+
+.imageContainer {
+    @apply relative h-28 mb-2 bg-gray-100 rounded-[4px];
+}
+
+.actions {
+    @apply flex justify-end gap-2;
+}
+
+.buttonSecondary {
+    @apply p-1.5;
+}
+
+.buttonPrimary {
+    @apply p-1.5;
+}
+
+.icon {
+    @apply w-4 h-4;
+}

@@ -1,0 +1,19 @@
+.campaign-card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+.campaign-card.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+button {
+    transition: all 0.2s ease-in-out;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
