@@ -9,7 +9,6 @@ import Section from "@/components/ui/Section"
 import Button from "@/components/ui/Button"
 import "./animations.css"
 
-// Données fictives pour les campagnes avec dates de création
 const fakeCampaigns = [
     {
         id: 1,
@@ -85,7 +84,6 @@ const fakeCampaigns = [
     },
 ]
 
-// Types de tri disponibles
 type SortType = "alphabetique" | "date"
 
 export default function CampaignsPage() {

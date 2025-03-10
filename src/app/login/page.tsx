@@ -16,13 +16,11 @@ export default function LoginPage() {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
-        // Ici, vous pourriez ajouter la logique de connexion
         console.log("Tentative de connexion avec:", email)
     }
 
     return (
         <div className={styles.container}>
-            {/* Colonne de gauche avec image de fond */}
             <div className={styles.leftColumn}>
                 <Image src="/placeholder.svg?height=1080&width=1080" alt="Background" fill className="object-cover" />
                 <div className={styles.backgroundOverlay} />
@@ -31,7 +29,6 @@ export default function LoginPage() {
                 </div>
             </div>
 
-            {/* Colonne de droite avec formulaire */}
             <div className={styles.rightColumn}>
                 <div className={styles.logoContainer}>
                     <Link href="/" className={styles.logo}>
