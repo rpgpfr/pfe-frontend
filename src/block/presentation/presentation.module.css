@@ -1,0 +1,8 @@
+.text_presentation {
+    font-family: "Aladin", sans-serif;
+    @apply text-[40px];
+}
+
+.presentation {
+    @apply flex justify-center items-center text-center h-full;
+}
