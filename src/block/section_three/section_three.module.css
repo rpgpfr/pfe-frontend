@@ -1,0 +1,27 @@
+.container_section_three {
+    @apply w-full px-4 py-12;
+}
+
+.title_section_three {
+    @apply text-4xl md:text-7xl font-bold text-center mb-12;
+}
+
+.grid_section_three {
+    @apply w-full grid grid-cols-1 md:grid-cols-3 gap-8;
+}
+
+.card_section_three {
+    @apply relative rounded-lg overflow-hidden w-full;
+}
+
+.image_container {
+    @apply aspect-square bg-gray-100;
+}
+
+.card_overlay {
+    @apply absolute bottom-0 left-0 right-0 backdrop-blur-sm p-4;
+}
+
+.card_text {
+    @apply text-black text-center;
+}
