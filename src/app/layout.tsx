@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Source_Sans_3, Aladin as Aladdin } from "next/font/google"
 import "./globals.css"
+import {SessionProvider} from "next-auth/react";
 
 const sourceSans = Source_Sans_3({
     subsets: ["latin"],
@@ -27,7 +28,9 @@ export default function RootLayout({
 }) {
     return (
         <html lang="fr" className={`${sourceSans.variable} ${aladdin.variable}`}>
-        <body>{children}</body>
+        <SessionProvider>
+            <body>{children}</body>
+        </SessionProvider>
         </html>
     )
 }

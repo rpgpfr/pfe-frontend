@@ -10,18 +10,20 @@
     "commit": "cz"
   },
   "dependencies": {
-    "@auth0/nextjs-auth0": "^4.0.1",
     "@radix-ui/react-slot": "^1.1.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "jsonwebtoken": "^9.0.2",
     "lucide-react": "^0.474.0",
     "next": "15.1.7",
+    "next-auth": "^5.0.0-beta.25",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.9",
     "@types/node": "^20",
     "@types/react": "19.0.8",
     "@types/react-dom": "19.0.3",
