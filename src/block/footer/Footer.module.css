@@ -1,18 +1,17 @@
 .footer {
     @apply bg-primaryGreen py-14 px-10 flex items-center justify-between shadow-md;
-    position: sticky;
     bottom: 0;
     width: 100%;
 }
 
 .footerlist {
     font-family: "Source Sans Pro", sans-serif;
-    @apply text-[#ffffff]
+    @apply text-[#ffffff];
 }
 
 .content {
     font-family: "Source Sans Pro", sans-serif;
-    @apply text-[#ffffff]
+    @apply text-[#ffffff];
 }
 
 .footertitle {

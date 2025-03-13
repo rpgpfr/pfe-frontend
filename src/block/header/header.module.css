@@ -29,7 +29,7 @@
     @apply text-[#0b0e14] font-medium text-[16px] px-6 py-3 rounded-full transition duration-300 hover:bg-white hover:text-[#0b0e14];
 }
 
-.btn-primary {
+.btnPrimary {
     font-family: "Source Sans Pro", sans-serif;
-    @apply text-[#0b0e14] font-medium text-[16px] px-6 py-3 rounded-full transition duration-300;
+    @apply bg-secondaryGreen text-white font-medium text-[16px] px-6 py-3 rounded-lg transition duration-300;
 }
