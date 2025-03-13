@@ -15,7 +15,6 @@ const Home = () => {
                 <Presentation />
             </div>
             <div>
-                <CampaignCreator />
             </div>
             <Footer />
         </div>
