@@ -4,5 +4,5 @@
 }
 
 .presentation {
-    @apply flex justify-center items-center text-center h-full;
+    @apply flex justify-center items-center text-center h-full my-10;
 }
