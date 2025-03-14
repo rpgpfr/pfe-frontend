@@ -9,7 +9,7 @@ import styles from "./LoginForm.module.css";
 
 const LoginForm = () => {
 
-    const [email, setEmail] = useState("");
+    const [identifier, setIdentifier] = useState("");
     const [password, setPassword] = useState("");
 
     const handleSubmit = (e: FormEvent) => {
@@ -24,8 +24,8 @@ const LoginForm = () => {
                         label="Nom d'utilisateur ou adresse e-mail"
                         id="identifier"
                         type="text"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        value={identifier}
+                        onChange={(e) => setIdentifier(e.target.value)}
                         required
                     />
 
