@@ -2,23 +2,35 @@
     @apply flex-1 flex items-center justify-center p-8;
 
     & > .formWrapper {
-        @apply max-w-md;
+        @apply w-full max-w-md;
 
         & > .form {
             @apply flex flex-col gap-3;
 
-            & > .signupButton {
+            & > .forgotPasswordContainer {
+                @apply text-right;
+
+                & > .forgotPasswordLink {
+                    @apply text-beige text-sm;
+
+                    &:hover {
+                        @apply underline;
+                    }
+                }
+            }
+
+            & > .loginButton {
                 @apply w-full;
             }
 
-            & > .loginLinkContainer {
+            & > .signupLinkContainer {
                 @apply text-center text-sm;
 
-                & > .loginText {
+                & > .signupText {
                     @apply text-gray-600;
                 }
 
-                & > .loginLink {
+                & > .signupLink {
                     @apply text-beige;
 
                     &:hover {
