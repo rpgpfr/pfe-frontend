@@ -34,42 +34,6 @@
     @apply font-aladdin text-2xl;
 }
 
-.formContainer {
-    @apply flex-1 flex items-center justify-center p-8;
-}
-
-.formWrapper {
-    @apply w-full max-w-md;
-}
-
-.form {
-    @apply flex flex-col gap-3;
-}
-
-.forgotPasswordContainer {
-    @apply text-right;
-}
-
-.forgotPasswordLink {
-    @apply text-beige hover:underline text-sm;
-}
-
-.loginButton {
-    @apply w-full;
-}
-
-.loginLinkContainer {
-    @apply text-center text-sm;
-}
-
-.loginText {
-    @apply text-gray-600;
-}
-
-.loginLink {
-    @apply text-beige hover:underline;
-}
-
 /* Responsive styles */
 @media (max-width: 768px) {
     .container {

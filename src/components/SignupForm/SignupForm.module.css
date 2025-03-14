@@ -1,0 +1,27 @@
+.formContainer {
+    @apply flex-1 flex items-center justify-center p-8;
+}
+
+.formWrapper {
+    @apply max-w-md;
+}
+
+.form {
+    @apply flex flex-col gap-3;
+}
+
+.signupButton {
+    @apply w-full;
+}
+
+.loginLinkContainer {
+    @apply text-center text-sm;
+}
+
+.loginText {
+    @apply text-gray-600;
+}
+
+.loginLink {
+    @apply text-beige hover:underline;
+}
