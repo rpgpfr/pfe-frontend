@@ -1,51 +1,57 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import { Trash2, ArrowRight } from "lucide-react"
-import Button from "@/components/ui/Button"
-import styles from "./CampaignCard.module.css"
+import Image from "next/image";
+import {ArrowRight, Trash2} from "lucide-react";
+
+import {Button} from "@/components/ui";
+import {cn} from "@/lib/utils";
+
+import styles from "./CampaignCard.module.css";
 
 interface CampaignCardProps {
-    id: number
-    name: string
-    image: string
-    createdAt: Date
-    className?: string
-    showDate?: boolean
+    id: number;
+    name: string;
+    image: string;
+    createdAt: Date;
+    className?: string;
+    showDate?: boolean;
 }
 
-export default function CampaignCard({
-                                         id,
-                                         name,
-                                         image,
-                                         createdAt,
-                                         className = "",
-                                         showDate = true,
-                                     }: CampaignCardProps) {
-    // Formater la date pour l'affichage
+export const CampaignCard = (props: CampaignCardProps) => {
+
     const formatDate = (date: Date) => {
         return date.toLocaleDateString("fr-FR", {
             day: "numeric",
             month: "long",
             year: "numeric",
-        })
-    }
+        });
+    };
 
     return (
-        <div className={`${styles.card} ${className}`}>
-            <h3 className={styles.title}>{name}</h3>
-            {showDate && <p className={styles.date}>Créée le {formatDate(createdAt)}</p>}
+        <div className={cn(styles.card, props.className)}>
+            <h3 className={styles.title}>{props.name}</h3>
+
+            {
+                props.showDate &&
+                <p className={styles.date}>Créée le {formatDate(props.createdAt)}</p>
+            }
+
             <div className={styles.imageContainer}>
-                <Image src={image || "/placeholder.svg"} alt={name} fill className="object-cover rounded-[4px]" />
+                <Image src={props.image || "/placeholder.svg"} alt={props.name} fill/>
             </div>
-            <div className={styles.actions}>
-                <Button variant="secondary" className={styles.buttonSecondary}>
-                    <Trash2 className={styles.icon} />
+
+            <div className={styles.action}>
+                <Button variant="secondary" className={styles.button}>
+                    <Trash2 className={styles.icon}/>
                 </Button>
-                <Button variant="primary" className={styles.buttonPrimary}>
-                    <ArrowRight className={styles.icon} />
+
+                <Button variant="primary" className={styles.button}>
+                    <ArrowRight className={styles.icon}/>
                 </Button>
             </div>
         </div>
-    )
-}
+    );
+
+};
+
+export default CampaignCard;

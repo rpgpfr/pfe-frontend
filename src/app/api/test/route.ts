@@ -1,7 +1,7 @@
 import {auth} from "@/lib/auth";
 import {NextRequest, NextResponse} from "next/server";
 
-export const GET = auth(async function GET(request: NextRequest & {auth: unknown}) {
+export const GET = auth(async function GET(request: NextRequest & { auth: unknown }) {
     if (!request.auth) {
         return NextResponse.json({message: "Not authenticated"}, {status: 401});
     }

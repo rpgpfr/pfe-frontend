@@ -1,0 +1,27 @@
+.button {
+    @apply rounded-[4px] transition-all;
+}
+
+.primary {
+    @apply bg-primary-green text-white px-6 py-2;
+
+    &:hover {
+        @apply bg-white text-black border border-black;
+    }
+}
+
+.secondary {
+    @apply bg-beige text-white;
+
+    &:hover {
+        @apply bg-opacity-90;
+    }
+}
+
+.outline {
+    @apply border border-gray-300 text-gray-700;
+}
+
+.icon {
+    @apply p-2 flex items-center justify-center;
+}

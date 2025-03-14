@@ -54,7 +54,7 @@ export const {handlers, auth} = NextAuth({
                     },
                     process.env.NEXTAUTH_SECRET!,
                     {
-                        algorithm:"HS256",
+                        algorithm: "HS256",
                         expiresIn: "1h"
                     }
                 );

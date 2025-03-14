@@ -1,13 +1,11 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-// import Layout from "@/components/layout/Layout"
-import CampaignCard from "@/components/CampaignCard/CampaignCard"
-import Pagination from "@/components/Pagination/Pagination"
-import SearchBar from "@/components/SearchBar/SearchBar"
-import Section from "@/components/ui/Section"
-import Button from "@/components/ui/Button"
-import "./animations.css"
+import {useEffect, useState} from "react";
+
+import {Button, Section} from "@/components/ui";
+import {CampaignCard, Pagination, SearchBar} from "@/components";
+
+import "./animations.css";
 
 const fakeCampaigns = [
     {
@@ -82,49 +80,50 @@ const fakeCampaigns = [
         image: "/placeholder.svg?height=200&width=300",
         createdAt: new Date("2024-02-28"),
     },
-]
+];
 
-type SortType = "alphabetique" | "date"
+type SortType = "alphabetique" | "date";
 
 export default function CampaignsPage() {
-    const [searchTerm, setSearchTerm] = useState("")
-    const [currentPage, setCurrentPage] = useState(1)
-    const [sortType, setSortType] = useState<SortType>("alphabetique")
-    const [filteredCampaigns, setFilteredCampaigns] = useState(fakeCampaigns)
-    const [animateCards, setAnimateCards] = useState(false)
-    const campaignsPerPage = 10 // 2 lignes de 5 campagnes
+
+    const [searchTerm, setSearchTerm] = useState("");
+    const [currentPage, setCurrentPage] = useState(1);
+    const [sortType, setSortType] = useState<SortType>("alphabetique");
+    const [filteredCampaigns, setFilteredCampaigns] = useState(fakeCampaigns);
+    const [animateCards, setAnimateCards] = useState(false);
+
+    const campaignsPerPage = 10;
 
     useEffect(() => {
-        const sorted = [...fakeCampaigns].sort((a, b) => {
+        const sorted = fakeCampaigns.sort((a, b) => {
             if (sortType === "alphabetique") {
-                return a.name.localeCompare(b.name, "fr", { sensitivity: "base" })
+                return a.name.localeCompare(b.name, "fr", {sensitivity: "base"});
             } else {
-                return b.createdAt.getTime() - a.createdAt.getTime() // Du plus récent au plus ancien
+                return b.createdAt.getTime() - a.createdAt.getTime();
             }
         })
 
-        const filtered = sorted.filter((campaign) => campaign.name.toLowerCase().includes(searchTerm.toLowerCase()))
+        const filtered = sorted.filter((campaign) =>
+            campaign.name.toLowerCase().includes(searchTerm.toLowerCase())
+        );
 
-        setFilteredCampaigns(filtered)
-        setCurrentPage(1)
-
-        setAnimateCards(false)
-        setTimeout(() => setAnimateCards(true), 10)
-    }, [searchTerm, sortType])
+        setFilteredCampaigns(filtered);
+        setCurrentPage(1);
+        setAnimateCards(false);
+        setTimeout(() => setAnimateCards(true), 10);
+    }, [searchTerm, sortType]);
 
     useEffect(() => {
-        setAnimateCards(false)
-        setTimeout(() => setAnimateCards(true), 10)
-    }, [currentPage])
+        setAnimateCards(false);
+        setTimeout(() => setAnimateCards(true), 10);
+    }, [currentPage]);
 
-    const indexOfLastCampaign = currentPage * campaignsPerPage
-    const indexOfFirstCampaign = indexOfLastCampaign - campaignsPerPage
-    const currentCampaigns = filteredCampaigns.slice(indexOfFirstCampaign, indexOfLastCampaign)
-
-    const totalPages = Math.ceil(filteredCampaigns.length / campaignsPerPage)
+    const indexOfLastCampaign = currentPage * campaignsPerPage;
+    const indexOfFirstCampaign = indexOfLastCampaign - campaignsPerPage;
+    const currentCampaigns = filteredCampaigns.slice(indexOfFirstCampaign, indexOfLastCampaign);
+    const totalPages = Math.ceil(filteredCampaigns.length / campaignsPerPage);
 
     return (
-
         <div>
             <Section pattern="dice">
                 <h1 className="font-aladdin text-3xl text-center relative z-10">
@@ -140,6 +139,7 @@ export default function CampaignsPage() {
                         sortType={sortType}
                         onSortChange={setSortType}
                     />
+
                     <Button variant="primary" className="px-4 py-2">
                         + Créer une campagne
                     </Button>
@@ -149,32 +149,37 @@ export default function CampaignsPage() {
             <div className="max-w-7xl mx-auto px-8 py-8 mb-24">
                 <div
                     className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 mb-8">
-                    {currentCampaigns.map((campaign, index) => (
-                        <div
-                            key={campaign.id}
-                            className={`campaign-card w-full ${animateCards ? "animate-in" : ""}`}
-                            style={{animationDelay: `${index * 50}ms`}}
-                        >
-                            <CampaignCard
-                                id={campaign.id}
-                                name={campaign.name}
-                                image={campaign.image}
-                                createdAt={campaign.createdAt}
-                                showDate={false}
-                            />
-                        </div>
-                    ))}
+                    {
+                        currentCampaigns.map((campaign, index) => (
+                            <div
+                                key={campaign.id}
+                                className={`campaign-card w-full ${animateCards ? "animate-in" : ""}`}
+                                style={{animationDelay: `${index * 50}ms`}}
+                            >
+                                <CampaignCard
+                                    id={campaign.id}
+                                    name={campaign.name}
+                                    image={campaign.image}
+                                    createdAt={campaign.createdAt}
+                                    showDate={false}
+                                />
+                            </div>
+                        ))
+                    }
                 </div>
 
-                {filteredCampaigns.length === 0 && (
-                    <div className="text-center py-12">
-                        <p className="text-gray-500">Aucune campagne ne correspond à votre recherche.</p>
-                    </div>
-                )}
+                {
+                    filteredCampaigns.length === 0 && (
+                        <div className="text-center py-12">
+                            <p className="text-gray-500">Aucune campagne ne correspond à votre recherche.</p>
+                        </div>
+                    )
+                }
 
-                {totalPages > 0 && (
+                {
+                    totalPages > 0 &&
                     <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={setCurrentPage}/>
-                )}
+                }
             </div>
         </div>
     )

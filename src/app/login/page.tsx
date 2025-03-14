@@ -1,30 +1,31 @@
-"use client"
+"use client";
 
-import type React from "react"
+import {FormEvent, useState} from "react";
+import Link from "next/link";
+import Image from "next/image";
 
-import { useState } from "react"
-import Link from "next/link"
-import Image from "next/image"
-import Button from "@/components/ui/Button"
-import FormInput from "@/components/ui/FormInput/FormInput"
-import PasswordInput from "@/components/ui/PasswordInput/PasswordInput"
-import styles from "./login.module.css"
+import {Button, FormInput, PasswordInput} from "@/components/ui";
 
-export default function LoginPage() {
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
+import styles from "./login.module.css";
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault()
-    }
+const LoginPage = () => {
+
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    const handleSubmit = (e: FormEvent) => {
+        e.preventDefault();
+    };
 
     return (
         <div className={styles.container}>
             <div className={styles.leftColumn}>
-                <Image src="/placeholder.svg?height=1080&width=1080" alt="Background" fill className="object-cover" />
-                <div className={styles.backgroundOverlay} />
+                <Image src="/placeholder.svg?height=1080&width=1080" alt="Background" fill className="object-cover"/>
+
+                <div className={styles.backgroundOverlay}/>
+
                 <div className={styles.leftContent}>
-                    <h1 className={styles.welcomeTitle}>Nous sommes heureux de vous retrouver !</h1>
+                    <h2 className={styles.welcomeTitle}>Nous sommes heureux de vous retrouver !</h2>
                 </div>
             </div>
 
@@ -68,7 +69,7 @@ export default function LoginPage() {
                             <div className={styles.signupContainer}>
                                 <span className={styles.signupText}>Pas de compte ? </span>
                                 <Link href="/signup" className={styles.signupLink}>
-                                    S'inscrire
+                                    S&apos;inscrire
                                 </Link>
                             </div>
                         </form>
@@ -76,6 +77,8 @@ export default function LoginPage() {
                 </div>
             </div>
         </div>
-    )
-}
+    );
 
+};
+
+export default LoginPage;

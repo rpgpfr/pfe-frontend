@@ -1,8 +1,9 @@
 import type React from "react"
-import type { Metadata } from "next"
-import { Source_Sans_3, Aladin as Aladdin } from "next/font/google"
-import "./globals.css"
+import type {Metadata} from "next"
+import {Aladin as Aladdin, Source_Sans_3} from "next/font/google"
 import {SessionProvider} from "next-auth/react";
+
+import "./globals.css"
 
 const sourceSans = Source_Sans_3({
     subsets: ["latin"],

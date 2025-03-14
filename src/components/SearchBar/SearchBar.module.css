@@ -1,31 +1,35 @@
 .flexContainer {
     @apply flex gap-4 flex-1 max-w-xl;
-}
 
-.relativeContainer {
-    @apply relative;
-}
+    & > .relativeContainer {
+        @apply relative;
 
-.button {
-    @apply flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-[4px] text-gray-700 w-[200px] justify-between;
-}
+        & > .button {
+            @apply flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-[4px] text-gray-700 w-[200px] justify-between;
 
-.dropdown {
-    @apply absolute top-full left-0 mt-1 w-[200px] bg-white border border-gray-300 rounded-[4px] shadow-lg z-20;
-}
+            & > .icon {
+                @apply w-4 h-4;
+            }
+        }
 
-.dropdownContent {
-    @apply p-2;
-}
+        & > .dropdown {
+            @apply absolute top-full left-0 mt-1 w-[200px] bg-white border border-gray-300 rounded-[4px] shadow-lg z-20;
 
-.dropdownButton {
-    @apply flex items-center justify-between w-full px-4 py-2 text-left hover:bg-gray-100 rounded-[4px];
-}
+            & > .dropdownContent {
+                @apply p-2;
 
-.icon {
-    @apply w-4 h-4;
-}
+                & > .dropdownButton {
+                    @apply flex items-center justify-between w-full px-4 py-2 text-left rounded-[4px];
 
-.iconPrimaryGreen {
-    @apply text-primary-green;
+                    &:hover {
+                        @apply bg-gray-100;
+                    }
+
+                    & > .iconPrimaryGreen {
+                        @apply text-primary-green;
+                    }
+                }
+            }
+        }
+    }
 }
