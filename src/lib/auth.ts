@@ -2,6 +2,7 @@ import NextAuth, {Session} from "next-auth";
 import Credentials from "next-auth/providers/credentials"
 import {JWT} from "next-auth/jwt"
 import jwt from "jsonwebtoken";
+import {NextResponse} from "next/server";
 
 export const {handlers, auth} = NextAuth({
     providers: [
@@ -24,7 +25,9 @@ export const {handlers, auth} = NextAuth({
                     const authorizationResponse = await fetch(`${process.env.SPRING_API_URL}/auth/login`, options);
 
                     if (!authorizationResponse.ok) {
-                        return null;
+                        const errorMessage = (await authorizationResponse.json()).error;
+
+                        return {error: errorMessage};
                     }
 
                     const data = await authorizationResponse.json();
@@ -33,7 +36,7 @@ export const {handlers, auth} = NextAuth({
                 } catch (error) {
                     console.error(error);
 
-                    return null;
+                    return {error: "Une erreur est survenue lors de la connexion."};
                 }
             }
         })

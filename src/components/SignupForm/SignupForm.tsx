@@ -8,6 +8,7 @@ import {signupSchema} from "@/lib/schemas";
 import {Button, FormInput, PasswordInput} from "@/components/ui";
 
 import styles from "./SignupForm.module.css";
+import {signIn} from "next-auth/react";
 
 const SignupForm = () => {
 
@@ -19,7 +20,7 @@ const SignupForm = () => {
         password: "",
         confirmPassword: ""
     });
-
+    const [submitError, setSubmitError] = useState<string>("");
     const [fieldErrors, setFieldErrors] = useState<Map<string, string>>(new Map());
 
     const handleFormChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -29,11 +30,48 @@ const SignupForm = () => {
         });
     };
 
-    const handleSubmit = (e: FormEvent) => {
+    const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
 
         if (validateForm()) {
+            try {
+                const signupBody = {
+                    email: formData.email,
+                    username: formData.username,
+                    firstName: formData.firstName,
+                    lastName: formData.lastName,
+                    password: formData.password
+                };
 
+                const options: RequestInit = {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json"
+                    },
+                    body: JSON.stringify(signupBody)
+                };
+
+                const signupResponse = await fetch("/api/auth/signup", options);
+
+                if (signupResponse.ok) {
+                    const loginResponse = await signIn("credentials", {
+                        identifier: formData.username,
+                        password: formData.password,
+                    });
+
+                    if (loginResponse?.error) {
+                        setSubmitError(loginResponse?.error)
+                    }
+
+                } else {
+                    const errorMessage = (await signupResponse.json());
+
+                    setSubmitError(errorMessage);
+                }
+            } catch(error) {
+                console.error(error);
+            }
         }
     };
 
@@ -60,6 +98,11 @@ const SignupForm = () => {
     return (
         <div className={styles.formContainer}>
             <div className={styles.formWrapper}>
+                {
+                    submitError &&
+                    <p className={styles.error}>{submitError}</p>
+                }
+
                 <form onSubmit={handleSubmit} className={styles.form}>
                     <FormInput
                         label="Adresse e-mail"
