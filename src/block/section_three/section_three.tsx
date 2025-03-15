@@ -11,7 +11,7 @@ const aladin = Aladin({
 const SectionThree = () => {
   return (
     <div className={styles.container_section_three}>
-      <h1 className={`${styles.title_section_three} ${aladin.variable} ${aladin.className}`}>Simple d'utilisation</h1>
+      <h1 className={`${styles.title_section_three} ${aladin.variable} ${aladin.className}`}>Simple d&apos;utilisation</h1>
 
       <div className={styles.grid_section_three}>
         <div className={styles.card_section_three}>

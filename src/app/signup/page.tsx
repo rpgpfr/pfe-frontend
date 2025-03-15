@@ -41,7 +41,7 @@ export default function SignupPage() {
                 <Image src="/placeholder.svg?height=1080&width=1080" alt="Background" fill className="object-cover" />
                 <div className={styles.backgroundOverlay} />
                 <div className={styles.leftContent}>
-                    <h1 className={styles.welcomeTitle}>Rejoignez l'aventure !</h1>
+                    <h1 className={styles.welcomeTitle}>Rejoignez l&apos;aventure !</h1>
                 </div>
             </div>
 
@@ -82,7 +82,7 @@ export default function SignupPage() {
                             />
 
                             <Button type="submit" variant="primary" className={styles.loginButton}>
-                                S'inscrire
+                                S&apos;inscrire
                             </Button>
 
                             <div className={styles.signupContainer}>

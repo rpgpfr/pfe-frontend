@@ -69,7 +69,7 @@ export default function LoginPage() {
                             <div className={styles.signupContainer}>
                                 <span className={styles.signupText}>Pas de compte ? </span>
                                 <Link href="/signup" className={styles.signupLink}>
-                                    S'inscrire
+                                    S&apos;inscrire
                                 </Link>
                             </div>
                         </form>

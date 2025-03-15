@@ -6,7 +6,6 @@ import Button from "@/components/ui/Button"
 import styles from "./CampaignCard.module.css"
 
 interface CampaignCardProps {
-    id: number
     name: string
     image: string
     createdAt: Date
@@ -15,7 +14,6 @@ interface CampaignCardProps {
 }
 
 export default function CampaignCard({
-                                         id,
                                          name,
                                          image,
                                          createdAt,

@@ -156,7 +156,6 @@ export default function CampaignsPage() {
                             style={{animationDelay: `${index * 50}ms`}}
                         >
                             <CampaignCard
-                                id={campaign.id}
                                 name={campaign.name}
                                 image={campaign.image}
                                 createdAt={campaign.createdAt}

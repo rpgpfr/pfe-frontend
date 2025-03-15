@@ -8,14 +8,17 @@ const config: Config = {
     theme: {
         extend: {
             colors: {
-                primaryGreen: 'var(--primary-green)',
+                primary: {
+                    green: 'var(--primary-green)',
+                },
+                smooth: {
+                    green: 'var(--smooth-green)',
+                    beige: 'var(--smooth-beige)',
+                },
                 secondaryGreen: 'var(--secondary-green)',
-                smoothGreen: 'var(--smooth-green)',
-                smoothBeige: 'var(--smooth-beige)',
                 beige: 'var(--beige)',
                 primaryBrown: 'var(--primary-brown)',
                 darkGreen: 'var(--dark-green)',
-                beige: 'var(--beige)',
                 white: 'var(--white)',
             },
             fontFamily: {
