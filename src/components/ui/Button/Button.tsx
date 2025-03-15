@@ -1,19 +1,16 @@
 "use client";
 
-import type React from "react";
+import {ButtonHTMLAttributes, ReactNode} from "react";
 import Link from "next/link";
-import {cva} from "class-variance-authority";
+import {cva, VariantProps} from "class-variance-authority";
 
 import {cn} from "@/lib/utils";
 
 import styles from "./Button.module.css";
 
-interface ButtonProps {
-    children: React.ReactNode;
-    variant?: "primary" | "secondary" | "outline" | "icon";
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants>{
+    children: ReactNode;
     href?: string;
-    onClick?: () => void;
-    className?: string;
     type?: "button" | "submit" | "reset";
 }
 
@@ -31,21 +28,21 @@ const buttonVariants = cva(
     }
 );
 
-const Button = (props: ButtonProps) => {
+const Button = ({children, className, href, type, onClick, variant}: ButtonProps) => {
 
-    const buttonClasses = cn(buttonVariants({variant: props.variant}), props.className);
+    const buttonClasses = cn(buttonVariants({variant: variant}), className);
 
-    if (props.href) {
+    if (href) {
         return (
-            <Link href={props.href} className={buttonClasses}>
-                {props.children}
+            <Link href={href} className={buttonClasses}>
+                {children}
             </Link>
         );
     }
 
     return (
-        <button type={props.type || "button"} onClick={props.onClick} className={buttonClasses}>
-            {props.children}
+        <button type={type || "button"} onClick={onClick} className={buttonClasses}>
+            {children}
         </button>
     );
 
