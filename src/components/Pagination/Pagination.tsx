@@ -25,7 +25,7 @@ const Pagination = ({currentPage, totalPages, onPageChange}: PaginationProps) =>
                 icon={ChevronLeft}
                 onClick={() => onPageChange(Math.max(1, currentPage - 1))}
                 variant="outline"
-                ariaLabel="Page précédente"
+                aria-label="Page précédente"
                 className={cn(currentPage === 1 && styles.disabled)}
             />
 
@@ -45,7 +45,7 @@ const Pagination = ({currentPage, totalPages, onPageChange}: PaginationProps) =>
                 icon={ChevronRight}
                 onClick={() => onPageChange(Math.min(totalPages, currentPage + 1))}
                 variant="outline"
-                ariaLabel="Page suivante"
+                aria-label="Page suivante"
                 className={cn(currentPage === totalPages && styles.disabled)}
             />
         </div>

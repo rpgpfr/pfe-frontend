@@ -16,7 +16,7 @@ export const POST = async (request: NextRequest) => {
 
         if (!authorizationResponse.ok) {
             const data = await authorizationResponse.json();
-            console.error(data.errorMessage);
+            console.error(data);
 
             return NextResponse.json(data, {status: authorizationResponse.status});
         }

@@ -9,6 +9,7 @@ import {Button, FormInput, PasswordInput} from "@/components/ui";
 
 import styles from "./SignupForm.module.css";
 import {signIn} from "next-auth/react";
+import {useRouter} from "next/navigation";
 
 const SignupForm = () => {
 
@@ -22,6 +23,7 @@ const SignupForm = () => {
     });
     const [submitError, setSubmitError] = useState<string>("");
     const [fieldErrors, setFieldErrors] = useState<Map<string, string>>(new Map());
+    const router = useRouter();
 
     const handleFormChange = (e: ChangeEvent<HTMLInputElement>) => {
         setFormData({
@@ -58,18 +60,21 @@ const SignupForm = () => {
                     const loginResponse = await signIn("credentials", {
                         identifier: formData.username,
                         password: formData.password,
+                        redirect: false
                     });
 
                     if (loginResponse?.error) {
-                        setSubmitError(loginResponse?.error)
+                        setSubmitError("Votre compte a été créé, mais une erreur s'est produite lors de la connexion");
+                    } else {
+                        router.push("/");
                     }
 
                 } else {
-                    const errorMessage = (await signupResponse.json());
+                    const errorMessage = (await signupResponse.json()).error;
 
                     setSubmitError(errorMessage);
                 }
-            } catch(error) {
+            } catch (error) {
                 console.error(error);
             }
         }
@@ -98,10 +103,6 @@ const SignupForm = () => {
     return (
         <div className={styles.formContainer}>
             <div className={styles.formWrapper}>
-                {
-                    submitError &&
-                    <p className={styles.error}>{submitError}</p>
-                }
 
                 <form onSubmit={handleSubmit} className={styles.form}>
                     <FormInput
@@ -167,6 +168,8 @@ const SignupForm = () => {
                     <Button type="submit" variant="primary" className={styles.signupButton}>
                         S&apos;inscrire
                     </Button>
+
+                    <p className={styles.error}>{submitError}</p>
 
                     <div className={styles.loginLinkContainer}>
                         <span className={styles.loginText}>Déjà un compte ? </span>

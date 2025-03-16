@@ -1,19 +1,57 @@
 "use client";
 
-import {FormEvent, useState} from "react";
+import {ChangeEvent, FormEvent, useState} from "react";
 import Link from "next/link";
+import {signIn} from "next-auth/react";
 
+import {loginSchema} from "@/lib/schemas";
 import {Button, FormInput, PasswordInput} from "@/components/ui";
 
 import styles from "./LoginForm.module.css";
+import {useRouter} from "next/navigation";
 
 const LoginForm = () => {
 
-    const [identifier, setIdentifier] = useState("");
-    const [password, setPassword] = useState("");
+    const [formData, setFormData] = useState({
+        identifier: "",
+        password: ""
+    });
+    const [submitError, setSubmitError] = useState("");
+    const router = useRouter();
 
-    const handleSubmit = (e: FormEvent) => {
+    const handleFormChange = (event: ChangeEvent<HTMLInputElement>) => {
+        setFormData({
+            ...formData,
+            [event.target.id]: event.target.value
+        })
+    }
+
+    const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
+
+        if (validateForm()) {
+            try {
+                const loginResponse = await signIn("credentials", {
+                    identifier: formData.identifier,
+                    password: formData.password,
+                    redirect: false,
+                });
+
+                if (loginResponse?.error) {
+                    setSubmitError("L'identifiant ou le mot de passe est incorrect.");
+                } else {
+                    router.push("/");
+                }
+            } catch (error) {
+                setSubmitError((error as Error).message)
+            }
+        }
+    };
+
+    const validateForm = () => {
+        const validation = loginSchema.safeParse(formData);
+
+        return validation.success;
     };
 
     return (
@@ -24,16 +62,16 @@ const LoginForm = () => {
                         label="Nom d'utilisateur ou adresse e-mail"
                         id="identifier"
                         type="text"
-                        value={identifier}
-                        onChange={(e) => setIdentifier(e.target.value)}
+                        value={formData.identifier}
+                        onChange={handleFormChange}
                         required
                     />
 
                     <PasswordInput
                         label="Mot de passe"
                         id="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
+                        value={formData.password}
+                        onChange={handleFormChange}
                         required
                     />
 
@@ -47,8 +85,10 @@ const LoginForm = () => {
                         Se connecter
                     </Button>
 
-                    <div className={styles.signupContainer}>
-                        <span className={styles.signupText}>Pas de compte ? </span>
+                    <p className={styles.error}>{submitError}</p>
+
+                    <div className={styles.signupLinkContainer}>
+                        <span className={styles.signupText}>Vous ne possédez pas de compte ? </span>
                         <Link href="/signup" className={styles.signupLink}>
                             S&apos;inscrire
                         </Link>

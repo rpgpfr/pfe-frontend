@@ -1,7 +1,7 @@
 import {auth} from "@/lib/auth"
 import {NextRequest} from "next/server";
 
-export default auth((request: NextRequest & { auth: any }) => {
+export default auth((request: NextRequest & { auth: unknown }) => {
     if (
         !request.auth
         && request.nextUrl.pathname.includes("/campaigns")

@@ -8,7 +8,7 @@ import {cn} from "@/lib/utils";
 
 import styles from "./Button.module.css";
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants>{
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
     children: ReactNode;
     href?: string;
     type?: "button" | "submit" | "reset";

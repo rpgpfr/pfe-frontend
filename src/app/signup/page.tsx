@@ -26,7 +26,7 @@ const SignupPage = () => {
                     </Link>
                 </div>
 
-                <SignupForm />
+                <SignupForm/>
             </div>
         </div>
     );

@@ -11,6 +11,10 @@
                 @apply w-full;
             }
 
+            & > .error {
+                @apply text-sm w-full text-center text-red-600;
+            }
+
             & > .loginLinkContainer {
                 @apply text-center text-sm;
 

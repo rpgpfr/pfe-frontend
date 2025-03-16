@@ -1,8 +1,7 @@
-import NextAuth, {Session} from "next-auth";
+import NextAuth, {AuthError, Session, User} from "next-auth";
 import Credentials from "next-auth/providers/credentials"
 import {JWT} from "next-auth/jwt"
 import jwt from "jsonwebtoken";
-import {NextResponse} from "next/server";
 
 export const {handlers, auth} = NextAuth({
     providers: [
@@ -12,37 +11,34 @@ export const {handlers, auth} = NextAuth({
                 password: {label: "Password", type: "password"}
             },
             authorize: async (credentials) => {
-                const options: RequestInit = {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        "backend-api-key": process.env.SPRING_API_KEY!
-                    },
-                    body: JSON.stringify(credentials)
-                };
-
                 try {
+                    const options: RequestInit = {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "backend-api-key": process.env.SPRING_API_KEY!
+                        },
+                        body: JSON.stringify(credentials)
+                    };
                     const authorizationResponse = await fetch(`${process.env.SPRING_API_URL}/auth/login`, options);
 
                     if (!authorizationResponse.ok) {
                         const errorMessage = (await authorizationResponse.json()).error;
 
-                        return {error: errorMessage};
+                        throw new Error(errorMessage);
                     }
 
                     const data = await authorizationResponse.json();
 
                     return data.data;
                 } catch (error) {
-                    console.error(error);
-
-                    return {error: "Une erreur est survenue lors de la connexion."};
+                    throw new AuthError((error as Error).message);
                 }
             }
         })
     ],
     callbacks: {
-        jwt: async ({token, user}) => {
+        jwt: async ({token, user}: { token: JWT, user: User }) => {
             if (user) {
                 token.username = user.username;
                 token.firstName = user.firstName;

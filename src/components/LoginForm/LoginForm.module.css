@@ -23,6 +23,10 @@
                 @apply w-full;
             }
 
+            & > .error {
+                @apply text-sm w-full text-center text-red-600;
+            }
+
             & > .signupLinkContainer {
                 @apply text-center text-sm;
 

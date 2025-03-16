@@ -8,7 +8,7 @@ import {cn} from "@/lib/utils";
 import styles from "./IconButton.module.css";
 import {ButtonHTMLAttributes} from "react";
 
-interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof iconButtonVariants>{
+interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof iconButtonVariants> {
     icon: LucideIcon;
 }
 
