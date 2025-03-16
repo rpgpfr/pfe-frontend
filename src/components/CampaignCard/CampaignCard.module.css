@@ -29,15 +29,3 @@
         }
     }
 }
-
-@keyframes animateIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 100%;
-        transform: translateY(0);
-    }
-}

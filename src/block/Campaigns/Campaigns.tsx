@@ -1,6 +1,9 @@
 "use client";
 
-import {useEffect, useState} from "react";
+import {useEffect, useRef, useState} from "react";
+import {useGSAP} from "@gsap/react";
+import {gsap} from "gsap";
+import TweenTarget = gsap.TweenTarget;
 
 import {CampaignCard, Pagination, SearchBar} from "@/components";
 import {Button} from "@/components/ui";
@@ -12,37 +15,63 @@ type SortType = "alphabetique" | "date";
 
 const Campaigns = () => {
 
+    const campaigns = fakeCampaigns;
+    const campaignsPerPage = 10;
+
     const [searchTerm, setSearchTerm] = useState("");
     const [currentPage, setCurrentPage] = useState(1);
     const [sortType, setSortType] = useState<SortType>("alphabetique");
-    const [filteredCampaigns, setFilteredCampaigns] = useState<typeof fakeCampaigns>([]);
+    const [filteredCampaigns, setFilteredCampaigns] = useState<typeof fakeCampaigns>(campaigns);
+    const [currentCampaigns, setCurrentCampaigns] = useState<typeof fakeCampaigns>([]);
+    const [totalPages, setTotalPages] = useState(0);
 
-    const campaignsPerPage = 10;
-    const indexOfLastCampaign = currentPage * campaignsPerPage;
-    const indexOfFirstCampaign = indexOfLastCampaign - campaignsPerPage;
-    const currentCampaigns = filteredCampaigns.slice(indexOfFirstCampaign, indexOfLastCampaign);
-    const totalPages = Math.ceil(filteredCampaigns.length / campaignsPerPage);
+    const campaignsRef = useRef<HTMLDivElement>(null);
+
+    useGSAP(() => {
+        gsap.set(campaignsRef.current?.children as TweenTarget, { autoAlpha: 0, y: 20 });
+
+        gsap.to("*", {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.4,
+            stagger: {
+                amount: currentCampaigns.length * 0.1,
+            },
+        })
+    }, {
+        scope: campaignsRef,
+        dependencies: [currentCampaigns, searchTerm]
+    })
 
     useEffect(() => {
-        const sorted = fakeCampaigns.sort((a, b) => {
+        const sorted = campaigns.sort((a, b) => {
             if (sortType === "alphabetique") {
                 return a.name.localeCompare(b.name, "fr", {sensitivity: "base"});
             } else {
                 return b.createdAt.getTime() - a.createdAt.getTime();
             }
-        })
+        });
 
         const filtered = sorted.filter((campaign) =>
             campaign.name.toLowerCase().includes(searchTerm.toLowerCase())
         );
 
         setFilteredCampaigns(filtered);
+        setTotalPages(Math.ceil(filtered.length / campaignsPerPage));
         setCurrentPage(1);
-    }, [searchTerm, sortType]);
+    }, [campaigns, searchTerm, sortType]);
+
+    useEffect(() => {
+        const indexOfLastCampaign = currentPage * campaignsPerPage;
+        const indexOfFirstCampaign = indexOfLastCampaign - campaignsPerPage;
+        const current = filteredCampaigns.slice(indexOfFirstCampaign, indexOfLastCampaign);
+
+        setCurrentCampaigns(current);
+    }, [currentPage, filteredCampaigns]);
 
     return (
         <>
-            <div className={styles.actionBar}>
+            <section className={styles.actionBar}>
                 <SearchBar
                     searchTerm={searchTerm}
                     onSearchChange={setSearchTerm}
@@ -53,10 +82,10 @@ const Campaigns = () => {
                 <Button variant="primary" className="px-4 py-2">
                     + Créer une campagne
                 </Button>
-            </div>
+            </section>
 
-            <div className={styles.campaignsContainer}>
-                <div className={styles.campaigns}>
+            <section className={styles.campaignsContainer}>
+                <div ref={campaignsRef} className={styles.campaigns}>
                     {
                         currentCampaigns.map((campaign, index) => (
                             <CampaignCard
@@ -82,7 +111,7 @@ const Campaigns = () => {
                     totalPages > 0 &&
                     <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={setCurrentPage}/>
                 }
-            </div>
+            </section>
         </>
     );
 

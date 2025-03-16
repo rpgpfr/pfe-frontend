@@ -4,6 +4,7 @@ import {Aladin as Aladdin, Source_Sans_3} from "next/font/google"
 import {SessionProvider} from "next-auth/react";
 
 import "./globals.css"
+import {GSAPWrapper} from "@/components";
 
 const sourceSans = Source_Sans_3({
     subsets: ["latin"],
@@ -30,7 +31,11 @@ export default function RootLayout({
     return (
         <html lang="fr" className={`${sourceSans.variable} ${aladdin.variable}`}>
         <SessionProvider>
-            <body>{children}</body>
+            <body>
+            <GSAPWrapper>
+                {children}
+            </GSAPWrapper>
+            </body>
         </SessionProvider>
         </html>
     )
