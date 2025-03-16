@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import {ArrowRight, Trash2} from "lucide-react";
 

@@ -2,7 +2,7 @@
 
 import {LucideIcon} from "lucide-react";
 import {ButtonHTMLAttributes} from "react";
-import {cva, VariantProps} from "class-variance-authority";
+import {VariantProps} from "class-variance-authority";
 
 import {cn} from "@/lib/utils";
 import {iconButtonVariants} from "@/components/ui/IconButton/IconButtonVariants";

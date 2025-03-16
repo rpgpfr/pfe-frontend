@@ -1,5 +1,3 @@
-
-
 export const fakeCampaigns = [
     {
         id: 1,

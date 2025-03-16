@@ -1,5 +1,5 @@
 .actionBar {
-    @apply  w-full max-w-7xl mx-auto px-8 py-6 flex justify-between items-center border-b border-gray-200;
+    @apply w-full max-w-7xl mx-auto px-8 py-6 flex justify-between items-center border-b border-gray-200;
 }
 
 .campaignsContainer {

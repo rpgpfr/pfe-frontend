@@ -3,13 +3,13 @@
 import {useEffect, useRef, useState} from "react";
 import {useGSAP} from "@gsap/react";
 import {gsap} from "gsap";
-import TweenTarget = gsap.TweenTarget;
 
 import {CampaignCard, Pagination, SearchBar} from "@/components";
 import {Button} from "@/components/ui";
 import {fakeCampaigns} from "@/app/campaigns/mock";
 
 import styles from "./Campaigns.module.css";
+import TweenTarget = gsap.TweenTarget;
 
 type SortType = "alphabetique" | "date";
 
@@ -28,7 +28,7 @@ const Campaigns = () => {
     const campaignsRef = useRef<HTMLDivElement>(null);
 
     useGSAP(() => {
-        gsap.set(campaignsRef.current?.children as TweenTarget, { autoAlpha: 0, y: 20 });
+        gsap.set(campaignsRef.current?.children as TweenTarget, {autoAlpha: 0, y: 20});
 
         gsap.to("*", {
             autoAlpha: 1,
