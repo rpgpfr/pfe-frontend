@@ -3,11 +3,11 @@
 }
 
 .title_section_two {
-    @apply text-4xl md:text-7xl font-bold text-center mb-12;
+    @apply text-4xl font-bold text-center mb-12;
 }
 
 .grid_section_two {
-    @apply w-full grid grid-cols-1 md:grid-cols-2 gap-8;
+    @apply w-full grid grid-cols-2 gap-8;
 }
 
 .card_section_two {
@@ -15,7 +15,7 @@
 }
 
 .image_container {
-    @apply aspect-square  bg-gray-100;
+    @apply aspect-square bg-gray-100;
 }
 
 .card_overlay {

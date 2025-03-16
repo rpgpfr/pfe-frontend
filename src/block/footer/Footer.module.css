@@ -16,5 +16,5 @@
 
 .footertitle {
     font-family: "Wonderbar", sans-serif;
-    @apply text-[40px];
+    @apply text-4xl font-bold;
 }

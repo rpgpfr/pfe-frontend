@@ -1,5 +1,5 @@
 import Image from "next/image"
-import styles from '@/block/section_one/section_one.module.css';
+import styles from '@/block/home_campaign_demo/home_campaign_demo.module.css';
 import { Aladin } from 'next/font/google';  
 
 const aladin = Aladin({
@@ -8,7 +8,7 @@ const aladin = Aladin({
   variable: '--font-aladin',
 });
 
-const SectionOne  = () =>{
+const HomeCampaignDemo  = () =>{
   return (
     <div className={styles.container_section_one}>
       <h1 className={`${styles.title_section_one} ${aladin.variable} ${aladin.className}`}>Créez votre campagne</h1>
@@ -46,9 +46,10 @@ const SectionOne  = () =>{
             </li>
           </ul>
         </div>
+
       </div>
     </div>
   )
 }
 
-export default SectionOne;
+export default HomeCampaignDemo;

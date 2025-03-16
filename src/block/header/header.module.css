@@ -17,7 +17,7 @@
 }
 
 .title {
-    @apply pl-20 flex-1 text-[30px] font-black;
+    @apply pl-20 flex-1 text-3xl font-black;
 }
 
 .nav {
@@ -26,10 +26,10 @@
 
 .link {
     font-family: "Source Sans Pro", sans-serif;
-    @apply text-[#0b0e14] font-medium text-[16px] px-6 py-3 rounded-full transition duration-300 hover:bg-white hover:text-[#0b0e14];
+    @apply text-[#0b0e14] font-medium text-base px-6 py-3 rounded-full transition duration-300 hover:bg-white hover:text-[#0b0e14];
 }
 
 .btnPrimary {
     font-family: "Source Sans Pro", sans-serif;
-    @apply bg-secondaryGreen text-white font-medium text-[16px] px-6 py-3 rounded-lg transition duration-300;
+    @apply bg-secondaryGreen text-white font-medium text-base px-6 py-3 rounded-lg transition duration-300;
 }

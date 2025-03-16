@@ -3,11 +3,11 @@
 }
 
 .title_section_three {
-    @apply text-4xl md:text-7xl font-bold text-center mb-12;
+    @apply text-4xl font-bold text-center mb-12;
 }
 
 .grid_section_three {
-    @apply w-full grid grid-cols-1 md:grid-cols-3 gap-8;
+    @apply w-full grid grid-cols-3 gap-8;
 }
 
 .card_section_three {

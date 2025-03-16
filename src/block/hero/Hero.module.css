@@ -20,5 +20,5 @@
 }
 
 .header_title {
-    @apply text-[75px] font-black;
+    @apply text-7xl font-black;
 }

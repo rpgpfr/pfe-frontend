@@ -2,9 +2,9 @@ import Header from "@/block/header/Header";
 import Footer from "@/block/footer/Footer";
 import Hero from "@/block/hero/Hero";
 import Presentation from "@/block/presentation/presentation";
-import SectionOne from "@/block/section_one/section_one";
-import SectionTwo from "@/block/section_two/section_two";
-import SectionThree from "@/block/section_three/section_three";
+import HomeCampaignDemo from "@/block/home_campaign_demo/home_campaign_demo";
+import HomeWorldDemo from "@/block/home_world_demo/home_world_demo";
+import HomeUseCaseDemo from "@/block/home_use_case_demo/home_use_case_demo";
 
 const Home = () => {
     return (
@@ -17,13 +17,13 @@ const Home = () => {
                 <Presentation />
             </div>
             <div>
-                <SectionOne />
+                <HomeCampaignDemo />
             </div>
             <div>
-                <SectionTwo />
+                <HomeWorldDemo />
             </div>
             <div>
-                <SectionThree />
+                <HomeUseCaseDemo />
             </div>
             <Footer />
         </div>

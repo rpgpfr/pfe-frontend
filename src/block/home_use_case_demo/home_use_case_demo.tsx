@@ -1,6 +1,6 @@
 import Image from "next/image";
-import styles from '@/block/section_three/section_three.module.css';
-import { Aladin } from 'next/font/google';  
+import styles from '@/block/home_use_case_demo/home_use_case_demo.module.css';
+import { Aladin } from 'next/font/google';
 
 const aladin = Aladin({
   subsets: ['latin'],
@@ -8,7 +8,7 @@ const aladin = Aladin({
   variable: '--font-aladin',
 });
 
-const SectionThree = () => {
+const HomeUseCaseDemo = () => {
   return (
     <div className={styles.container_section_three}>
       <h1 className={`${styles.title_section_three} ${aladin.variable} ${aladin.className}`}>Simple d&apos;utilisation</h1>
@@ -60,7 +60,8 @@ const SectionThree = () => {
           </div>
           <div className={styles.card_overlay}>
             <p className={styles.card_text}>
-            Vous avez un doute sur la signification d’un terme ? Le glossaire est là pour vous !            </p>
+            Vous avez un doute sur la signification d’un terme ? Le glossaire est là pour vous !
+            </p>
           </div>
         </div>
       </div>
@@ -68,4 +69,4 @@ const SectionThree = () => {
   );
 };
 
-export default SectionThree;
+export default HomeUseCaseDemo;
