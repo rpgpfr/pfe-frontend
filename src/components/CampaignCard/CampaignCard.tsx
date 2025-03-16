@@ -1,4 +1,3 @@
-"use client";
 
 import Image from "next/image";
 import {ArrowRight, Trash2} from "lucide-react";
@@ -9,6 +8,7 @@ import {cn} from "@/lib/utils";
 import styles from "./CampaignCard.module.css";
 
 interface CampaignCardProps {
+    id: number,
     name: string;
     image: string;
     createdAt: Date;
@@ -16,7 +16,7 @@ interface CampaignCardProps {
     showDate?: boolean;
 }
 
-export const CampaignCard = ({name, image, createdAt, className, showDate}: CampaignCardProps) => {
+export const CampaignCard = ({id, name, image, createdAt, className, showDate}: CampaignCardProps) => {
 
     const formatDate = (date: Date) => {
         return date.toLocaleDateString("fr-FR", {
@@ -27,7 +27,7 @@ export const CampaignCard = ({name, image, createdAt, className, showDate}: Camp
     };
 
     return (
-        <div className={cn(styles.card, className)}>
+        <div id={`campaign-${id}`} className={cn(styles.card, className)}>
             <h3 className={styles.title}>{name}</h3>
 
             {

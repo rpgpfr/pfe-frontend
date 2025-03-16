@@ -1,5 +1,5 @@
 .card {
-    @apply border rounded-[4px] p-2 bg-white h-full;
+    @apply border rounded-[4px] p-2 bg-white w-full h-full;
 
     & > .title {
         @apply font-aladdin text-base mb-1 truncate;
@@ -30,4 +30,14 @@
     }
 }
 
+@keyframes animateIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
 
+    to {
+        opacity: 100%;
+        transform: translateY(0);
+    }
+}

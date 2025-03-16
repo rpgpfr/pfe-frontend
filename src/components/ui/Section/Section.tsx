@@ -1,11 +1,12 @@
-import type React from "react";
+
+import {ReactNode} from "react";
 
 import {cn} from "@/lib/utils";
 
 import styles from "./Section.module.css";
 
 interface SectionProps {
-    children: React.ReactNode;
+    children: ReactNode;
     title?: string;
     className?: string;
     pattern?: "dice" | "sword" | "checkerboard" | "none";

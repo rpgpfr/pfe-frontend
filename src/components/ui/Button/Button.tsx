@@ -2,11 +2,10 @@
 
 import {ButtonHTMLAttributes, ReactNode} from "react";
 import Link from "next/link";
-import {cva, VariantProps} from "class-variance-authority";
+import {VariantProps} from "class-variance-authority";
 
 import {cn} from "@/lib/utils";
-
-import styles from "./Button.module.css";
+import {buttonVariants} from "@/components/ui/Button/buttonVariants";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
     children: ReactNode;
@@ -14,23 +13,10 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, VariantPr
     type?: "button" | "submit" | "reset";
 }
 
-const buttonVariants = cva(
-    styles.button,
-    {
-        variants: {
-            variant: {
-                primary: styles.primary,
-                secondary: styles.secondary,
-                outline: styles.outline,
-                icon: styles.icon
-            }
-        }
-    }
-);
-
 const Button = ({children, className, href, type, onClick, variant}: ButtonProps) => {
 
     const buttonClasses = cn(buttonVariants({variant: variant}), className);
+    console.log(buttonClasses);
 
     if (href) {
         return (
