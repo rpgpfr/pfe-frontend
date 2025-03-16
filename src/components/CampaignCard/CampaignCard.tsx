@@ -9,7 +9,6 @@ import {cn} from "@/lib/utils";
 import styles from "./CampaignCard.module.css";
 
 interface CampaignCardProps {
-    id: number;
     name: string;
     image: string;
     createdAt: Date;
@@ -17,7 +16,7 @@ interface CampaignCardProps {
     showDate?: boolean;
 }
 
-export const CampaignCard = (props: CampaignCardProps) => {
+export const CampaignCard = ({name, image, createdAt, className, showDate}: CampaignCardProps) => {
 
     const formatDate = (date: Date) => {
         return date.toLocaleDateString("fr-FR", {
@@ -28,16 +27,16 @@ export const CampaignCard = (props: CampaignCardProps) => {
     };
 
     return (
-        <div className={cn(styles.card, props.className)}>
-            <h3 className={styles.title}>{props.name}</h3>
+        <div className={cn(styles.card, className)}>
+            <h3 className={styles.title}>{name}</h3>
 
             {
-                props.showDate &&
-                <p className={styles.date}>Créée le {formatDate(props.createdAt)}</p>
+                showDate &&
+                <p className={styles.date}>Créée le {formatDate(createdAt)}</p>
             }
 
             <div className={styles.imageContainer}>
-                <Image src={props.image || "/placeholder.svg"} alt={props.name} fill/>
+                <Image src={image || "/placeholder.svg"} alt={name} fill/>
             </div>
 
             <div className={styles.action}>

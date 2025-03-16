@@ -15,23 +15,23 @@ interface TextFieldProps {
     className?: string;
 }
 
-const TextField = (props: TextFieldProps) => {
+const TextField = ({type, placeholder, value, onChange, icon, className}: TextFieldProps) => {
 
-    const textFieldClasses = cn(styles.textField, props.className);
+    const textFieldClasses = cn(styles.textField, className);
 
     return (
         <div className={textFieldClasses}>
             <input
-                type={props.type}
-                placeholder={props.placeholder}
-                value={props.value}
-                onChange={props.onChange}
+                type={type}
+                placeholder={placeholder}
+                value={value}
+                onChange={onChange}
                 className={styles.input}
             />
 
             {
-                props.icon &&
-                <div className={styles.icon}>{props.icon}</div>
+                icon &&
+                <div className={styles.icon}>{icon}</div>
             }
         </div>
     );

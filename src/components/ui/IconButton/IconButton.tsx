@@ -1,12 +1,12 @@
 "use client"
 
 import {LucideIcon} from "lucide-react";
+import {ButtonHTMLAttributes} from "react";
 import {cva, VariantProps} from "class-variance-authority";
 
 import {cn} from "@/lib/utils";
 
 import styles from "./IconButton.module.css";
-import {ButtonHTMLAttributes} from "react";
 
 interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof iconButtonVariants> {
     icon: LucideIcon;
