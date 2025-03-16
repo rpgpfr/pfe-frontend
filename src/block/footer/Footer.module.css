@@ -1,18 +1,30 @@
 .footer {
+<<<<<<< HEAD
     @apply bg-primaryGreen py-6 px-10 flex items-center justify-between shadow-md;
     position: sticky;
+=======
+    @apply bg-primary-green py-14 px-10 flex items-center justify-between shadow-md;
+>>>>>>> 96f52365a33c5926dfff6e3eac921c938bfb91d8
     bottom: 0;
     width: 100%;
 }
 
 .footerlist {
     font-family: "Source Sans Pro", sans-serif;
+<<<<<<< HEAD
     @apply text-[#ffffff]
+=======
+    @apply text-[#ffffff];
+>>>>>>> 96f52365a33c5926dfff6e3eac921c938bfb91d8
 }
 
 .content {
     font-family: "Source Sans Pro", sans-serif;
+<<<<<<< HEAD
     @apply text-[#ffffff]
+=======
+    @apply text-[#ffffff];
+>>>>>>> 96f52365a33c5926dfff6e3eac921c938bfb91d8
 }
 
 .footertitle {

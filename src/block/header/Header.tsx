@@ -24,7 +24,11 @@ const Header = () => {
           Se Connecter
         </Link>
         <Link href="/register" className={styles.btnPrimary}>
+<<<<<<< HEAD
           S'inscrire
+=======
+          S&apos;inscrire
+>>>>>>> 96f52365a33c5926dfff6e3eac921c938bfb91d8
         </Link>
       </nav>
     </header>

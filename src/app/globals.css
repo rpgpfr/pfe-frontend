@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 :root {
+<<<<<<< HEAD
     --primary-green: #4D624E;
     --secondary-green: #86AC87;
     --smooth-green: #E9EDC8;
@@ -10,3 +11,68 @@
     --beige: #FAEDCD;
     --primary-brown: #D4A373;
 }
+=======
+    --primary-green: #86ac87;
+    --dark-green: #4d624e;
+    --beige: #d4a373;
+    --white: #ffffff;
+    --font-source-sans: 'Source Sans 3', sans-serif;
+    --font-aladdin: 'Aladin', serif;
+}
+
+body {
+    font-family: var(--font-source-sans), system-ui, sans-serif;
+    color: #333;
+}
+
+.font-aladdin {
+    font-family: var(--font-aladdin), serif;
+}
+
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
+}
+
+.checkerboard-pattern {
+    background-image: linear-gradient(45deg, #f0f0f0 25%, transparent 25%),
+    linear-gradient(-45deg, #f0f0f0 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #f0f0f0 75%),
+    linear-gradient(-45deg, transparent 75%, #f0f0f0 75%);
+    background-size: 40px 40px;
+    background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+    opacity: 0.2;
+}
+
+.dice-pattern {
+    background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/e7e7735edf5dbae3ebf7fd10f84564d9-eXrvCHtWGDC2EuNSUWjHWfPUXAFMy4.png");
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    opacity: 0.01;
+}
+
+.sword-pattern {
+    background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/f89f5926b9e94700299a4508bdd6e2b2-33tDdffjNCRVSdU5sUAPrNXjHR7cXo.png");
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    opacity: 0.01;
+}
+
+.btn-primary {
+    background-color: var(--primary-green);
+    color: var(--white);
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--dark-green);
+    color: black;
+    border: 1px solid black;
+}
+
+
+
+
+>>>>>>> 96f52365a33c5926dfff6e3eac921c938bfb91d8

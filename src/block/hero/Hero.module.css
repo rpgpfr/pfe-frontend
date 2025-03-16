@@ -10,7 +10,11 @@
 }
 
 .links {
+<<<<<<< HEAD
     @apply bg-secondaryGreen flex space-x-4 p-3;
+=======
+    @apply bg-secondaryGreen flex space-x-4 p-3 rounded-lg;
+>>>>>>> 96f52365a33c5926dfff6e3eac921c938bfb91d8
     font-family: "Source Sans Pro", sans-serif;
 }
 
