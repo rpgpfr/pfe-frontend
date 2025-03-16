@@ -3,7 +3,7 @@
 }
 
 .primary {
-    @apply bg-primary-green text-white px-6 py-2;
+    @apply bg-primary-green text-white px-6 py-2 border border-primary-green;
 
     &:hover {
         @apply bg-white text-black border border-black;

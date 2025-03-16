@@ -6,9 +6,18 @@ export default auth((request: NextRequest & { auth: unknown }) => {
         !request.auth
         && request.nextUrl.pathname.includes("/campaigns")
     ) {
-        const newUrl = new URL("/login", request.nextUrl.origin)
+        const newUrl = new URL("/login", request.nextUrl.origin);
 
-        return Response.redirect(newUrl)
+        return Response.redirect(newUrl);
+    }
+
+    if (
+        request.auth
+        && (request.nextUrl.pathname.includes("/login") || request.nextUrl.pathname.includes("/signup"))
+    ) {
+        const newUrl = new URL("/", request.nextUrl.origin);
+
+        return Response.redirect(newUrl);
     }
 });
 
