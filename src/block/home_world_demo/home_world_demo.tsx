@@ -3,8 +3,8 @@ import styles from '@/block/home_world_demo/home_world_demo.module.css';
 
 const HomeWorldDemo = () => {
   return (
-    <section className={styles.container_section_two}>
-      <h1 className={styles.title_section_two}>Construisez votre monde</h1>
+    <section className={styles.title}>
+      <h1 className={styles.title}>Construisez votre monde</h1>
 
       <div className={styles.grid_section_two}>
         <div className={styles.card_section_two}>

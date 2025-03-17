@@ -5,10 +5,10 @@
     font-style: normal;
 }
 
-.container_section_one {
+.title {
     @apply container mx-auto px-4 py-12;
 
-    .title_section_one {
+    .title {
         font-family: "Aladin", sans-serif;
         @apply text-7xl text-center mb-12;
     }

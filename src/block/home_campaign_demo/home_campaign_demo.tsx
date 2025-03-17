@@ -3,8 +3,8 @@ import styles from '@/block/home_campaign_demo/home_campaign_demo.module.css';
 
 const HomeCampaignDemo  = () =>{
   return (
-    <section className={styles.container_section_one}>
-      <h1 className={styles.title_section_one}>Créez votre campagne</h1>
+    <section className={styles.title}>
+      <h1 className={styles.title}>Créez votre campagne</h1>
 
       <div className={styles.grid_section_one}>
         <div className={styles.image_container}>
