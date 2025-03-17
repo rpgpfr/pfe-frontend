@@ -2,19 +2,19 @@
     @apply bg-primary-green py-14 px-10 flex items-center justify-between shadow-md;
     bottom: 0;
     width: 100%;
-}
 
-.footerlist {
-    font-family: "Source Sans Pro", sans-serif;
-    @apply text-[#ffffff];
-}
+    .footerlist {
+        font-family: "Source Sans Pro", sans-serif;
+        @apply text-[#ffffff];
+    }
 
-.content {
-    font-family: "Source Sans Pro", sans-serif;
-    @apply text-[#ffffff];
-}
+    .content {
+        font-family: "Source Sans Pro", sans-serif;
+        @apply text-[#ffffff];
 
-.footertitle {
-    font-family: "Wonderbar", sans-serif;
-    @apply text-4xl font-bold;
+        .footertitle {
+            font-family: "Wonderbar", sans-serif;
+            @apply text-4xl font-bold;
+        }
+    }
 }
