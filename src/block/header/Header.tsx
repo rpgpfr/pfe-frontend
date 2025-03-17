@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Aladin } from 'next/font/google';
 import styles from '@/block/header/Header.module.css';
+import Button from '@/components/ui/Button';
 
 const aladin = Aladin({
   subsets: ['latin'],
@@ -23,9 +24,7 @@ const Header = () => {
         <Link href="/login" className={styles.link}>
           Se Connecter
         </Link>
-        <Link href="/register" className={styles.btnPrimary}>
-          S&apos;inscrire
-        </Link>
+          <Button href="/register" variant="primary">S&apos;inscrire</Button>
       </nav>
     </header>
   );
