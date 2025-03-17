@@ -1,17 +1,10 @@
 import Image from "next/image"
 import styles from '@/block/home_campaign_demo/home_campaign_demo.module.css';
-import { Aladin } from 'next/font/google';  
-
-const aladin = Aladin({
-  subsets: ['latin'],
-  weight: '400',
-  variable: '--font-aladin',
-});
 
 const HomeCampaignDemo  = () =>{
   return (
-    <div className={styles.container_section_one}>
-      <h1 className={`${styles.title_section_one} ${aladin.variable} ${aladin.className}`}>Créez votre campagne</h1>
+    <section className={styles.container_section_one}>
+      <h1 className={styles.title_section_one}>Créez votre campagne</h1>
 
       <div className={styles.grid_section_one}>
         <div className={styles.image_container}>
@@ -20,7 +13,7 @@ const HomeCampaignDemo  = () =>{
             alt="Image de campagne"
             width={400}
             height={400}
-            className="w-full h-full object-cover"
+            className={styles.image}
           />
         </div>
 
@@ -48,7 +41,7 @@ const HomeCampaignDemo  = () =>{
         </div>
 
       </div>
-    </div>
+    </section>
   )
 }
 

@@ -1,17 +1,10 @@
 import Image from "next/image";
 import styles from '@/block/home_use_case_demo/home_use_case_demo.module.css';
-import { Aladin } from 'next/font/google';
-
-const aladin = Aladin({
-  subsets: ['latin'],
-  weight: '400',
-  variable: '--font-aladin',
-});
 
 const HomeUseCaseDemo = () => {
   return (
-    <div className={styles.container_section_three}>
-      <h1 className={`${styles.title_section_three} ${aladin.variable} ${aladin.className}`}>Simple d&apos;utilisation</h1>
+    <section className={styles.container_section_three}>
+      <h1 className={styles.title_section_three}>Simple d&apos;utilisation</h1>
 
       <div className={styles.grid_section_three}>
         <div className={styles.card_section_three}>
@@ -21,7 +14,7 @@ const HomeUseCaseDemo = () => {
               alt="Image 1"
               width={600}
               height={600}
-              className="w-full h-full object-cover"
+              className={styles.image}
             />
           </div>
           <div className={styles.card_overlay}>
@@ -38,7 +31,7 @@ const HomeUseCaseDemo = () => {
               alt="Image 2"
               width={600}
               height={600}
-              className="w-full h-full object-cover"
+              className={styles.image}
             />
           </div>
           <div className={styles.card_overlay}>
@@ -55,7 +48,7 @@ const HomeUseCaseDemo = () => {
               alt="Image 3"
               width={600}
               height={600}
-              className="w-full h-full object-cover"
+              className={styles.image}
             />
           </div>
           <div className={styles.card_overlay}>
@@ -65,7 +58,7 @@ const HomeUseCaseDemo = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

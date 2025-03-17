@@ -1,17 +1,10 @@
 import Image from "next/image";
 import styles from '@/block/home_world_demo/home_world_demo.module.css';
-import { Aladin } from 'next/font/google';  
-
-const aladin = Aladin({
-  subsets: ['latin'],
-  weight: '400',
-  variable: '--font-aladin',
-});
 
 const HomeWorldDemo = () => {
   return (
-    <div className={styles.container_section_two}>
-      <h1 className={`${styles.title_section_two} ${aladin.variable} ${aladin.className}`}>Construisez votre monde</h1>
+    <section className={styles.container_section_two}>
+      <h1 className={styles.title_section_two}>Construisez votre monde</h1>
 
       <div className={styles.grid_section_two}>
         <div className={styles.card_section_two}>
@@ -22,7 +15,7 @@ const HomeWorldDemo = () => {
               alt="Création de personnage"
               width={600}
               height={600}
-              className="w-full h-full object-cover"
+              className={styles.image}
             />
           </div>
 
@@ -41,7 +34,7 @@ const HomeWorldDemo = () => {
               alt="Carte du monde"
               width={600}
               height={600}
-              className="w-full h-full object-cover"
+              className={styles.image}
             />
           </div>
 
@@ -54,7 +47,7 @@ const HomeWorldDemo = () => {
 
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
