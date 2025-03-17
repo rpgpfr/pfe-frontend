@@ -3,7 +3,7 @@ import styles from '@/block/home_use_case_demo/home_use_case_demo.module.css';
 
 const HomeUseCaseDemo = () => {
   return (
-    <section className={styles.title}>
+    <section className={styles.section}>
       <h1 className={styles.title}>Simple d&apos;utilisation</h1>
 
       <div className={styles.grid_section_three}>

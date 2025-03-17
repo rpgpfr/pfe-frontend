@@ -13,8 +13,8 @@
         @apply text-[#ffffff];
 
         .footertitle {
-            font-family: "Wonderbar", sans-serif;
-            @apply text-4xl font-bold;
+            font-family: "Aladin", sans-serif;
+            @apply text-4xl;
         }
     }
 }
