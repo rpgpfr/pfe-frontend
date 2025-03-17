@@ -6,7 +6,7 @@
 }
 
 .header {
-    @apply text-white text-center p-[50px_20px] w-screen h-screen flex flex-col justify-center items-center;
+    @apply text-white text-center p-[50px_20px] w-screen h-screen flex flex-col justify-center items-center;;
 }
 
 .links {
@@ -20,5 +20,6 @@
 }
 
 .header_title {
-    @apply text-7xl font-black;
+    font-family: "Aladin", sans-serif;
+    @apply text-7xl mb-8;
 }
