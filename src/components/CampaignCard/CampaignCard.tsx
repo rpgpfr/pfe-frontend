@@ -15,7 +15,7 @@ interface CampaignCardProps {
     showDate?: boolean;
 }
 
-export const CampaignCard = ({id, name, image, createdAt, className, showDate}: CampaignCardProps) => {
+export const CampaignCard = ({id, name, image, createdAt, className, showDate = true}: CampaignCardProps) => {
 
     const formatDate = (date: Date) => {
         return date.toLocaleDateString("fr-FR", {

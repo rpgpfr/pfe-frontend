@@ -39,37 +39,35 @@ const SearchBar = ({searchTerm, onSearchChange, sortType, onSortChange}: SearchB
                 </button>
 
                 {
-                    isFilterOpen && (
-                        <div className={styles.dropdown}>
-                            <div className={styles.dropdownContent}>
-                                <button
-                                    className={styles.dropdownButton}
-                                    onClick={() => {
-                                        onSortChange("alphabetique");
-                                        setIsFilterOpen(false);
-                                    }}
-                                >
-                                    <span>Alphabétique</span>
-                                    {
-                                        sortType === "alphabetique" && <Check className={styles.iconPrimaryGreen}/>
-                                    }
-                                </button>
-
-                                <button
-                                    className={styles.dropdownButton}
-                                    onClick={() => {
-                                        onSortChange("date");
-                                        setIsFilterOpen(false);
-                                    }}
-                                >
-                                    <span>Date de création</span>
-                                    {
-                                        sortType === "date" && <Check className={styles.iconPrimaryGreen}/>
-                                    }
-                                </button>
-                            </div>
+                    isFilterOpen &&
+                    <div className={styles.dropdown}>
+                        <div className={styles.dropdownContent}>
+                            <button
+                                className={styles.dropdownButton}
+                                onClick={() => {
+                                    onSortChange("alphabetique");
+                                    setIsFilterOpen(false);
+                                }}
+                            >
+                                <span>Alphabétique</span>
+                                {
+                                    sortType === "alphabetique" && <Check className={styles.iconPrimaryGreen}/>
+                                }
+                            </button>
+                            <button
+                                className={styles.dropdownButton}
+                                onClick={() => {
+                                    onSortChange("date");
+                                    setIsFilterOpen(false);
+                                }}
+                            >
+                                <span>Date de création</span>
+                                {
+                                    sortType === "date" && <Check className={styles.iconPrimaryGreen}/>
+                                }
+                            </button>
                         </div>
-                    )
+                    </div>
                 }
             </div>
         </div>

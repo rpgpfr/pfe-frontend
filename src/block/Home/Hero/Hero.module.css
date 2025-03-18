@@ -1,0 +1,8 @@
+.hero {
+    @apply text-white bg-cover bg-center h-screen flex flex-col justify-center items-center;
+    background-image: url('/images/hero.jpg');
+
+    & > .title {
+        @apply text-7xl mb-8;
+    }
+}

@@ -4,20 +4,14 @@
 
 :root {
     --primary-green: #86ac87;
+    --secondary-green: #4d624e;
     --dark-green: #4d624e;
     --beige: #d4a373;
     --white: #ffffff;
-    --font-source-sans: 'Source Sans 3', sans-serif;
-    --font-aladdin: 'Aladin', serif;
 }
 
 body {
-    font-family: var(--font-source-sans), system-ui, sans-serif;
     color: #333;
-}
-
-.font-aladdin {
-    font-family: var(--font-aladdin), serif;
 }
 
 @layer utilities {
