@@ -165,19 +165,21 @@ const SignupForm = () => {
                         required
                     />
 
-                    <Button type="submit" variant="primary" className={styles.signupButton}>
-                        S&apos;inscrire
-                    </Button>
+                    <div>
+                        <Button type="submit" variant="primary" className={styles.signupButton}>
+                            S&apos;inscrire
+                        </Button>
 
-                    <p className={styles.error}>{submitError}</p>
-
-                    <div className={styles.loginLinkContainer}>
-                        <span className={styles.loginText}>Déjà un compte ? </span>
-                        <Link href="/login" className={styles.loginLink}>
-                            Se connecter
-                        </Link>
+                        <p className={styles.error}>{submitError}</p>
                     </div>
                 </form>
+
+                <div className={styles.loginLinkContainer}>
+                    <span className={styles.loginText}>Déjà un compte ? </span>
+                    <Link href="/login" className={styles.loginLink}>
+                        Se connecter
+                    </Link>
+                </div>
             </div>
         </div>
     );

@@ -3,12 +3,12 @@
 import {ChangeEvent, FormEvent, useState} from "react";
 import Link from "next/link";
 import {signIn} from "next-auth/react";
+import {useRouter} from "next/navigation";
 
 import {loginSchema} from "@/lib/schemas";
 import {Button, FormInput, PasswordInput} from "@/components/ui";
 
 import styles from "./LoginForm.module.css";
-import {useRouter} from "next/navigation";
 
 const LoginForm = () => {
 
@@ -67,33 +67,37 @@ const LoginForm = () => {
                         required
                     />
 
-                    <PasswordInput
-                        label="Mot de passe"
-                        id="password"
-                        value={formData.password}
-                        onChange={handleFormChange}
-                        required
-                    />
+                    <div className={styles.passwordContainer}>
+                        <PasswordInput
+                            label="Mot de passe"
+                            id="password"
+                            value={formData.password}
+                            onChange={handleFormChange}
+                            required
+                        />
 
-                    <div className={styles.forgotPasswordContainer}>
-                        <Link href="/forgot-password" className={styles.forgotPasswordLink}>
-                            Mot de passe oublié ?
-                        </Link>
+                        <div className={styles.forgotPasswordContainer}>
+                            <Link href="/forgot-password" className={styles.forgotPasswordLink}>
+                                Mot de passe oublié ?
+                            </Link>
+                        </div>
                     </div>
 
-                    <Button type="submit" variant="primary" className={styles.loginButton}>
-                        Se connecter
-                    </Button>
+                    <div>
+                        <Button type="submit" variant="primary" className={styles.loginButton}>
+                            Se connecter
+                        </Button>
 
-                    <p className={styles.error}>{submitError}</p>
-
-                    <div className={styles.signupLinkContainer}>
-                        <span className={styles.signupText}>Vous ne possédez pas de compte ? </span>
-                        <Link href="/signup" className={styles.signupLink}>
-                            S&apos;inscrire
-                        </Link>
+                        <p className={styles.error}>{submitError}</p>
                     </div>
                 </form>
+
+                <div className={styles.signupLinkContainer}>
+                    <span className={styles.signupText}>Vous ne possédez pas de compte ? </span>
+                    <Link href="/signup" className={styles.signupLink}>
+                        S&apos;inscrire
+                    </Link>
+                </div>
             </div>
         </div>
     );

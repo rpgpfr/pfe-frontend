@@ -5,29 +5,33 @@
         @apply max-w-md;
 
         & > .form {
-            @apply flex flex-col gap-3;
+            @apply flex flex-col gap-6 mb-4;
 
-            & > .signupButton {
-                @apply w-full;
-            }
+            & > div:last-child {
+                @apply flex flex-col justify-center items-center gap-2;
 
-            & > .error {
-                @apply text-sm w-full text-center text-red-600;
-            }
-
-            & > .loginLinkContainer {
-                @apply text-center text-sm;
-
-                & > .loginText {
-                    @apply text-gray-600;
+                & > .signupButton {
+                    @apply w-full;
                 }
 
-                & > .loginLink {
-                    @apply text-beige;
+                & > .error {
+                    @apply text-sm w-full text-center text-red-600;
+                }
+            }
+        }
 
-                    &:hover {
-                        @apply underline;
-                    }
+        & > .loginLinkContainer {
+            @apply text-center text-sm;
+
+            & > .loginText {
+                @apply text-gray-600;
+            }
+
+            & > .loginLink {
+                @apply text-beige;
+
+                &:hover {
+                    @apply underline;
                 }
             }
         }

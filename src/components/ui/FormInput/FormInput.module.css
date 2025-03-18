@@ -1,5 +1,4 @@
 .container {
-    @apply w-full mb-4;
 
     & > .label {
         @apply block text-sm font-medium mb-1 transition-colors duration-200 text-gray-700;
