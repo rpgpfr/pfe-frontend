@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, type InputHTMLAttributes } from "react"
+import {type InputHTMLAttributes, useState} from "react"
 import styles from "./FormInput.module.css"
 
 interface FormInputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "className"> {
@@ -10,7 +10,7 @@ interface FormInputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "cl
     className?: string
 }
 
-export default function FormInput({ label, id, error, className = "", ...props }: FormInputProps) {
+export default function FormInput({label, id, error, className = "", ...props}: FormInputProps) {
     const [isFocused, setIsFocused] = useState(false)
 
     return (

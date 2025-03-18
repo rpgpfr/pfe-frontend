@@ -1,6 +1,6 @@
 "use client"
 
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import {ChevronLeft, ChevronRight} from "lucide-react"
 import IconButton from "@/components/ui/IconButton"
 import styles from "./Pagination.module.css"
 
@@ -10,7 +10,7 @@ interface PaginationProps {
     onPageChange: (page: number) => void
 }
 
-export default function Pagination({ currentPage, totalPages, onPageChange }: PaginationProps) {
+export default function Pagination({currentPage, totalPages, onPageChange}: PaginationProps) {
     if (totalPages <= 1) return null
 
     return (
@@ -23,7 +23,7 @@ export default function Pagination({ currentPage, totalPages, onPageChange }: Pa
                 className={currentPage === 1 ? styles.disabled : ""}
             />
 
-            {Array.from({ length: totalPages }, (_, i) => i + 1).map((number) => (
+            {Array.from({length: totalPages}, (_, i) => i + 1).map((number) => (
                 <button
                     key={number}
                     onClick={() => onPageChange(number)}

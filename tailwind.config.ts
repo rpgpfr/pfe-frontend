@@ -9,10 +9,18 @@ const config: Config = {
         extend: {
             colors: {
                 primary: {
-                    green: 'var(--primary-green)'
+                    green: 'var(--primary-green)',
+                    brown: 'var(--primary-brown)',
                 },
-                darkGreen: 'var(--dark-green)',
+                secondary: {
+                    green: 'var(--secondary-green)',
+                },
+                smooth: {
+                    green: 'var(--smooth-green)',
+                    beige: 'var(--smooth-beige)',
+                },
                 beige: 'var(--beige)',
+                darkGreen: 'var(--dark-green)',
                 white: 'var(--white)',
             },
             fontFamily: {

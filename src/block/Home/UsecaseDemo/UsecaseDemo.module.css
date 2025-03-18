@@ -1,0 +1,15 @@
+.section {
+    @apply w-full px-4 py-12;
+
+    & > .title {
+        @apply text-7xl text-center mb-12;
+    }
+
+    & > .sectionGrid {
+        @apply w-full grid grid-cols-3 gap-8;
+
+        .content {
+            @apply text-black text-center;
+        }
+    }
+}
