@@ -1,7 +1,7 @@
 "use client"
 
-import { useState, useRef } from "react"
-import { Search, ChevronDown, Check } from "lucide-react"
+import {useRef, useState} from "react"
+import {Check, ChevronDown, Search} from "lucide-react"
 import TextField from "@/components/ui/TextField"
 import styles from "./SearchBar.module.css"
 
@@ -12,7 +12,7 @@ interface SearchBarProps {
     onSortChange: (type: "alphabetique" | "date") => void
 }
 
-export default function SearchBar({ searchTerm, onSearchChange, sortType, onSortChange }: SearchBarProps) {
+export default function SearchBar({searchTerm, onSearchChange, sortType, onSortChange}: SearchBarProps) {
     const [isFilterOpen, setIsFilterOpen] = useState(false)
     const filterRef = useRef<HTMLDivElement>(null)
 
@@ -23,7 +23,7 @@ export default function SearchBar({ searchTerm, onSearchChange, sortType, onSort
                 placeholder="Rechercher"
                 value={searchTerm}
                 onChange={(e) => onSearchChange(e.target.value)}
-                icon={<Search className={styles.icon} />}
+                icon={<Search className={styles.icon}/>}
                 className="flex-1"
             />
 
@@ -34,7 +34,7 @@ export default function SearchBar({ searchTerm, onSearchChange, sortType, onSort
                     onClick={() => setIsFilterOpen(!isFilterOpen)}
                 >
                     {sortType === "alphabetique" ? "Alphabétique" : "Date de création"}
-                    <ChevronDown className={styles.icon} />
+                    <ChevronDown className={styles.icon}/>
                 </button>
 
                 {isFilterOpen && (
@@ -48,7 +48,7 @@ export default function SearchBar({ searchTerm, onSearchChange, sortType, onSort
                                 }}
                             >
                                 <span>Alphabétique</span>
-                                {sortType === "alphabetique" && <Check className={styles.iconPrimaryGreen} />}
+                                {sortType === "alphabetique" && <Check className={styles.iconPrimaryGreen}/>}
                             </button>
                             <button
                                 className={styles.dropdownButton}
@@ -58,7 +58,7 @@ export default function SearchBar({ searchTerm, onSearchChange, sortType, onSort
                                 }}
                             >
                                 <span>Date de création</span>
-                                {sortType === "date" && <Check className={styles.iconPrimaryGreen} />}
+                                {sortType === "date" && <Check className={styles.iconPrimaryGreen}/>}
                             </button>
                         </div>
                     </div>

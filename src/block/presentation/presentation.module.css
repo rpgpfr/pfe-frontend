@@ -1,8 +1,0 @@
-.text_presentation {
-    font-family: "Aladin", sans-serif;
-    @apply text-4xl;
-}
-
-.presentation {
-    @apply flex justify-center items-center text-center h-full my-10;
-}

@@ -1,20 +1,18 @@
-import Hero from "@/block/hero/Hero";
-import Presentation from "@/block/presentation/presentation";
-import HomeCampaignDemo from "@/block/home_campaign_demo/home_campaign_demo";
-import HomeWorldDemo from "@/block/home_world_demo/home_world_demo";
-import HomeUseCaseDemo from "@/block/home_use_case_demo/home_use_case_demo";
+import Hero from "@/block/Home/Hero/Hero";
+import Presentation from "@/block/Home/Presentation/Presentation";
+import CampaignDemo from "@/block/Home/CampaignDemo/CampaignDemo";
+import HomeWorldDemo from "@/block/Home/WorldDemo/WorldDemo";
+import UsecaseDemo from "@/block/Home/UsecaseDemo/UsecaseDemo";
 
 const Home = () => {
     return (
-        <div className="flex flex-col min-h-screen">
-            <div className="flex-grow">
-                <Hero />
-            </div>
-                <Presentation />
-                <HomeCampaignDemo />
-                <HomeWorldDemo />
-                <HomeUseCaseDemo />
-        </div>
+        <main className="flex flex-col min-h-screen">
+            <Hero/>
+            <Presentation/>
+            <CampaignDemo/>
+            <HomeWorldDemo/>
+            <UsecaseDemo/>
+        </main>
     );
 };
 

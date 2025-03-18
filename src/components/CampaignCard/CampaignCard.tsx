@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { Trash2, ArrowRight } from "lucide-react"
+import {ArrowRight, Trash2} from "lucide-react"
 import Button from "@/components/ui/Button"
 import styles from "./CampaignCard.module.css"
 
@@ -34,14 +34,14 @@ export default function CampaignCard({
             <h3 className={styles.title}>{name}</h3>
             {showDate && <p className={styles.date}>Créée le {formatDate(createdAt)}</p>}
             <div className={styles.imageContainer}>
-                <Image src={image || "/placeholder.svg"} alt={name} fill className="object-cover rounded-[4px]" />
+                <Image src={image || "/placeholder.svg"} alt={name} fill className="object-cover rounded-[4px]"/>
             </div>
             <div className={styles.actions}>
                 <Button variant="secondary" className={styles.buttonSecondary}>
-                    <Trash2 className={styles.icon} />
+                    <Trash2 className={styles.icon}/>
                 </Button>
                 <Button variant="primary" className={styles.buttonPrimary}>
-                    <ArrowRight className={styles.icon} />
+                    <ArrowRight className={styles.icon}/>
                 </Button>
             </div>
         </div>

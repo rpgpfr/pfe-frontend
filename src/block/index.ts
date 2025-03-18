@@ -1,3 +1,5 @@
-import Header from "@/block/header/Header";
+import {Header, Footer, Hero, Presentation, CampaignDemo, UsecaseDemo, WorldDemo} from "@/block/Home";
 
-export {Header};
+export {
+    Header, Footer, Hero, Presentation, CampaignDemo, UsecaseDemo, WorldDemo
+};

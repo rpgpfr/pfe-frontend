@@ -1,8 +1,7 @@
 "use client"
 
 import type React from "react"
-
-import { useState } from "react"
+import {useState} from "react"
 import Link from "next/link"
 import Image from "next/image"
 import Button from "@/components/ui/Button"
@@ -38,8 +37,8 @@ export default function SignupPage() {
     return (
         <div className={styles.container}>
             <div className={styles.leftColumn}>
-                <Image src="/placeholder.svg?height=1080&width=1080" alt="Background" fill className="object-cover" />
-                <div className={styles.backgroundOverlay} />
+                <Image src="/placeholder.svg?height=1080&width=1080" alt="Background" fill className="object-cover"/>
+                <div className={styles.backgroundOverlay}/>
                 <div className={styles.leftContent}>
                     <h1 className={styles.welcomeTitle}>Rejoignez l&apos;aventure !</h1>
                 </div>

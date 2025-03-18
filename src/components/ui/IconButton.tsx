@@ -1,5 +1,5 @@
 "use client"
-import type { LucideIcon } from "lucide-react"
+import type {LucideIcon} from "lucide-react"
 
 interface IconButtonProps {
     icon: LucideIcon
@@ -28,7 +28,7 @@ export default function IconButton({
 
     return (
         <button type="button" onClick={onClick} className={buttonStyles} aria-label={ariaLabel}>
-            <Icon className="w-5 h-5" />
+            <Icon className="w-5 h-5"/>
         </button>
     )
 }

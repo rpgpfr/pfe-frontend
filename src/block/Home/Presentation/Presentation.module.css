@@ -1,0 +1,15 @@
+.presentation {
+    @apply flex justify-center items-center text-center h-full my-10;
+
+    & > p {
+        @apply flex justify-center items-center gap-2 w-full;
+
+        & > span {
+            @apply inline-block;
+        }
+
+        & > .title {
+            @apply text-4xl;
+        }
+    }
+}

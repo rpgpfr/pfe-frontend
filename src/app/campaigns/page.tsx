@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import {useEffect, useState} from "react"
 // import Layout from "@/components/layout/Layout"
 import CampaignCard from "@/components/CampaignCard/CampaignCard"
 import Pagination from "@/components/Pagination/Pagination"
@@ -97,7 +97,7 @@ export default function CampaignsPage() {
     useEffect(() => {
         const sorted = [...fakeCampaigns].sort((a, b) => {
             if (sortType === "alphabetique") {
-                return a.name.localeCompare(b.name, "fr", { sensitivity: "base" })
+                return a.name.localeCompare(b.name, "fr", {sensitivity: "base"})
             } else {
                 return b.createdAt.getTime() - a.createdAt.getTime() // Du plus récent au plus ancien
             }
