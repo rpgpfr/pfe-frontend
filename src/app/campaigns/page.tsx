@@ -1,7 +1,7 @@
 import {Section} from "@/components/ui";
 import {Campaigns} from "@/block";
 
-export default function CampaignsPage() {
+const CampaignsPage = () => {
 
     return (
         <main>
@@ -13,6 +13,8 @@ export default function CampaignsPage() {
 
             <Campaigns/>
         </main>
-    )
-}
-
+    );
+        
+};
+        
+export default CampaignsPage;

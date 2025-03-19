@@ -7,6 +7,7 @@ import {SessionProvider} from "next-auth/react";
 import {Footer, Header} from "@/block";
 import {GSAPWrapper} from "@/components";
 
+
 import "./globals.css";
 
 const sourceSans = Source_Sans_3({
