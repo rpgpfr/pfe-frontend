@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import {LoginForm} from "@/components";
+import {aladin} from "@/lib/utils";
 
 import styles from "./login.module.css";
 
@@ -22,7 +23,7 @@ const LoginPage = () => {
             <div className={styles.rightColumn}>
                 <div className={styles.logoContainer}>
                     <Link href="/" className={styles.logo}>
-                        <h1 className={styles.logoText}>Project RPG</h1>
+                        <h1 className={`${styles.logoText} ${aladin.className}`}>Project RPG</h1>
                     </Link>
                 </div>
 

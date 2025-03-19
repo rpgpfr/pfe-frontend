@@ -1,5 +1,5 @@
 import {Section} from "@/components/ui";
-import Campaigns from "@/block/Campaigns/Campaigns";
+import {Campaigns} from "@/block";
 
 export default function CampaignsPage() {
 

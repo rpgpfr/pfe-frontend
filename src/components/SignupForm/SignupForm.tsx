@@ -3,13 +3,13 @@
 import Link from "next/link";
 
 import {ChangeEvent, FormEvent, useState} from "react";
+import {signIn} from "next-auth/react";
+import {useRouter} from "next/navigation";
 
 import {signupSchema} from "@/lib/schemas";
 import {Button, FormInput, PasswordInput} from "@/components/ui";
 
 import styles from "./SignupForm.module.css";
-import {signIn} from "next-auth/react";
-import {useRouter} from "next/navigation";
 
 const SignupForm = () => {
 

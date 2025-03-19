@@ -16,7 +16,6 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, VariantPr
 const Button = ({children, className, href, type, onClick, variant}: ButtonProps) => {
 
     const buttonClasses = cn(buttonVariants({variant: variant}), className);
-    console.log(buttonClasses);
 
     if (href) {
         return (

@@ -3,7 +3,7 @@
 import {usePathname} from "next/navigation";
 import Link from 'next/link';
 
-import Button from '@/components/ui/Button';
+import {Button} from "@/components/ui";
 import {aladin} from "@/lib/utils";
 
 import styles from './Header.module.css';
