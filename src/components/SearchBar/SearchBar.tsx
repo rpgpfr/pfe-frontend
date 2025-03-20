@@ -1,20 +1,22 @@
-"use client"
+"use client";
 
-import {useRef, useState} from "react"
-import {Check, ChevronDown, Search} from "lucide-react"
-import TextField from "@/components/ui/TextField"
-import styles from "./SearchBar.module.css"
+import {useState} from "react";
+import {Check, ChevronDown, Search} from "lucide-react";
+
+import {TextField} from "@/components/ui";
+
+import styles from "./SearchBar.module.css";
 
 interface SearchBarProps {
-    searchTerm: string
-    onSearchChange: (term: string) => void
-    sortType: "alphabetique" | "date"
-    onSortChange: (type: "alphabetique" | "date") => void
+    searchTerm: string;
+    onSearchChange: (term: string) => void;
+    sortType: "alphabetique" | "date";
+    onSortChange: (type: "alphabetique" | "date") => void;
 }
 
-export default function SearchBar({searchTerm, onSearchChange, sortType, onSortChange}: SearchBarProps) {
-    const [isFilterOpen, setIsFilterOpen] = useState(false)
-    const filterRef = useRef<HTMLDivElement>(null)
+const SearchBar = ({searchTerm, onSearchChange, sortType, onSortChange}: SearchBarProps) => {
+
+    const [isFilterOpen, setIsFilterOpen] = useState(false);
 
     return (
         <div className={styles.flexContainer}>
@@ -27,8 +29,7 @@ export default function SearchBar({searchTerm, onSearchChange, sortType, onSortC
                 className="flex-1"
             />
 
-            {/* Menu déroulant des filtres */}
-            <div className={styles.relativeContainer} ref={filterRef}>
+            <div className={styles.relativeContainer}>
                 <button
                     className={styles.button}
                     onClick={() => setIsFilterOpen(!isFilterOpen)}
@@ -37,33 +38,41 @@ export default function SearchBar({searchTerm, onSearchChange, sortType, onSortC
                     <ChevronDown className={styles.icon}/>
                 </button>
 
-                {isFilterOpen && (
+                {
+                    isFilterOpen &&
                     <div className={styles.dropdown}>
                         <div className={styles.dropdownContent}>
                             <button
                                 className={styles.dropdownButton}
                                 onClick={() => {
-                                    onSortChange("alphabetique")
-                                    setIsFilterOpen(false)
+                                    onSortChange("alphabetique");
+                                    setIsFilterOpen(false);
                                 }}
                             >
                                 <span>Alphabétique</span>
-                                {sortType === "alphabetique" && <Check className={styles.iconPrimaryGreen}/>}
+                                {
+                                    sortType === "alphabetique" && <Check className={styles.iconPrimaryGreen}/>
+                                }
                             </button>
                             <button
                                 className={styles.dropdownButton}
                                 onClick={() => {
-                                    onSortChange("date")
-                                    setIsFilterOpen(false)
+                                    onSortChange("date");
+                                    setIsFilterOpen(false);
                                 }}
                             >
                                 <span>Date de création</span>
-                                {sortType === "date" && <Check className={styles.iconPrimaryGreen}/>}
+                                {
+                                    sortType === "date" && <Check className={styles.iconPrimaryGreen}/>
+                                }
                             </button>
                         </div>
                     </div>
-                )}
+                }
             </div>
         </div>
-    )
-}
+    );
+
+};
+
+export default SearchBar;

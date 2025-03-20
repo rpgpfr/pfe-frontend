@@ -1,45 +1,51 @@
 {
-  "name": "pfe-frontend",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "commit": "cz"
-  },
-  "dependencies": {
-    "@auth0/nextjs-auth0": "^4.0.1",
-    "@radix-ui/react-slot": "^1.1.2",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
-    "lucide-react": "^0.474.0",
-    "next": "15.1.7",
-    "react": "19.0.0",
-    "react-dom": "19.0.0",
-    "tailwind-merge": "^2.6.0",
-    "tailwindcss-animate": "^1.0.7"
-  },
-  "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "19.0.8",
-    "@types/react-dom": "19.0.3",
-    "commitizen": "^4.3.1",
-    "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^8",
-    "eslint-config-next": "15.1.7",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
+    "name": "pfe-frontend",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint",
+        "commit": "cz"
+    },
+    "dependencies": {
+        "@gsap/react": "^2.1.2",
+        "@radix-ui/react-slot": "^1.1.2",
+        "bcrypt": "^5.1.1",
+        "class-variance-authority": "^0.7.1",
+        "clsx": "^2.1.1",
+        "gsap": "^3.12.7",
+        "jsonwebtoken": "^9.0.2",
+        "lucide-react": "^0.474.0",
+        "next": "15.1.7",
+        "next-auth": "^5.0.0-beta.25",
+        "react": "19.0.0",
+        "react-dom": "19.0.0",
+        "tailwind-merge": "^2.6.0",
+        "tailwindcss-animate": "^1.0.7",
+        "zod": "^3.24.2"
+    },
+    "devDependencies": {
+        "@types/jsonwebtoken": "^9.0.9",
+        "@types/node": "^20",
+        "@types/react": "19.0.8",
+        "@types/react-dom": "19.0.3",
+        "commitizen": "^4.3.1",
+        "cz-conventional-changelog": "^3.3.0",
+        "eslint": "^8",
+        "eslint-config-next": "15.1.7",
+        "postcss": "^8",
+        "tailwindcss": "^3.4.1",
+        "typescript": "^5"
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
+    },
+    "overrides": {
+        "@types/react": "19.0.8",
+        "@types/react-dom": "19.0.3"
     }
-  },
-  "overrides": {
-    "@types/react": "19.0.8",
-    "@types/react-dom": "19.0.3"
-  }
 }

@@ -1,5 +1,5 @@
-import Button from '@/components/ui/Button';
 
+import {Button} from "@/components/ui";
 import {aladin} from "@/lib/utils";
 
 import styles from './Hero.module.css';

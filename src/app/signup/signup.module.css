@@ -34,7 +34,7 @@
     @apply font-aladdin text-2xl;
 }
 
-
+/* Responsive styles */
 @media (max-width: 768px) {
     .container {
         @apply flex-col;

@@ -5,6 +5,7 @@ import HomeWorldDemo from "@/block/Home/WorldDemo/WorldDemo";
 import UsecaseDemo from "@/block/Home/UsecaseDemo/UsecaseDemo";
 
 const Home = () => {
+
     return (
         <main className="flex flex-col min-h-screen">
             <Hero/>
@@ -14,6 +15,7 @@ const Home = () => {
             <UsecaseDemo/>
         </main>
     );
+    
 };
 
 export default Home;

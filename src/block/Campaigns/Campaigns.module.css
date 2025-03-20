@@ -1,0 +1,19 @@
+.actionBar {
+    @apply w-full max-w-7xl mx-auto px-8 py-6 flex justify-between items-center border-b border-gray-200;
+}
+
+.campaignsContainer {
+    @apply max-w-7xl mx-auto px-8 py-8 mb-24;
+
+    & > .campaigns {
+        @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 mb-8;
+
+        & > * {
+            @apply invisible translate-y-5;
+        }
+    }
+
+    & > .noResults {
+        @apply text-center py-12;
+    }
+}

@@ -1,0 +1,53 @@
+.formContainer {
+    @apply flex-1 flex items-center justify-center p-8;
+
+    & > .formWrapper {
+        @apply w-full max-w-md;
+
+        & > .form {
+            @apply flex flex-col gap-6 mb-4;
+
+            & > .passwordContainer {
+                & > .forgotPasswordContainer {
+                    @apply text-right;
+
+                    & > .forgotPasswordLink {
+                        @apply text-beige text-sm;
+
+                        &:hover {
+                            @apply underline;
+                        }
+                    }
+                }
+            }
+
+            & > div:last-child {
+                @apply flex flex-col justify-center items-center gap-2;
+
+                & > .loginButton {
+                    @apply w-full;
+                }
+
+                & > .error {
+                    @apply text-sm w-full text-center text-red-600;
+                }
+            }
+        }
+
+        & > .signupLinkContainer {
+            @apply text-center text-sm;
+
+            & > .signupText {
+                @apply text-gray-600;
+            }
+
+            & > .signupLink {
+                @apply text-beige;
+
+                &:hover {
+                    @apply underline;
+                }
+            }
+        }
+    }
+}

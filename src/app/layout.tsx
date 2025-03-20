@@ -1,9 +1,12 @@
 
 import {ReactNode} from "react";
-import type {Metadata} from "next"
-import {Source_Sans_3} from "next/font/google"
+import type {Metadata} from "next";
+import {Source_Sans_3} from "next/font/google";
+import {SessionProvider} from "next-auth/react";
 
 import {Footer, Header} from "@/block";
+import {GSAPWrapper} from "@/components";
+
 
 import "./globals.css";
 
@@ -20,11 +23,15 @@ export const metadata: Metadata = {
 export default function RootLayout({children,}: { children: ReactNode }) {
     return (
         <html lang="fr">
-        <body className={`${sourceSans.className}`}>
-            <Header/>
-            {children}
-            <Footer/>
-        </body>
+        <SessionProvider>
+            <body className={`${sourceSans.className}`}>
+                <GSAPWrapper>
+                    <Header/>
+                    {children}
+                    <Footer/>
+                </GSAPWrapper>
+            </body>
+        </SessionProvider>
         </html>
     )
 }

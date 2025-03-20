@@ -1,0 +1,11 @@
+.textField {
+    @apply relative;
+
+    & > .input {
+        @apply w-full pl-4 pr-10 py-2 border border-gray-300 rounded-[4px];
+    }
+
+    & > .icon {
+        @apply absolute right-3 top-1/2 -translate-y-1/2 text-gray-400;
+    }
+}
