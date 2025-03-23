@@ -22,9 +22,16 @@ const config: Config = {
                 beige: 'var(--beige)',
                 darkGreen: 'var(--dark-green)',
                 white: 'var(--white)',
+                disabled : 'var(--disabled)',
+                lightGrey: 'var(--light-grey)',
             },
             borderRadius: {
                 DEFAULT: '4px',
+            },
+            fontSize:{
+                h1: 'var(--h1-size)',
+                h2: 'var(--h2-size)',
+                h3: 'var(--h3-size)',
             }
         }
     },

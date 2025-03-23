@@ -1,0 +1,12 @@
+.container {
+    @apply flex justify-between items-center p-4 rounded-lg border bg-disabled border-disabled w-full;
+}
+
+.label {
+    @apply font-bold text-black;
+}
+
+.content {
+    @apply text-black;
+}
+

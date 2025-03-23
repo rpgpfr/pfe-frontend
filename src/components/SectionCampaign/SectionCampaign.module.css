@@ -1,0 +1,7 @@
+.container {
+    @apply flex min-h-[450px] p-[18px] flex-col items-center gap-[18px] flex-[1_0_0] rounded-[4px] border-[1px] border-[solid] border-lightGrey bg-white;
+}
+
+.title {
+    @apply text-h3;
+}

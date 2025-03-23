@@ -158,7 +158,7 @@ const Campaigns = () => {
                                     Annuler
                                 </Button>
                                 <Button type="submit" variant="primary" className="px-4 py-2"
-                                        // disabled={isSubmitting}
+                                    // disabled={isSubmitting}
                                 >
                                     {/*{isSubmitting ? "Création en cours..." : "Créer la campagne"}*/}
                                     Créer la campagne
@@ -170,7 +170,7 @@ const Campaigns = () => {
             </section>
 
         </>
-);
+    );
 
 };
 
