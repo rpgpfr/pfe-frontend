@@ -2,7 +2,7 @@
 
 import { ChangeEvent, FormEvent, useState } from "react";
 import { revalidatePath } from "next/cache";
-import { Pen } from "lucide-react"; // Import the Pen icon from lucide-react
+import { Pen } from "lucide-react";
 import styles from "./ProfileForm.module.css";
 
 interface ProfileFormProps {
@@ -121,7 +121,7 @@ const ProfileForm = ({ initialData }: ProfileFormProps) => {
                     <div className={styles.formRow}>
                         <fieldset className={styles.formGroup}>
                             <label htmlFor="username" className={styles.formLabel}>
-                                Nom d'utilisateur
+                                Nom d&apos;utilisateur
                             </label>
                             <input
                                 id="username"

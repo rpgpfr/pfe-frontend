@@ -1,22 +1,20 @@
 import Profile from "@/block/Profile/Profile";
+import LastActivitiesProfile from "@/components/LastActivitiesProfile/LastActivitiesProfile";
 
 const ProfilePage = () => {
-
-    return (
+  return (
     <main>
-        <div className="w-screen h-screen border-2 border-red-500">
-            <div className="w-1/2 border-2 border-blue-500 size-full">
-                    <Profile />
-            <div className="border-blue-500">
-                    </div>
-            </div>
-            <div>
-            </div>
+      <div className="flex w-screen h-screen border-2 gap-2">
+        <div className="w-1/2 h-full border-2 p-1">
+          <Profile />
         </div>
+
+        <div className="w-1/2 h-full border-2 p-1">
+          <LastActivitiesProfile activites={[]} />
+        </div>
+      </div>
     </main>
   );
 };
 
 export default ProfilePage;
-
-
