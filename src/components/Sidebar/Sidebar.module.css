@@ -35,7 +35,7 @@
 }
 
 .sidebar[data-open="true"] {
-    @apply w-[250px];
+    @apply w-[300px];
 
     .navLabel {
         @apply max-w-[200px];

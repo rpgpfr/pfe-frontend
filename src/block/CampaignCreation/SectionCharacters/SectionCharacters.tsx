@@ -1,8 +1,12 @@
 'use client'
 import SectionCampaign from "@/components/SectionCampaign/SectionCampaign";
-import {ImageContentCard} from "@/components/ui/ImageContentCard/ImageContentCard";
+import {ImageContentCard} from "@/components/ImageContentCard/ImageContentCard";
 import Drawer from "@/components/Drawer/Drawer";
 import {useState} from "react";
+import TabList from "@/components/Tabs/TabList/TabList";
+import TabItem from "@/components/Tabs/TabItem/TabItem";
+import Image from "next/image";
+import {ImageActionCard} from "@/components/ImageActionCard/ImageActionCard";
 
 
 const SectionCharacters = () => {
@@ -32,6 +36,23 @@ const SectionCharacters = () => {
                 onClose={handleClose}
                 title="Personnages assignés"
             >
+                <div className={' border-lightGrey border rounded-default w-[900px]'}>
+                    <TabList>
+                        <TabItem key={1} label={'Vos personnages'}>
+                            <div className={'flex flex-col gap-4 p-[18px]'}>
+                                <ImageActionCard imageSrc={'/images/placeholder.png'} content={'test'}/>
+                                <ImageActionCard imageSrc={'/images/placeholder.png'} content={'test'}/>
+                            </div>
+                        </TabItem>
+                        <TabItem key={2} label={'Personnages par défaut'}>
+                            <div className={'flex flex-col gap-4 p-[18px]'}>
+                                <ImageActionCard imageSrc={'/images/placeholder.png'} content={'test'}/>
+                            </div>
+                        </TabItem>
+                    </TabList>
+                </div>
+
+
             </Drawer>
 
         </SectionCampaign>

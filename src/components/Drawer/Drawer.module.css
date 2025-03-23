@@ -3,9 +3,10 @@
 }
 
 .drawer {
-    @apply bg-white w-full max-w-md h-full shadow-lg flex flex-col;
+    @apply bg-white w-auto min-w-[450px] max-w-[90%] h-full shadow-lg flex flex-col;
     animation: slideIn 0.3s ease-out;
 }
+
 
 .header {
     @apply flex items-center justify-between p-4 border-b border-gray-200;

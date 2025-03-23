@@ -23,7 +23,7 @@ const Header = () => {
 
                     <nav className={styles.nav}>
                         <Link href="/login" className={styles.link}>
-                            Se Connecter
+                            Se connecter
                         </Link>
 
                         <Button href="/register" variant="primary">S&apos;inscrire</Button>

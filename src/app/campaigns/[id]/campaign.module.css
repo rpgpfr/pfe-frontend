@@ -1,0 +1,23 @@
+.container {
+    @apply flex
+}
+
+.campaign {
+    @apply flex flex-col w-full;
+}
+
+.banner {
+    @apply h-[290px] w-full;
+}
+
+.bannerImg {
+    @apply h-full w-full object-cover object-center;
+}
+
+.containerTitle {
+    @apply m-[18px]
+}
+
+.containerInfos {
+    @apply grid grid-cols-2 gap-4 m-[18px]
+}
