@@ -2,7 +2,7 @@
     @apply border rounded-[4px] p-2 bg-white w-full h-full;
 
     & > .title {
-        @apply font-aladdin text-base mb-1 truncate;
+        @apply text-base mb-1 truncate;
     }
 
     & > .date {

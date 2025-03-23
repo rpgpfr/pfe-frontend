@@ -15,7 +15,7 @@
 }
 
 .welcomeTitle {
-    @apply font-aladdin text-5xl text-white leading-tight;
+    @apply text-5xl text-white leading-tight;
 }
 
 .rightColumn {
@@ -31,7 +31,7 @@
 }
 
 .logoText {
-    @apply font-aladdin text-2xl;
+    @apply text-2xl;
 }
 
 /* Responsive styles */

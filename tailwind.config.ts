@@ -23,10 +23,6 @@ const config: Config = {
                 darkGreen: 'var(--dark-green)',
                 white: 'var(--white)',
             },
-            fontFamily: {
-                sans: ['var(--font-source-sans)', 'system-ui', 'sans-serif'],
-                aladdin: ['var(--font-aladdin)', 'serif'],
-            },
             borderRadius: {
                 DEFAULT: '4px',
             }

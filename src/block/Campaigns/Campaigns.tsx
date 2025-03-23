@@ -10,6 +10,7 @@ import {fakeCampaigns} from "@/app/campaigns/mock";
 
 import styles from "./Campaigns.module.css";
 import TweenTarget = gsap.TweenTarget;
+import Drawer from "@/components/Drawer/Drawer";
 
 type SortType = "alphabetique" | "date";
 
@@ -24,6 +25,8 @@ const Campaigns = () => {
     const [filteredCampaigns, setFilteredCampaigns] = useState<typeof fakeCampaigns>(campaigns);
     const [currentCampaigns, setCurrentCampaigns] = useState<typeof fakeCampaigns>([]);
     const [totalPages, setTotalPages] = useState(0);
+    const [isDrawerOpen, setIsDrawerOpen] = useState(false)
+    const [campaignName, setCampaignName] = useState("")
 
     const campaignsRef = useRef<HTMLDivElement>(null);
 
@@ -69,6 +72,15 @@ const Campaigns = () => {
         setCurrentCampaigns(current);
     }, [currentPage, filteredCampaigns]);
 
+    const handleCreateCampaign = async (e: React.FormEvent) => {
+        e.preventDefault()
+
+    }
+
+    const handleCloseDrawer = () => {
+        setIsDrawerOpen(false)
+    }
+
     return (
         <>
             <section className={styles.actionBar}>
@@ -79,7 +91,7 @@ const Campaigns = () => {
                     onSortChange={setSortType}
                 />
 
-                <Button variant="primary" className="px-4 py-2">
+                <Button variant="primary" className="px-4 py-2" onClick={() => setIsDrawerOpen(true)}>
                     + Créer une campagne
                 </Button>
             </section>
@@ -111,9 +123,54 @@ const Campaigns = () => {
                     totalPages > 0 &&
                     <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={setCurrentPage}/>
                 }
+
+                <Drawer isOpen={isDrawerOpen} onClose={handleCloseDrawer}
+                        title="Créer une nouvelle campagne">
+                    <div className="space-y-6">
+                        <form onSubmit={handleCreateCampaign} className="space-y-6">
+                            <div className="space-y-2">
+                                <label htmlFor="campaignName"
+                                       className="block text-sm font-medium text-gray-700 font-aladdin">
+                                    Nom de la campagne
+                                </label>
+                                <input
+                                    id="campaignName"
+                                    type="text"
+                                    value={campaignName}
+                                    onChange={(e) => setCampaignName(e.target.value)}
+                                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-primary-green focus:border-primary-green"
+                                    placeholder="Entrez le nom de votre campagne"
+                                    autoFocus
+                                />
+                            </div>
+
+                            <p className="text-sm text-gray-500">Vous pourrez modifier les détails de votre campagne
+                                après sa création.</p>
+
+                            <div className="flex justify-end gap-4 mt-8">
+                                <Button
+                                    type="button"
+                                    variant="outline"
+                                    onClick={handleCloseDrawer}
+                                    className="px-4 py-2"
+                                    // disabled={isSubmitting}
+                                >
+                                    Annuler
+                                </Button>
+                                <Button type="submit" variant="primary" className="px-4 py-2"
+                                        // disabled={isSubmitting}
+                                >
+                                    {/*{isSubmitting ? "Création en cours..." : "Créer la campagne"}*/}
+                                    Créer la campagne
+                                </Button>
+                            </div>
+                        </form>
+                    </div>
+                </Drawer>
             </section>
+
         </>
-    );
+);
 
 };
 
