@@ -10,7 +10,6 @@ import FormInput from "@/components/ui/FormInput/FormInput";
 const SectionQuest = () => {
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
-    // Définition des champs pour affichage et formulaire
     const fields = [
         { id: 'titre', label: 'Titre', content: 'Contenu' },
         { id: 'description', label: 'Description du monde', content: 'Contenu', className: 'flex flex-col !items-start'},

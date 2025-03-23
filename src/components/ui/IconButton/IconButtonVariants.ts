@@ -1,7 +1,7 @@
 import {cva} from "class-variance-authority";
 
 export const iconButtonVariants = cva(
-    "p-2 rounded-[4px] flex items-center justify-center",
+    "p-2 rounded-default flex items-center justify-center",
     {
         variants: {
             variant: {

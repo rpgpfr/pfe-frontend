@@ -1,10 +1,9 @@
 import Sidebar from "@/components/Sidebar/Sidebar";
-import Image from "next/image";
 import {aladin} from "@/lib/utils";
-import SectionCampaign from "@/components/SectionCampaign/SectionCampaign";
-import {LabelContent} from "@/components/ui/LabelContent/LabelContent";
 import SectionInfos from "@/block/CampaignCreation/SectionInfos/SectionInfos";
 import SectionQuest from "@/block/CampaignCreation/SectionQuest/SectionQuest";
+import SectionMap from "@/block/CampaignCreation/SectionMap/SectionMap";
+import SectionCharacters from "@/block/CampaignCreation/SectionCharacters/SectionCharacters";
 
 const CampaignPage = async ({params} : {params : Promise<{id:bigint}>}) => {
 
@@ -24,18 +23,8 @@ const CampaignPage = async ({params} : {params : Promise<{id:bigint}>}) => {
                 <div className="grid grid-cols-2 gap-4 m-[18px]">
                     <SectionInfos/>
                     <SectionQuest/>
-                    <SectionCampaign title={"Carte utilisée dans la campagne"}>
-                        <LabelContent label={"Ambiance du monde"} content={"Ambiance du monde"}/>
-                        <LabelContent label={"Type de monde"} content={"Contenu"}/>
-                        <LabelContent label={"Description du monde"} content={"Contenu"}
-                                      className={'flex flex-col !items-start'}/>
-                    </SectionCampaign>
-                    <SectionCampaign title={"Personnages assignés"}>
-                        <LabelContent label={"Ambiance du monde"} content={"Ambiance du monde"}/>
-                        <LabelContent label={"Type de monde"} content={"Contenu"}/>
-                        <LabelContent label={"Description du monde"} content={"Contenu"}
-                                      className={'flex flex-col !items-start'}/>
-                    </SectionCampaign>
+                    <SectionMap/>
+                    <SectionCharacters/>
                 </div>
 
             </div>

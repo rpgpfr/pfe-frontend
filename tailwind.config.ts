@@ -26,7 +26,7 @@ const config: Config = {
                 lightGrey: 'var(--light-grey)',
             },
             borderRadius: {
-                DEFAULT: '4px',
+                default: '4px',
             },
             fontSize:{
                 h1: 'var(--h1-size)',

@@ -10,7 +10,6 @@ import FormInput from "@/components/ui/FormInput/FormInput";
 const SectionInfos = () => {
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
-    // Définition des champs pour affichage et formulaire
     const fields = [
         { id: 'type', label: 'Type de monde', content: 'Contenu' },
         { id: 'ambiance', label: 'Ambiance', content: 'Ambiance du monde' },

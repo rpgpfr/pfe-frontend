@@ -1,5 +1,5 @@
 .card {
-    @apply border rounded-[4px] p-2 bg-white w-full h-full;
+    @apply border rounded-default p-2 bg-white w-full h-full;
 
     & > .title {
         @apply text-base mb-1 truncate;
@@ -10,10 +10,10 @@
     }
 
     & > .imageContainer {
-        @apply relative h-28 mb-2 bg-gray-100 rounded-[4px];
+        @apply relative h-28 mb-2 bg-gray-100 rounded-default;
 
         & > img {
-            @apply object-cover rounded-[4px];
+            @apply object-cover rounded-default ;
         }
     }
 

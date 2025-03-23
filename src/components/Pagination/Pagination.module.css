@@ -6,7 +6,7 @@
     }
 
     & > .pageButton {
-        @apply w-8 h-8 rounded-[4px] border border-gray-300;
+        @apply w-8 h-8 rounded-default border border-gray-300;
 
         &:hover {
             @apply bg-gray-100;

@@ -1,5 +1,5 @@
 .container {
-    @apply flex justify-between items-center p-4 rounded-lg border bg-disabled border-disabled w-full;
+    @apply flex justify-between items-center p-4 rounded-default border border-lightGrey bg-disabled w-full;
 }
 
 .label {

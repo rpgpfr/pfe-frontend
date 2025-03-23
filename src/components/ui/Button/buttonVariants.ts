@@ -1,7 +1,7 @@
 import {cva} from "class-variance-authority";
 
 export const buttonVariants = cva(
-    "rounded-[4px] transition-all",
+    "rounded-default transition-all",
     {
         variants: {
             variant: {
