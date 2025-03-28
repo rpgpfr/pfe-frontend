@@ -7,7 +7,7 @@ import SectionCharacters from "@/block/CampaignCreation/SectionCharacters/Sectio
 import styles from './campaign.module.css'
 import CircularProgress from "@/components/CircularProgress/CircularProgress";
 
-const CampaignPage = async ({params} : {params : Promise<{id:bigint}>}) => {
+const CampaignPage = async ({params}: { params: Promise<{ id: bigint }> }) => {
 
     const {id} = await params;
 
@@ -19,11 +19,15 @@ const CampaignPage = async ({params} : {params : Promise<{id:bigint}>}) => {
                     <img className={styles.bannerImg} src={'/images/placeholder.png'}
                          alt="Campaign"/>
                 </div>
-                <div className={styles.containerTitle}>
+                <div className={styles.header}>
                     <h1 className={`${aladin.className} text-h2`}>Nom de campagne</h1>
-                    <CircularProgress value={2} maxValue={4} />
+                    <div className={styles.progress}>
+                        <span><strong>encore 1 étape</strong> pour que la campagne soit jouable !</span>
+                        <CircularProgress value={2} maxValue={4}/>
+                    </div>
+
                 </div>
-                <div className={styles.containerInfos}>
+                <div className={styles.infos}>
                     <SectionInfos/>
                     <SectionQuest/>
                     <SectionMap/>
