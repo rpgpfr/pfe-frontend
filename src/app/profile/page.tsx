@@ -4,12 +4,12 @@ import LastActivitiesProfile from "@/components/LastActivitiesProfile/LastActivi
 const ProfilePage = () => {
   return (
     <main>
-      <div className="flex w-screen h-screen gap-2">
-        <div className="w-1/2 h-full p-1">
+      <div className="flex w-screen gap-2 pl-5 pr-5 pt-5 pb-5">
+        <div className="w-1/2 p-1">
           <Profile />
         </div>
 
-        <div className="w-1/2 h-full p-1">
+        <div className="w-1/2 p-1">
           <LastActivitiesProfile activites={[]} />
         </div>
       </div>

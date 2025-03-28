@@ -2,7 +2,7 @@
     @apply border border-gray-300 rounded-md overflow-hidden;
 
     .activitiesHeader {
-        @apply font-aladdin text-3xl p-4 border-b border-gray-300;
+        @apply text-5xl p-4 border-b border-gray-300;
     }
 
     .activitiesList {

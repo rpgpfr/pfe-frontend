@@ -21,6 +21,6 @@
     }
 
     .profileFormContainer {
-        @apply border-blue-500 mt-6 h-[500px] overflow-hidden;
+        @apply overflow-hidden;
     }
 }

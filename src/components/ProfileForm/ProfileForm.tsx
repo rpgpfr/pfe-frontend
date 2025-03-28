@@ -4,6 +4,7 @@ import { ChangeEvent, FormEvent, useState } from "react";
 import { revalidatePath } from "next/cache";
 import { Pen } from "lucide-react";
 import styles from "./ProfileForm.module.css";
+import {aladin} from "@/lib/utils";
 
 interface ProfileFormProps {
     initialData: {
@@ -65,7 +66,7 @@ const ProfileForm = ({ initialData }: ProfileFormProps) => {
     return (
         <div className={styles.formContainer}>
             <div className={styles.formWrapper}>
-                <h1 className={styles.formTitle}>Vos informations</h1>
+                <h1 className={`${styles.formTitle} ${aladin.className}`}>Vos informations</h1>
 
                 <div className={styles.profileHeader}>
                     <button className={styles.editButton} aria-label="Modifier">
@@ -163,7 +164,7 @@ const ProfileForm = ({ initialData }: ProfileFormProps) => {
                     </fieldset>
 
                     <div className={styles.registrationInfo}>
-                        <h2 className={styles.registrationTitle}>Inscrit depuis</h2>
+                        <h2 className={`${styles.registrationTitle} ${aladin.className}`}>Inscrit depuis</h2>
                         <span className={styles.registrationDate}>: 22/07/2000</span>
                     </div>
                 </form>
