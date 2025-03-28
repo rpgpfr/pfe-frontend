@@ -1,11 +1,7 @@
 "use client"
 
 import { useState } from "react";
-import SectionCampaign from "@/components/SectionCampaign/SectionCampaign";
-import { LabelContent } from "@/components/LabelContent/LabelContent";
-import Drawer from "@/components/Drawer/Drawer";
-import { Button } from "@/components/ui";
-import FormInput from "@/components/ui/FormInput/FormInput";
+import {Drawer, Button, FormInput, LabelContent, SectionCampaign} from "@/components/";
 
 const SectionInfos = () => {
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);

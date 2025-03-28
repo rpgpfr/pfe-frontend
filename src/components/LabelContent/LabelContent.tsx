@@ -9,15 +9,14 @@ interface LabelContentProps extends Omit<React.HTMLAttributes<HTMLDivElement>, "
     contentClassName?: string
 }
 
-export function LabelContent({
-                                 label,
-                                 content,
-                                 className,
-                                 labelClassName,
-                                 contentClassName,
-                                 ...props
-                             }: LabelContentProps) {
-
+const LabelContent: React.FC<LabelContentProps> = ({
+                                                       label,
+                                                       content,
+                                                       className,
+                                                       labelClassName,
+                                                       contentClassName,
+                                                       ...props
+                                                   }) => {
     return (
         <div className={cn(styles.container, className)} {...props}>
             <span className={cn(styles.label, labelClassName)}>{label}</span>
@@ -25,4 +24,6 @@ export function LabelContent({
         </div>
     )
 }
+
+export default LabelContent
 

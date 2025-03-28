@@ -1,12 +1,6 @@
 'use client'
-import SectionCampaign from "@/components/SectionCampaign/SectionCampaign";
-import {ImageContentCard} from "@/components/ImageContentCard/ImageContentCard";
-import Drawer from "@/components/Drawer/Drawer";
 import {useState} from "react";
-import TabList from "@/components/Tabs/TabList/TabList";
-import TabItem from "@/components/Tabs/TabItem/TabItem";
-import Image from "next/image";
-import {ImageActionCard} from "@/components/ImageActionCard/ImageActionCard";
+import {ImageActionCard, ImageContentCard, Drawer, SectionCampaign, TabList, TabItem} from "@/components";
 
 
 const SectionCharacters = () => {

@@ -5,7 +5,7 @@ import Image from "next/image"
 import { Eye, Plus } from "lucide-react"
 import { cn } from "@/lib/utils"
 import styles from "./ImageActionCard.module.css"
-import Button from "@/components/ui/Button/Button";
+import {Button} from "@/components";
 
 interface ImageActionCardProps extends React.HTMLAttributes<HTMLDivElement> {
     imageSrc: string
@@ -18,14 +18,14 @@ interface ImageActionCardProps extends React.HTMLAttributes<HTMLDivElement> {
     addButtonClassName?: string
 }
 
-export function ImageActionCard({
-                                    imageSrc,
-                                    imageAlt = "Image",
-                                    imageSize = 80,
-                                    className,
-                                    imageClassName,
-                                    ...props
-                                }: ImageActionCardProps) {
+const ImageActionCard: React.FC<ImageActionCardProps> = ({
+    imageSrc,
+    imageAlt = "Image",
+    imageSize = 80,
+    className,
+    imageClassName,
+    ...props
+}) => {
     return (
         <div className={cn(styles.container, className)} {...props}>
             <div className={cn(styles.image, imageClassName)}>
@@ -44,9 +44,9 @@ export function ImageActionCard({
                 <Button variant={'primary'} className={'p-[18px]'}>
                     <Plus className="h-5 w-5" />
                 </Button>
-
             </div>
         </div>
     )
 }
 
+export default ImageActionCard;

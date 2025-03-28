@@ -1,10 +1,7 @@
 "use client"
 
 import { useState } from "react";
-import SectionCampaign from "@/components/SectionCampaign/SectionCampaign";
-import Drawer from "@/components/Drawer/Drawer";
-import TabItem from "@/components/Tabs/TabItem/TabItem";
-import TabList from "@/components/Tabs/TabList/TabList";
+import { Drawer, SectionCampaign, TabItem, TabList } from "@/components";
 
 const SectionMap = () => {
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);

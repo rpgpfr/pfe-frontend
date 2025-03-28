@@ -4,13 +4,11 @@ import {useEffect, useRef, useState} from "react";
 import {useGSAP} from "@gsap/react";
 import {gsap} from "gsap";
 
-import {CampaignCard, Pagination, SearchBar} from "@/components";
-import {Button} from "@/components/ui";
+import {CampaignCard, Pagination, SearchBar, Button, Drawer} from "@/components";
 import {fakeCampaigns} from "@/app/campaigns/mock";
 
 import styles from "./Campaigns.module.css";
 import TweenTarget = gsap.TweenTarget;
-import Drawer from "@/components/Drawer/Drawer";
 
 type SortType = "alphabetique" | "date";
 

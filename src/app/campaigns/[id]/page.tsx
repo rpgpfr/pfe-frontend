@@ -1,11 +1,7 @@
-import Sidebar from "@/components/Sidebar/Sidebar";
 import {aladin} from "@/lib/utils";
-import SectionInfos from "@/block/CampaignCreation/SectionInfos/SectionInfos";
-import SectionQuest from "@/block/CampaignCreation/SectionQuest/SectionQuest";
-import SectionMap from "@/block/CampaignCreation/SectionMap/SectionMap";
-import SectionCharacters from "@/block/CampaignCreation/SectionCharacters/SectionCharacters";
 import styles from './campaign.module.css'
-import CircularProgress from "@/components/CircularProgress/CircularProgress";
+import {CircularProgress, Sidebar} from "@/components";
+import {SectionInfos, SectionCharacters, SectionQuest, SectionMap} from "@/block"
 
 const CampaignPage = async ({params}: { params: Promise<{ id: bigint }> }) => {
 
@@ -23,7 +19,7 @@ const CampaignPage = async ({params}: { params: Promise<{ id: bigint }> }) => {
                     <h1 className={`${aladin.className} text-h2`}>Nom de campagne</h1>
                     <div className={styles.progress}>
                         <span><strong>encore 1 étape</strong> pour que la campagne soit jouable !</span>
-                        <CircularProgress value={2} maxValue={4}/>
+                        <CircularProgress value={2} maxValue={6}/>
                     </div>
 
                 </div>
