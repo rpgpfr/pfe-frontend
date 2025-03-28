@@ -1,0 +1,26 @@
+.profileContainer {
+
+    .statsGrid {
+        @apply border border-gray-300 p-4 rounded-md grid grid-cols-2 gap-4;
+
+        .statCard {
+            @apply border rounded-lg p-6;
+
+            .statCardContent {
+                @apply text-center;
+
+                .statValue {
+                    @apply text-4xl font-normal text-green-500;
+                }
+
+                .statTitle {
+                    @apply text-base text-gray-800 mt-2;
+                }
+            }
+        }
+    }
+
+    .profileFormContainer {
+        @apply border-blue-500 mt-6 h-[500px] overflow-hidden;
+    }
+}

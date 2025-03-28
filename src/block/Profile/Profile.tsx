@@ -1,15 +1,16 @@
-import ProfileForm from "@/components/ProfileForm/ProfileForm";
+import ProfileForm from "@/components/ProfileForm";
+import styles from "./Profile.module.css";
 
 export default function Profile() {
     return (
-        <div className="border rounded-lg p-6">
-            <div className="grid grid-cols-2 gap-4">
+        <div className={styles.profileContainer}>
+            <div className={styles.statsGrid}>
                 <StatCard title="campagnes créées" value={0} />
                 <StatCard title="cartes créées" value={0} />
                 <StatCard title="personnages créés" value={0} />
                 <StatCard title="ressources créées" value={0} />
             </div>
-            <div className="border-blue-500 mt-6 h-[500px] overflow-hidden"> {/* Set a fixed height */}
+            <div className={styles.profileFormContainer}>
                 <ProfileForm initialData={{}} />
             </div>
         </div>
@@ -18,10 +19,10 @@ export default function Profile() {
 
 function StatCard({ title, value }: { title: string; value: number }) {
     return (
-        <div className="border rounded-lg p-6">
-            <div className="text-center">
-                <div className="text-4xl font-normal text-green-500">{value}</div>
-                <div className="text-base text-gray-800 mt-2">{title}</div>
+        <div className={styles.statCard}>
+            <div className={styles.statCardContent}>
+                <div className={styles.statValue}>{value}</div>
+                <div className={styles.statTitle}>{title}</div>
             </div>
         </div>
     );

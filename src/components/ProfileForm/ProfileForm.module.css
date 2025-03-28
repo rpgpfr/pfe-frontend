@@ -1,11 +1,11 @@
 .formContainer {
-    @apply w-full h-full overflow-y-auto;
+    @apply border border-gray-300 p-4 rounded-md w-full h-full overflow-y-auto;
 
     & > .formWrapper {
         @apply bg-white p-6 ;
 
         & > .formTitle {
-            @apply mb-6 pb-3 font-aladdin text-3xl;
+            @apply font-aladdin text-3xl mb-6 pb-3;
         }
         
         & > .profileHeader {
