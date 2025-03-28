@@ -1,5 +1,6 @@
 import { ChevronRight } from "lucide-react";
 import styles from "./LastActivities.module.css";
+import {aladin} from "@/lib/utils";
 
 interface Activite {
     titre: string;
@@ -23,7 +24,7 @@ export default function DernieresActivites({ activites = [] }: DernieresActivite
 
     return (
         <div className={styles.activitiesContainer}>
-            <h2 className={styles.activitiesHeader}>Dernières activités</h2>
+            <h2 className={`${styles.activitiesHeader} ${aladin.className}`}>Dernières activités</h2>
             <ul className={styles.activitiesList}>
                 {activitesAffichees.map((activite, index) => (
                     <li key={index} className={styles.activityItem}>

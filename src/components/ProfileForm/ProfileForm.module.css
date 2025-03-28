@@ -1,11 +1,11 @@
 .formContainer {
-    @apply border border-gray-300 p-4 rounded-md w-full h-full overflow-y-auto;
+    @apply border border-gray-300 p-4 rounded-md w-full h-fit overflow-y-auto;
 
     & > .formWrapper {
         @apply bg-white p-6 ;
 
         & > .formTitle {
-            @apply font-aladdin text-3xl mb-6 pb-3;
+            @apply text-5xl mb-6 pb-3;
         }
         
         & > .profileHeader {
@@ -53,7 +53,7 @@
                 @apply flex items-center mt-6 mb-6 text-xl;
                 
                 & > .registrationTitle {
-                    @apply mr-1 font-aladdin text-3xl;
+                    @apply mr-1 text-5xl;
                 }
                 
                 & > .registrationDate {
