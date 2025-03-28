@@ -19,6 +19,7 @@ const config: Config = {
                     green: 'var(--smooth-green)',
                     beige: 'var(--smooth-beige)',
                 },
+                brown: 'var(--brown)',
                 beige: 'var(--beige)',
                 darkGreen: 'var(--dark-green)',
                 white: 'var(--white)',

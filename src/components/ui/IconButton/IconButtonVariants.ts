@@ -6,7 +6,7 @@ export const iconButtonVariants = cva(
         variants: {
             variant: {
                 primary: "bg-primary-green border border-primary-green text-white hover:bg-white hover:text-black hover:border-black",
-                secondary: "bg-beige text-white hover:bg-opacity-90",
+                secondary: "bg-brown text-white hover:bg-opacity-90",
                 outline: " border border-gray-300 text-gray-700"
             }
         },

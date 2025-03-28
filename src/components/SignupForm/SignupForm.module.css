@@ -28,7 +28,7 @@
             }
 
             & > .loginLink {
-                @apply text-beige;
+                @apply text-brown;
 
                 &:hover {
                     @apply underline;

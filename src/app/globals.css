@@ -3,10 +3,11 @@
 @tailwind utilities;
 
 :root {
-    --primary-green: #86ac87;
-    --secondary-green: #4d624e;
+    --primary-green: #4D624E;
+    --secondary-green: #679869;
     --dark-green: #4d624e;
-    --beige: #d4a373;
+    --brown: #C3803C;
+    --beige: #FAEDCD;
     --white: #ffffff;
     --light-grey: #D9D9D9;
     --disabled : #F9F9F9;

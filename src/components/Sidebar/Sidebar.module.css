@@ -3,7 +3,7 @@
 }
 
 .toggleButton {
-    @apply w-full flex justify-center items-center py-4 text-beige hover:bg-gray-50 transition-colors;
+    @apply w-full flex justify-center items-center py-4 text-brown hover:bg-gray-50 transition-colors;
 }
 
 .toggleContent {
@@ -11,7 +11,7 @@
 }
 
 .chevronIcon {
-    @apply w-5 h-5 text-beige;
+    @apply w-5 h-5 text-brown;
 }
 
 .navigation {
@@ -19,7 +19,7 @@
 }
 
 .navItem {
-    @apply flex items-center px-5 py-2 text-beige hover:bg-gray-50 transition-colors;
+    @apply flex items-center px-5 py-2 text-brown hover:bg-gray-50 transition-colors;
 }
 
 .navItemActive {
@@ -31,7 +31,7 @@
 }
 
 .navLabel {
-    @apply ml-3 text-beige transition-all duration-300 ease-in-out overflow-hidden whitespace-nowrap max-w-0;
+    @apply ml-3 text-brown transition-all duration-300 ease-in-out overflow-hidden whitespace-nowrap max-w-0;
 }
 
 .sidebar[data-open="true"] {

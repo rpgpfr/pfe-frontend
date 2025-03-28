@@ -2,10 +2,9 @@
 
 import { useState } from "react";
 import SectionCampaign from "@/components/SectionCampaign/SectionCampaign";
-import { LabelContent } from "@/components/LabelContent/LabelContent";
 import Drawer from "@/components/Drawer/Drawer";
-import { Button } from "@/components/ui";
-import FormInput from "@/components/ui/FormInput/FormInput";
+import TabItem from "@/components/Tabs/TabItem/TabItem";
+import TabList from "@/components/Tabs/TabList/TabList";
 
 const SectionMap = () => {
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -34,6 +33,18 @@ const SectionMap = () => {
                 onClose={handleClose}
                 title="Carte utilisée dans la campagne"
             >
+                <TabList>
+                    <TabItem key={1} label={'Vos cartes'}>
+                        <div className={'flex flex-col gap-4 p-[18px]'}>
+
+                        </div>
+                    </TabItem>
+                    <TabItem key={2} label={'Cartes par défaut'}>
+                        <div className={'flex flex-col gap-4 p-[18px]'}>
+
+                        </div>
+                    </TabItem>
+                </TabList>
 
             </Drawer>
         </div>
