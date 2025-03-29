@@ -1,5 +1,5 @@
 .formContainer {
-    @apply border border-gray-300 p-4 rounded-md w-full h-fit overflow-y-auto;
+    @apply border border-gray-300 mt-5 p-4 rounded-md w-full h-fit overflow-y-auto;
 
     & > .formWrapper {
         @apply bg-white p-6 ;
