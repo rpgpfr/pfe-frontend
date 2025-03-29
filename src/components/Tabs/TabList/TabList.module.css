@@ -11,28 +11,31 @@
 }
 
 .listWrapper {
-    @apply w-full
+    @apply w-full;
 }
 
 .tabList {
     @apply flex w-full;
 
-    .listItem{
+    .listItem {
         @apply w-1/2;
+
+        &:first-child {
+            .tabBtn {
+                @apply border-r;
+            }
+        }
+
+        &:last-child {
+            .tabBtn {
+                @apply border-l;
+            }
+        }
     }
 }
 
-.tabList .listItem:first-child .tabBtn {
-    @apply border-r;
-}
-
-.tabList .listItem:last-child .tabBtn {
-    @apply border-l;
-}
-
-
 .tabBtn {
-    @apply p-[18px] transition delay-75 duration-200 ease-in-out w-full border-b-lightGrey border-b max-h-[82px] ;
+    @apply p-[18px] transition delay-75 duration-200 ease-in-out w-full border-b-lightGrey border-b max-h-[82px];
 
     &:hover {
         @apply cursor-pointer;
