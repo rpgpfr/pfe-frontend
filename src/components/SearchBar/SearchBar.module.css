@@ -5,7 +5,7 @@
         @apply relative;
 
         & > .button {
-            @apply flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-[4px] text-gray-700 w-[200px] justify-between;
+            @apply flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-default text-gray-700 w-[200px] justify-between;
 
             & > .icon {
                 @apply w-4 h-4;
@@ -13,13 +13,13 @@
         }
 
         & > .dropdown {
-            @apply absolute top-full left-0 mt-1 w-[200px] bg-white border border-gray-300 rounded-[4px] shadow-lg z-20;
+            @apply absolute top-full left-0 mt-1 w-[200px] bg-white border border-gray-300 rounded-default shadow-lg z-20;
 
             & > .dropdownContent {
                 @apply p-2;
 
                 & > .dropdownButton {
-                    @apply flex items-center justify-between w-full px-4 py-2 text-left rounded-[4px];
+                    @apply flex items-center justify-between w-full px-4 py-2 text-left rounded-default;
 
                     &:hover {
                         @apply bg-gray-100;

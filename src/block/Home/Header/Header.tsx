@@ -18,12 +18,12 @@ const Header = () => {
                 !(pathname.includes("/login") || pathname.includes("/signup")) &&
                 <header className={styles.header}>
                     <Link href="/" className={`${styles.title} ${aladin.className}`}>
-                        PROJECT RPG
+                        Project RPG
                     </Link>
 
                     <nav className={styles.nav}>
                         <Link href="/login" className={styles.link}>
-                            Se Connecter
+                            Se connecter
                         </Link>
 
                         <Button href="/register" variant="primary">S&apos;inscrire</Button>

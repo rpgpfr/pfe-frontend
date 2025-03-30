@@ -12,7 +12,7 @@
                     @apply text-right;
 
                     & > .forgotPasswordLink {
-                        @apply text-beige text-sm;
+                        @apply text-brown text-sm;
 
                         &:hover {
                             @apply underline;
@@ -42,7 +42,7 @@
             }
 
             & > .signupLink {
-                @apply text-beige;
+                @apply text-brown;
 
                 &:hover {
                     @apply underline;

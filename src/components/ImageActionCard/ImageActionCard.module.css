@@ -1,0 +1,23 @@
+.container {
+    @apply flex items-center justify-between p-[18px] rounded-default border bg-white;
+    border-color: #d9d9d9;
+}
+
+.image {
+    @apply rounded-default;
+}
+
+.actions {
+    @apply flex items-center gap-2;
+}
+
+.viewButton {
+    @apply p-3 rounded-lg border flex items-center justify-center;
+    border-color: #d9d9d9;
+}
+
+.addButton {
+    @apply p-3 rounded-lg flex items-center justify-center text-white;
+    background-color: #86ac87;
+}
+

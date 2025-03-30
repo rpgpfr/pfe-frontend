@@ -1,0 +1,16 @@
+.container {
+    @apply relative inline-flex items-center justify-center;
+}
+
+.backgroundCircle {
+    @apply fill-transparent transition-all duration-300 ease-in-out stroke-beige;
+}
+
+.progressCircle {
+    @apply fill-transparent transition-all duration-700 ease-in-out stroke-brown;
+}
+
+.label {
+    @apply absolute text-2xl font-medium text-[#C0A87F];
+}
+
