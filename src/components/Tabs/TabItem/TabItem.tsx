@@ -7,7 +7,7 @@ interface TabItemProps {
     label:string
     children: ReactNode;
 }
-const TabItem: FC<TabItemProps> = ({label, children}) => {
+const TabItem: FC<TabItemProps> = ({children}) => {
 
     return (
         <div>

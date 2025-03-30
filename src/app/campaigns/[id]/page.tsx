@@ -2,17 +2,18 @@ import {aladin} from "@/lib/utils";
 import styles from './campaign.module.css'
 import {CircularProgress, Sidebar} from "@/components";
 import {SectionInfos, SectionCharacters, SectionQuest, SectionMap} from "@/block"
+import Image from "next/image";
 
-const CampaignPage = async ({params}: { params: Promise<{ id: bigint }> }) => {
+const CampaignPage = async () => {
 
-    const {id} = await params;
+    // const {id} = await params;
 
     return (
         <div className={styles.container}>
             <Sidebar activePage={"campaigns"}/>
             <div className={styles.campaign}>
                 <div className={styles.banner}>
-                    <img className={styles.bannerImg} src={'/images/placeholder.png'}
+                    <Image fill className={styles.bannerImg} src={'/images/placeholder.png'}
                          alt="Campaign"/>
                 </div>
                 <div className={styles.header}>

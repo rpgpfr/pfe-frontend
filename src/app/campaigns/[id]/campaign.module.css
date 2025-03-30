@@ -5,7 +5,7 @@
         @apply flex flex-col w-full;
 
         .banner {
-            @apply h-[290px] w-full;
+            @apply h-[290px] w-full relative;
 
             .bannerImg {
                 @apply h-full w-full object-cover object-center;
