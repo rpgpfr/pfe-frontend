@@ -1,12 +1,12 @@
 "use client";
 
 import {ChangeEvent, FormEvent, useState} from "react";
-import {revalidatePath} from "next/cache";
 import {Pen} from "lucide-react";
 import styles from "./ProfileForm.module.css";
 import {aladin} from "@/lib/utils";
 import {FormInput} from "../ui";
 import {UserProfile} from "api";
+import {useRouter} from "next/navigation";
 
 interface ProfileFormProps {
     profile: UserProfile
@@ -25,6 +25,8 @@ const ProfileForm = ({profile}: ProfileFormProps) => {
 
     const [isEditing, setIsEditing] = useState<boolean>(false); // État pour savoir si on est en mode édition
     const [submitError, setSubmitError] = useState<string>("");
+
+    const router = useRouter();
 
     const handleFormChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData({
@@ -66,8 +68,8 @@ const ProfileForm = ({profile}: ProfileFormProps) => {
             const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/api/profile`, options);
 
             if (response.ok) {
-                revalidatePath("/profile", "page");
                 setIsEditing(false); // Désactive le mode édition après validation
+                router.refresh();
             } else {
                 const errorMessage = (await response.json()).error;
 

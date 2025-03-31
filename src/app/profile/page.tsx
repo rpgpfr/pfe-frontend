@@ -34,9 +34,9 @@ const getUserProfile = async () => {
         const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/api/profile`, options);
 
         if (!response.ok) {
-            const errorMessage = (await response.json()).error;
+            console.log((await response.json()).error);
 
-            redirect("/profile/error?error=" + encodeURI(errorMessage));
+            redirect("/profile/error");
         }
 
         return await response.json();
