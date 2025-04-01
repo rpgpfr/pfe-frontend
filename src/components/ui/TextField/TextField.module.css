@@ -2,7 +2,7 @@
     @apply relative;
 
     & > .input {
-        @apply w-full pl-4 pr-10 py-2 border border-gray-300 rounded-[4px];
+        @apply w-full pl-4 pr-10 py-2 border border-gray-300 rounded-default;
     }
 
     & > .icon {

@@ -19,16 +19,20 @@ const config: Config = {
                     green: 'var(--smooth-green)',
                     beige: 'var(--smooth-beige)',
                 },
+                brown: 'var(--brown)',
                 beige: 'var(--beige)',
                 darkGreen: 'var(--dark-green)',
                 white: 'var(--white)',
-            },
-            fontFamily: {
-                sans: ['var(--font-source-sans)', 'system-ui', 'sans-serif'],
-                aladdin: ['var(--font-aladdin)', 'serif'],
+                disabled : 'var(--disabled)',
+                lightGrey: 'var(--light-grey)',
             },
             borderRadius: {
-                DEFAULT: '4px',
+                default: '4px',
+            },
+            fontSize:{
+                h1: 'var(--h1-size)',
+                h2: 'var(--h2-size)',
+                h3: 'var(--h3-size)',
             }
         }
     },
