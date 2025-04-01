@@ -6,8 +6,6 @@ import Image from "next/image";
 
 const CampaignPage = async () => {
 
-    // const {id} = await params;
-
     return (
         <div className={styles.container}>
             <Sidebar activePage={"campaigns"}/>

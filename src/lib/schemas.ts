@@ -12,3 +12,9 @@ export const loginSchema = z.object({
     identifier: z.string(),
     password: z.string()
 });
+
+export const infoSchema = z.object({
+    type: z.string().optional(),
+    ambiance: z.string().optional(),
+    description: z.string().optional(),
+})
