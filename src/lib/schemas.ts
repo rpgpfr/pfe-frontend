@@ -25,3 +25,9 @@ export const infoSchema = z.object({
     ambiance: z.string().optional(),
     description: z.string().optional(),
 })
+
+export const questSchema = z.object({
+        titre: z.string().optional(),
+        description: z.string().optional(),
+        objectifs: z.string().optional()
+    });
