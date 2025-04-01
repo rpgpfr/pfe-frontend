@@ -1,10 +1,17 @@
 "use client"
 
-import { useState } from "react";
+import {ChangeEvent, FormEvent, useState} from "react";
 import {Drawer, Button, FormInput, LabelContent, SectionCampaign} from "@/components/";
+import {infoSchema} from "@/lib/schemas"
 
 const SectionInfos = () => {
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+    const [formData, setFormData] = useState({
+        type: "",
+        ambiance: "",
+        description: "",
+    })
 
     const fields = [
         { id: 'type', label: 'Type de monde', content: 'Contenu' },
@@ -20,9 +27,26 @@ const SectionInfos = () => {
         setIsDrawerOpen(false);
     };
 
-    const handleSubmit = () => {
-        handleClose();
+    const validateForm = () => {
+        const validation = infoSchema.safeParse(formData);
+        return validation.success;
     };
+    const handleSubmit = async (e: FormEvent) => {
+        e.preventDefault();
+
+        if (validateForm()) {
+            console.log('test');
+            handleClose();
+        }
+    };
+
+    const handleFormChange = (event: ChangeEvent<HTMLInputElement>) => {
+        setFormData({
+            ...formData,
+            [event.target.id]: event.target.value
+        })
+    }
+
 
     return (
         <div>
@@ -48,6 +72,7 @@ const SectionInfos = () => {
                             key={field.id}
                             id={field.id}
                             label={field.label}
+                            onChange={handleFormChange}
                         />
                     ))}
                     <Button variant="primary" type="submit" className="px-4 py-2">
