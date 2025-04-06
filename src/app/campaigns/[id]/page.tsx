@@ -1,14 +1,12 @@
 import {aladin} from "@/lib/utils";
 import styles from './campaign.module.css'
-import {CircularProgress, Sidebar} from "@/components";
+import {CircularProgress} from "@/components";
 import {SectionInfos, SectionCharacters, SectionQuest, SectionMap} from "@/block"
 import Image from "next/image";
 
 const CampaignPage = async () => {
 
     return (
-        <div className={styles.container}>
-            <Sidebar activePage={"campaigns"}/>
             <div className={styles.campaign}>
                 <div className={styles.banner}>
                     <Image fill className={styles.bannerImg} src={'/images/placeholder.png'}
@@ -28,9 +26,8 @@ const CampaignPage = async () => {
                     <SectionMap/>
                     <SectionCharacters/>
                 </div>
-
             </div>
-        </div>
+
     );
 };
 
