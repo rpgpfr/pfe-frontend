@@ -12,9 +12,6 @@ const config: Config = {
                     green: 'var(--primary-green)',
                     brown: 'var(--primary-brown)',
                 },
-                secondary: {
-                    green: 'var(--secondary-green)',
-                },
                 smooth: {
                     green: 'var(--smooth-green)',
                     beige: 'var(--smooth-beige)',

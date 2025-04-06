@@ -4,7 +4,7 @@
         @apply block text-sm font-medium mb-1 transition-colors duration-200 text-gray-700;
 
         &:focus {
-            @apply text-secondary-green;
+            @apply text-primary-green;
         }
     }
 
@@ -12,7 +12,7 @@
         @apply w-full rounded border border-gray-300 px-3 py-2;
 
         &:focus {
-            @apply border-secondary-green outline-none ring-1 ring-secondary-green;
+            @apply border-primary-green outline-none ring-1 ring-primary-green;
         }
 
         &:disabled {

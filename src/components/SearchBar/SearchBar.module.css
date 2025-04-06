@@ -26,7 +26,7 @@
                     }
 
                     & > .iconPrimaryGreen {
-                        @apply text-primary-green;
+                        @apply text-darkGreen;
                     }
                 }
             }

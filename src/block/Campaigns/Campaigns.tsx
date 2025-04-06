@@ -136,7 +136,7 @@ const Campaigns = () => {
                                     type="text"
                                     value={campaignName}
                                     onChange={(e) => setCampaignName(e.target.value)}
-                                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-primary-green focus:border-primary-green"
+                                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-dark-green focus:border-dark-green"
                                     placeholder="Entrez le nom de votre campagne"
                                     autoFocus
                                 />
