@@ -15,5 +15,6 @@ import ImageActionCard from "@/components/ImageActionCard/ImageActionCard";
 import ImageContentCard from "@/components/ImageContentCard/ImageContentCard";
 import TabList from "@/components/Tabs/TabList/TabList";
 import TabItem from "@/components/Tabs/TabItem/TabItem";
+import DropDownProfil from "@/components/DropDownProfil/DropDownProfil";
 
-export {CampaignCard, Pagination, SearchBar, SignupForm, LoginForm, GSAPWrapper, CircularProgress, Sidebar, Button, FormInput, Drawer, LabelContent, SectionCampaign, ImageActionCard, ImageContentCard, TabList, TabItem};
+export {CampaignCard, Pagination, SearchBar, SignupForm, LoginForm, GSAPWrapper, CircularProgress, Sidebar, Button, FormInput, Drawer, LabelContent, SectionCampaign, ImageActionCard, ImageContentCard, TabList, TabItem, DropDownProfil};

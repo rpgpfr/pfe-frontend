@@ -1,0 +1,21 @@
+.container {
+    @apply relative w-fit;
+
+    .button {
+        .icon {
+            &:hover {
+                @apply cursor-pointer;
+            }
+        }
+    }
+    .dropdown {
+        @apply absolute top-full left-2/4 -translate-x-1/2 bg-white border-lightGrey border px-[20px] py-[16px] rounded-[4px] w-[151px];
+
+        .list {
+            .listItem {
+                @apply font-bold text-[16px];
+            }
+        }
+    }
+
+}
