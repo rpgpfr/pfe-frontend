@@ -14,7 +14,7 @@
     }
 
     & > .activePage {
-        @apply bg-primary-green text-white border-primary-green;
+        @apply bg-darkGreen text-white border-darkGreen;
     }
 }
 

@@ -13,7 +13,7 @@
         }
 
         & > .btnPrimary {
-            @apply bg-secondary-green text-white font-medium text-base px-6 py-3 rounded-lg transition duration-300;
+            @apply bg-primary-green text-white font-medium text-base px-6 py-3 rounded-lg transition duration-300;
         }
     }
 }

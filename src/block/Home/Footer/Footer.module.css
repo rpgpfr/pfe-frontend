@@ -1,5 +1,5 @@
 .footer {
-    @apply text-white bg-primary-green py-14 px-10 flex items-center justify-between shadow-md;
+    @apply text-white bg-darkGreen py-14 px-10 flex items-center justify-between shadow-md;
     bottom: 0;
     width: 100%;
 
