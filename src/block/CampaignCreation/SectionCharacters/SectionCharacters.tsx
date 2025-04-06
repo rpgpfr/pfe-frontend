@@ -15,10 +15,6 @@ const SectionCharacters = () => {
         setIsDrawerOpen(false);
     };
 
-    // const handleSubmit = () => {
-    //     handleClose();
-    // };
-
     return (
         <SectionCampaign title={"Personnages assignés"} onClick={handleEdit}>
             <div className={"h-full overflow-y-scroll w-full flex flex-col gap-4"}>

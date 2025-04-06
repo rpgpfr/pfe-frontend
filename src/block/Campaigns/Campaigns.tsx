@@ -151,14 +151,10 @@ const Campaigns = () => {
                                     variant="outline"
                                     onClick={handleCloseDrawer}
                                     className="px-4 py-2"
-                                    // disabled={isSubmitting}
                                 >
                                     Annuler
                                 </Button>
-                                <Button type="submit" variant="primary" className="px-4 py-2"
-                                    // disabled={isSubmitting}
-                                >
-                                    {/*{isSubmitting ? "Création en cours..." : "Créer la campagne"}*/}
+                                <Button type="submit" variant="primary" className="px-4 py-2">
                                     Créer la campagne
                                 </Button>
                             </div>

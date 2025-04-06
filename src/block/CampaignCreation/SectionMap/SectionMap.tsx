@@ -15,9 +15,6 @@ const SectionMap = () => {
         setIsDrawerOpen(false);
     };
 
-    // const handleSubmit = () => {
-    //     handleClose();
-    // };
 
     return (
         <div>
