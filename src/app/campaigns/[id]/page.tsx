@@ -7,7 +7,7 @@ import Image from "next/image";
 const CampaignPage = async () => {
 
     return (
-            <div className={styles.campaign}>
+            <main className={styles.campaign}>
                 <div className={styles.banner}>
                     <Image fill className={styles.bannerImg} src={'/images/placeholder.png'}
                          alt="Campaign"/>
@@ -26,7 +26,7 @@ const CampaignPage = async () => {
                     <SectionMap/>
                     <SectionCharacters/>
                 </div>
-            </div>
+            </main>
 
     );
 };

@@ -1,7 +1,3 @@
-.scrollbar-hidden {
-    @apply [scrollbar-width:none];
-}
-
 .scrollbar-hidden::-webkit-scrollbar {
     @apply hidden;
 }
