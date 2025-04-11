@@ -1,8 +1,8 @@
 .header {
-    @apply bg-[#ffffff] py-6 px-10 flex items-center justify-between shadow-md;
+    @apply bg-[#ffffff] h-24 py-6 px-10 flex items-center justify-between shadow-md;
 
     & > .title {
-        @apply pl-20 flex-1 text-3xl;
+        @apply pl-20 text-3xl;
     }
 
     & > .nav {
@@ -10,10 +10,6 @@
 
         & > .link {
             @apply text-[#0b0e14] font-medium text-base px-6 py-3 rounded-full transition duration-300 hover:bg-white hover:text-[#0b0e14];
-        }
-
-        & > .btnPrimary {
-            @apply bg-primary-green text-white font-medium text-base px-6 py-3 rounded-lg transition duration-300;
         }
     }
 }

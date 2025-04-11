@@ -4,14 +4,13 @@ import {usePathname} from "next/navigation";
 import Link from 'next/link';
 import {aladin} from "@/lib/utils";
 import styles from './Header.module.css';
-import {DropDownProfil, Button} from '@/components';
+import {Button, DropDownProfil} from '@/components';
 import {useSession} from "next-auth/react";
 
 const Header = () => {
 
     const pathname = usePathname();
-    const { status } = useSession();
-    const isLogin = status === "authenticated";
+    const {status} = useSession();
 
     return (
         <>
@@ -23,28 +22,46 @@ const Header = () => {
                         Project RPG
                     </Link>
 
-                    {isLogin ? (
+                    {
+                        status !== "loading" &&
+                        <>
+                            {
+                                status === "authenticated" ?
+                                    <ConnectedNav/>
+                                    :
+                                    <AnonymousNav/>
+                            }
+                        </>
 
-                            <nav className={styles.nav}>
-                                <DropDownProfil/>
-                            </nav>
-
-                        )
-                        :
-                        (
-                            <nav className={styles.nav}>
-                                <Link href="/login" className={styles.link}>
-                                    Se connecter
-                                </Link>
-
-                                <Button href="/register" variant="primary">S&apos;inscrire</Button>
-                            </nav>
-
-                        )}
+                    }
 
                 </header>
             }
         </>
+    );
+
+};
+
+const ConnectedNav = () => {
+
+    return (
+        <nav className={styles.nav}>
+            <DropDownProfil/>
+        </nav>
+    );
+
+};
+
+const AnonymousNav = () => {
+
+    return (
+        <nav className={styles.nav}>
+            <Link href="/login" className={styles.link}>
+                Se connecter
+            </Link>
+
+            <Button href="/register" variant="primary">S&apos;inscrire</Button>
+        </nav>
     );
 
 };

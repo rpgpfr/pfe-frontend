@@ -15,10 +15,14 @@
     --h3-size: 32px;
 }
 
-body {
-    color: #333;
+html, body {
+    @apply min-h-screen;
 }
 
+body {
+    color: #333;
+    @apply flex flex-col justify-between;
+}
 
 @layer utilities {
     .text-balance {
@@ -31,7 +35,7 @@ body {
     linear-gradient(-45deg, #f0f0f0 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #f0f0f0 75%),
     linear-gradient(-45deg, transparent 75%, #f0f0f0 75%);
     background-size: 40px 40px;
-    background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+    background-position: 0 0, 0 20px, 20px -20px, -20px 0;
     opacity: 0.2;
 }
 
