@@ -5,7 +5,7 @@ import {aladin} from "@/lib/utils";
 const CampaignsPage = () => {
 
     return (
-        <main>
+        <main className="flex-grow">
             <Section pattern="dice">
                 <h1 className={`${aladin.className} text-3xl text-center relative z-10`}>
                     Alors, on repart de zéro ou on charge une campagne existante ?

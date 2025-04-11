@@ -1,10 +1,4 @@
 .section {
-    @apply py-12 px-4 relative;
-
-    & > .background {
-        @apply absolute inset-0 z-0;
-    }
-
     & > .content {
         @apply max-w-6xl mx-auto w-full relative z-10;
 
@@ -12,8 +6,4 @@
             @apply text-3xl text-center mb-10;
         }
     }
-}
-
-.full-height {
-    @apply h-screen;
 }
