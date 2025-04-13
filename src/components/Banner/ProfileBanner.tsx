@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import styles from './Bannner.module.css'
 
-const Banner = () => {
+const ProfileBanner = () => {
     return (   
         <div className={styles.bannerContainer}>
             <Image
@@ -11,4 +11,4 @@ const Banner = () => {
     );
 };
 
-export default Banner;
+export default ProfileBanner;

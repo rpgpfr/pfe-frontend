@@ -1,4 +1,4 @@
-import ProfileForm from "@/components/ProfileForm";
+import {ProfileForm} from "@/components";
 import styles from "./Profile.module.css";
 import {UserProfile} from "api";
 

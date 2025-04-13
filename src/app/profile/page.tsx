@@ -1,8 +1,10 @@
 import Profile from "@/block/Profile/Profile";
-import Banner from "@/components/Banner/Banner";
+import ProfileBanner from "@/components/Banner/ProfileBanner";
 import LastActivitiesProfile from "@/components/LastActivitiesProfile/LastActivitiesProfile";
 import {redirect} from "next/navigation";
 import {headers} from "next/headers";
+
+import styles from "./styles.module.css";
 
 const ProfilePage = async () => {
 
@@ -10,13 +12,13 @@ const ProfilePage = async () => {
 
     return (
         <main>
-            <Banner/>
-            <div className="flex w-screen gap-2 pl-5 pr-5 pt-5 pb-5">
-                <div className="w-1/2 p-1">
+            <ProfileBanner/>
+            <div className={styles.dashboard}>
+                <div className={styles.column}>
                     <Profile profile={profile} />
                 </div>
 
-                <div className="w-1/2 p-1">
+                <div className={styles.column}>
                     <LastActivitiesProfile activites={[]}/>
                 </div>
             </div>

@@ -7,6 +7,8 @@ import {aladin} from "@/lib/utils";
 import {FormInput} from "../ui";
 import {UserProfile} from "api";
 import {useRouter} from "next/navigation";
+import {profileFormSchema} from "@/lib/schemas";
+import {Button} from "@/components";
 
 interface ProfileFormProps {
     profile: UserProfile
@@ -23,7 +25,8 @@ const ProfileForm = ({profile}: ProfileFormProps) => {
         signedUpAt: profile.signedUpAt,
     });
 
-    const [isEditing, setIsEditing] = useState<boolean>(false); // État pour savoir si on est en mode édition
+    const [isEditing, setIsEditing] = useState<boolean>(false);
+    const [fieldErrors, setFieldErrors] = useState<Map<string, string>>(new Map());
     const [submitError, setSubmitError] = useState<string>("");
 
     const router = useRouter();
@@ -36,11 +39,11 @@ const ProfileForm = ({profile}: ProfileFormProps) => {
     };
 
     const handleEditClick = () => {
-        setIsEditing(true); // Active le mode édition
+        setIsEditing(true);
     };
 
     const handleCancelClick = () => {
-        setIsEditing(false); // Désactive le mode édition
+        setIsEditing(false);
         setFormData({
             description: profile.description || "",
             lastName: profile.lastName,
@@ -49,36 +52,54 @@ const ProfileForm = ({profile}: ProfileFormProps) => {
             email: profile.email,
             rpgKnowledge: profile.rpgKnowledge || "",
             signedUpAt: profile.signedUpAt,
-        }); // Réinitialise les champs avec les données initiales
+        });
     };
 
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
 
-        try {
-            const options: RequestInit = {
-                method: "PATCH",
-                headers: {
-                    "Content-Type": "application/json",
-                    Accept: "application/json",
-                },
-                body: JSON.stringify(formData),
-            };
+        if (validateForm()) {
+            try {
+                const options: RequestInit = {
+                    method: "PATCH",
+                    headers: {
+                        "Content-Type": "application/json",
+                        Accept: "application/json",
+                    },
+                    body: JSON.stringify(formData),
+                };
 
-            const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/api/profile`, options);
+                const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/api/profile`, options);
+                console.log(response)
+                if (response.ok) {
+                    setIsEditing(false);
+                    router.refresh();
+                } else {
+                    const errorMessage = (await response.json()).error;
 
-            if (response.ok) {
-                setIsEditing(false); // Désactive le mode édition après validation
-                router.refresh();
-            } else {
-                const errorMessage = (await response.json()).error;
-
-                setSubmitError(errorMessage);
+                    setSubmitError(errorMessage);
+                }
+            } catch (error) {
+                console.error(error);
+                setSubmitError("Une erreur s'est produite lors de la mise à jour du profil");
             }
-        } catch (error) {
-            console.error(error);
-            setSubmitError("Une erreur s'est produite lors de la mise à jour du profil");
         }
+    };
+
+    const validateForm = () => {
+        const newErrors: Map<string, string> = new Map<string, string>();
+
+        const validation = profileFormSchema.safeParse(formData);
+        console.log(validation);
+        if (!validation.success) {
+            validation.error.issues.forEach(issue => {
+                newErrors.set(issue.path[0] as string, issue.message);
+            });
+        }
+
+        setFieldErrors(newErrors);
+
+        return newErrors.size === 0;
     };
 
     return (
@@ -98,8 +119,8 @@ const ProfileForm = ({profile}: ProfileFormProps) => {
                     )}
                 </div>
 
-                <form onSubmit={handleSubmit} className={styles.form}>
-                    <fieldset className={styles.formGroup}>
+                <form onSubmit={handleSubmit}>
+                    <fieldset>
                         <label htmlFor="description" className={styles.formLabel}>
                             Description
                         </label>
@@ -108,57 +129,57 @@ const ProfileForm = ({profile}: ProfileFormProps) => {
                             value={formData.description}
                             onChange={handleFormChange}
                             className={styles.formTextarea}
-                            placeholder="Ceci est la description de mon profil"
+                            placeholder="Dites-en un peu plus sur vous !"
                             rows={3}
                             disabled={!isEditing}
                         />
                     </fieldset>
 
-                    <div className={styles.formRow}>
-                        <fieldset className={styles.formGroup}>
-                            <FormInput
-                                id="lastName"
-                                label="Nom"
-                                value={formData.lastName}
-                                onChange={handleFormChange}
-                                disabled={!isEditing}
-                            />
-                        </fieldset>
+                    <fieldset className={styles.formRow}>
+                        <FormInput
+                            id="lastName"
+                            label="Nom"
+                            className="flex-1"
+                            value={formData.lastName}
+                            onChange={handleFormChange}
+                            error={fieldErrors.get("lastName")}
+                            disabled={!isEditing}
+                        />
 
-                        <fieldset className={styles.formGroup}>
-                            <FormInput
-                                id="firstName"
-                                label="Prénom"
-                                value={formData.firstName}
-                                onChange={handleFormChange}
-                                disabled={!isEditing}
-                            />
-                        </fieldset>
-                    </div>
+                        <FormInput
+                            id="firstName"
+                            label="Prénom"
+                            className="flex-1"
+                            value={formData.firstName}
+                            onChange={handleFormChange}
+                            error={fieldErrors.get("firstName")}
+                            disabled={!isEditing}
+                        />
+                    </fieldset>
 
-                    <div className={styles.formRow}>
-                        <fieldset className={styles.formGroup}>
-                            <FormInput
-                                id="username"
-                                label="Nom d'utilisateur"
-                                value={formData.username}
-                                onChange={handleFormChange}
-                                disabled={!isEditing}
-                            />
-                        </fieldset>
+                    <fieldset className={styles.formRow}>
+                        <FormInput
+                            id="username"
+                            label="Nom d'utilisateur"
+                            className="flex-1"
+                            value={formData.username}
+                            onChange={handleFormChange}
+                            error={fieldErrors.get("username")}
+                            disabled={!isEditing}
+                        />
+                        <FormInput
+                            id="email"
+                            label="Adresse e-mail"
+                            type="email"
+                            className="flex-1"
+                            value={formData.email}
+                            onChange={handleFormChange}
+                            error={fieldErrors.get("email")}
+                            disabled={!isEditing}
+                        />
+                    </fieldset>
 
-                        <fieldset className={styles.formGroup}>
-                            <FormInput
-                                id="email"
-                                label="Adresse e-mail"
-                                value={formData.email}
-                                onChange={handleFormChange}
-                                disabled={!isEditing}
-                            />
-                        </fieldset>
-                    </div>
-
-                    <fieldset className={styles.formGroup}>
+                    <fieldset>
                         <label htmlFor="rpgKnowledge" className={styles.formLabel}>
                             Niveau de connaissance du RPG
                         </label>
@@ -168,26 +189,20 @@ const ProfileForm = ({profile}: ProfileFormProps) => {
                             value={formData.rpgKnowledge}
                             onChange={handleFormChange}
                             className={styles.formInput}
-                            placeholder="Contenu du champ"
+                            placeholder="Mon niveau"
                             disabled={!isEditing}
                         />
                     </fieldset>
 
                     {isEditing && (
                         <div className={styles.formActions}>
-                            <button
-                                type="button"
-                                className="bg-gray-200 text-gray-700 px-4 py-2 rounded mr-2"
-                                onClick={handleCancelClick}
-                            >
+                            <Button variant="outline" onClick={handleCancelClick}>
                                 Annuler
-                            </button>
-                            <button
-                                type="submit"
-                                className="bg-blue-500 text-white px-4 py-2 rounded"
-                            >
+                            </Button>
+
+                            <Button type="submit" variant="primary">
                                 Valider
-                            </button>
+                            </Button>
                         </div>
                     )}
                 </form>
