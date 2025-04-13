@@ -1,4 +1,4 @@
-import Profile from "@/block/Profile";
+import Profile from "@/block/ProfileInfo";
 
 export default function Page() {
     return <Profile />;

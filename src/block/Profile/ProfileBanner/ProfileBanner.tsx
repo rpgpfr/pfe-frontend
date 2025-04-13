@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import styles from './Bannner.module.css'
+import styles from './ProfileBannner.module.css'
 
 const ProfileBanner = () => {
     return (   

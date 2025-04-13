@@ -1,6 +1,6 @@
-import Profile from "@/block/Profile/Profile";
-import ProfileBanner from "@/components/Banner/ProfileBanner";
-import LastActivitiesProfile from "@/components/LastActivitiesProfile/LastActivitiesProfile";
+
+import {ProfileBanner, ProfileInfo} from "@/block";
+import {LastActivities} from "@/components";
 import {redirect} from "next/navigation";
 import {headers} from "next/headers";
 
@@ -15,11 +15,11 @@ const ProfilePage = async () => {
             <ProfileBanner/>
             <div className={styles.dashboard}>
                 <div className={styles.column}>
-                    <Profile profile={profile} />
+                    <ProfileInfo profile={profile} />
                 </div>
 
                 <div className={styles.column}>
-                    <LastActivitiesProfile activites={[]}/>
+                    <LastActivities activities={[]}/>
                 </div>
             </div>
         </main>

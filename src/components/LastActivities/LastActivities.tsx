@@ -2,38 +2,38 @@ import { ChevronRight } from "lucide-react";
 import styles from "./LastActivities.module.css";
 import {aladin} from "@/lib/utils";
 
-interface Activite {
-    titre: string;
+interface Activity {
+    title: string;
     date: string;
 }
 
-interface DernieresActivitesProps {
-    activites: Activite[];
+interface LastActivitiesProps {
+    activities: Activity[];
 }
 
-export default function DernieresActivites({ activites = [] }: DernieresActivitesProps) {
-    const activitesAffichees =
-        activites.length > 0
-            ? activites
+export default function LastActivities({ activities = [] }: LastActivitiesProps) {
+    const showedActivities: Activity[] =
+        activities.length > 0
+            ? activities
             : [
-                  { titre: "Intitulé de l'activité", date: "22/07/2000" },
-                  { titre: "Intitulé de l'activité", date: "22/07/2000" },
-                  { titre: "Intitulé de l'activité", date: "22/07/2000" },
-                  { titre: "Intitulé de l'activité", date: "22/07/2000" },
+                  { title: "Intitulé de l'activité", date: "22/07/2000" },
+                  { title: "Intitulé de l'activité", date: "22/07/2000" },
+                  { title: "Intitulé de l'activité", date: "22/07/2000" },
+                  { title: "Intitulé de l'activité", date: "22/07/2000" },
               ];
 
     return (
         <div className={styles.activitiesContainer}>
             <h2 className={`${styles.activitiesHeader} ${aladin.className}`}>Dernières activités</h2>
             <ul className={styles.activitiesList}>
-                {activitesAffichees.map((activite, index) => (
+                {showedActivities.map((activity, index) => (
                     <li key={index} className={styles.activityItem}>
                         <div className={styles.activityDetails}>
                             <span className={styles.activityBullet}>•</span>
-                            <span className={styles.activityTitle}>{activite.titre}</span>
+                            <span className={styles.activityTitle}>{activity.title}</span>
                         </div>
                         <div className={styles.activityMeta}>
-                            <span className={styles.activityDate}>{activite.date}</span>
+                            <span className={styles.activityDate}>{activity.date}</span>
                             <ChevronRight className={styles.activityIcon} size={18} />
                         </div>
                     </li>

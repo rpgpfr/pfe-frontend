@@ -1,12 +1,12 @@
 import {ProfileForm} from "@/components";
-import styles from "./Profile.module.css";
+import styles from "./ProfileInfo.module.css";
 import {UserProfile} from "api";
 
 interface ProfileProps {
     profile: UserProfile
 }
 
-export default function Profile({profile}: ProfileProps) {
+export default function ProfileInfo({profile}: ProfileProps) {
     return (
         <div className={styles.profileContainer}>
             <div className={styles.statsGrid}>
