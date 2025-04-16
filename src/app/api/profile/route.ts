@@ -1,15 +1,16 @@
 import {auth} from "@/lib/auth";
 import {Session} from "next-auth";
 import {NextRequest} from "next/server";
-import {redirect} from "next/navigation";
 
-export const GET = auth(async (request: NextRequest & { auth: Session | null }) => {
-    if (!request.auth) {
-        return redirect("/");
+export const GET = async (request: NextRequest) => {
+    const session = await auth();
+
+    if (!session?.token) {
+        return Response.redirect(new URL("/", request.url));
     }
 
     try {
-        const options: RequestInit = buildRequestOptions("GET", request.auth.token);
+        const options: RequestInit = buildRequestOptions("GET", session!.token);
 
         const response = await fetch(`${process.env.SPRING_API_URL}/profile`, options);
 
@@ -25,17 +26,17 @@ export const GET = auth(async (request: NextRequest & { auth: Session | null }) 
     } catch (error) {
         return Response.json({error: (error as Error).message}, {status: 500});
     }
-});
+};
 
-export const PATCH = auth(async (request: NextRequest & { auth: Session | null }) => {
-    if (!request.auth) {
-        return redirect("/");
+export const PATCH = async (request: NextRequest & { auth: Session | null }) => {
+    const session = await auth();
+
+    if (session?.token) {
+        return Response.redirect(new URL("/", request.url));
     }
 
     try {
-        const body = await request.json();
-
-        const options: RequestInit = buildRequestOptions("PATCH", request.auth.token, body);
+        const options: RequestInit = buildRequestOptions("PATCH", session!.token);
 
         const response = await fetch(`${process.env.SPRING_API_URL}/profile`, options);
 
@@ -49,7 +50,7 @@ export const PATCH = auth(async (request: NextRequest & { auth: Session | null }
     } catch (error) {
         return Response.json({error: (error as Error).message}, {status: 500});
     }
-});
+};
 
 const buildRequestOptions = (method: string, token: string, body?: BodyInit) => {
     return {
