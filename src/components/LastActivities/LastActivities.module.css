@@ -1,0 +1,43 @@
+.activitiesContainer {
+    @apply border border-gray-300 rounded-md overflow-hidden;
+
+    .activitiesHeader {
+        @apply text-5xl p-4 border-b border-gray-300;
+    }
+
+    .activitiesList {
+        @apply list-none m-0 p-0;
+
+        .activityItem {
+            @apply flex items-center justify-between p-4;
+
+            &:nth-child(odd) {
+                @apply bg-gray-100;
+            }
+
+            .activityDetails {
+                @apply flex items-center;
+
+                .activityBullet {
+                    @apply mr-2 text-lg;
+                }
+
+                .activityTitle {
+                    @apply text-base;
+                }
+            }
+
+            .activityMeta {
+                @apply flex items-center;
+
+                .activityDate {
+                    @apply mr-3 text-gray-600;
+                }
+
+                .activityIcon {
+                    @apply text-gray-400;
+                }
+            }
+        }
+    }
+}

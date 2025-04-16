@@ -1,0 +1,81 @@
+.formContainer {
+    @apply border border-gray-300 mt-5 p-4 rounded-md w-full h-fit overflow-y-auto;
+
+    & > .formWrapper {
+        @apply bg-white p-6 ;
+
+        & > .formTitle {
+            @apply text-5xl mb-6 pb-3;
+        }
+        
+        & > .profileHeader {
+            @apply flex justify-end items-center mb-6;
+            
+            
+            & > .editButton {
+                @apply flex justify-center items-center w-10 h-10 rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200;
+            }
+        }
+
+        & > form {
+            @apply flex flex-col gap-5;
+
+            & > fieldset {
+                @apply w-full;
+                
+                & > .formLabel {
+                    @apply block text-sm font-medium mb-1 transition-colors duration-200 text-gray-700;
+
+                    &:focus {
+                        @apply text-secondary-green;
+                    }
+                }
+                
+                & > .formInput,
+                & > .formTextarea {
+                    @apply w-full rounded border border-gray-300 px-3 py-2;
+
+                    &:focus {
+                        @apply border-secondary-green outline-none ring-1 ring-secondary-green;
+                    }
+
+                    &:disabled {
+                        @apply bg-gray-100 text-gray-500;
+                    }
+                    
+                    &::placeholder {
+                        @apply text-gray-300;
+                    }
+                }
+                
+                & > .formTextarea {
+                    @apply min-h-[80px] resize-y;
+                }
+            }
+            
+            & > .formRow {
+                @apply flex gap-4;
+            }
+
+            & > .error {
+                @apply text-sm w-full text-center text-red-600;
+            }
+            
+            & > .formActions {
+                @apply mt-6 flex justify-center items-stretch gap-4;
+            }
+        }
+
+        & > .registrationInfo {
+            @apply flex items-center mt-6 mb-6 text-xl;
+
+            & > .registrationTitle {
+                @apply mr-1 text-5xl;
+            }
+
+            & > .registrationDate {
+                @apply italic;
+            }
+        }
+    }
+}

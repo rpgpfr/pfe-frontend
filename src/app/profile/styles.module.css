@@ -1,0 +1,7 @@
+.dashboard {
+    @apply flex w-screen gap-2 pl-5 pr-5 pt-5 pb-5;
+
+    & > .column {
+        @apply w-1/2 p-1;
+    }
+}

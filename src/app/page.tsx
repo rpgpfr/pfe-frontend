@@ -15,7 +15,7 @@ const Home = () => {
             <UsecaseDemo/>
         </main>
     );
-    
+
 };
 
 export default Home;

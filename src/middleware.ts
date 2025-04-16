@@ -4,7 +4,7 @@ import {NextRequest} from "next/server";
 export default auth((request: NextRequest & { auth: unknown }) => {
     if (
         !request.auth
-        && request.nextUrl.pathname.includes("/campaigns")
+        && !(request.nextUrl.pathname.includes("/login") || request.nextUrl.pathname.includes("/signup") || request.nextUrl.pathname === "/")
     ) {
         const newUrl = new URL("/login", request.nextUrl.origin);
 
