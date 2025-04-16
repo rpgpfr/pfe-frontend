@@ -194,6 +194,8 @@ const ProfileForm = ({profile}: ProfileFormProps) => {
                         />
                     </fieldset>
 
+                    {submitError && <p className={styles.error}>{submitError}</p>}
+
                     {isEditing && (
                         <div className={styles.formActions}>
                             <Button variant="outline" onClick={handleCancelClick}>

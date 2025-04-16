@@ -56,21 +56,25 @@
             & > .formRow {
                 @apply flex gap-4;
             }
-            
-            & > .registrationInfo {
-                @apply flex items-center mt-6 mb-6 text-xl;
-                
-                & > .registrationTitle {
-                    @apply mr-1 text-5xl;
-                }
-                
-                & > .registrationDate {
-                    @apply italic;
-                }
+
+            & > .error {
+                @apply text-sm w-full text-center text-red-600;
             }
             
             & > .formActions {
                 @apply mt-6 flex justify-center items-stretch gap-4;
+            }
+        }
+
+        & > .registrationInfo {
+            @apply flex items-center mt-6 mb-6 text-xl;
+
+            & > .registrationTitle {
+                @apply mr-1 text-5xl;
+            }
+
+            & > .registrationDate {
+                @apply italic;
             }
         }
     }
