@@ -76,6 +76,8 @@ const SignupForm = () => {
                 }
             } catch (error) {
                 console.error(error);
+
+                setSubmitError(error instanceof Error ? error.message : "Une erreur s'est produite lors de l'inscription");
             }
         }
     };

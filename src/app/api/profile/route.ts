@@ -31,12 +31,12 @@ export const GET = async (request: NextRequest) => {
 export const PATCH = async (request: NextRequest & { auth: Session | null }) => {
     const session = await auth();
 
-    if (session?.token) {
+    if (!session?.token) {
         return Response.redirect(new URL("/", request.url));
     }
 
     try {
-        const options: RequestInit = buildRequestOptions("PATCH", session!.token);
+        const options: RequestInit = buildRequestOptions("PATCH", session!.token, await request.json());
 
         const response = await fetch(`${process.env.SPRING_API_URL}/profile`, options);
 
