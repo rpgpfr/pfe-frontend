@@ -19,7 +19,7 @@ const DropDownProfil = () => {
                 <div className={styles.dropdown}>
                     <ul>
                         <li>
-                            <Link href="/profil">Profil</Link>
+                            <Link href="/profile">Profil</Link>
                         </li>
 
                         <li onClick={() => signOut()}>

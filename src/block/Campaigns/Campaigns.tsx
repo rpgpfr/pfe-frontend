@@ -1,27 +1,30 @@
 "use client";
 
-import {useEffect, useRef, useState} from "react";
+import {FormEvent, useEffect, useRef, useState} from "react";
 import {useGSAP} from "@gsap/react";
 import {gsap} from "gsap";
 
 import {CampaignCard, Pagination, SearchBar, Button, Drawer} from "@/components";
-import {fakeCampaigns} from "@/app/campaigns/mock";
 
 import styles from "./Campaigns.module.css";
 import TweenTarget = gsap.TweenTarget;
+import {Campaign} from "api";
 
 type SortType = "alphabetique" | "date";
 
-const Campaigns = () => {
+type CampaignsProps = {
+    campaigns: Campaign[]
+}
 
-    const campaigns = fakeCampaigns;
+const Campaigns = ({campaigns}: CampaignsProps) => {
+
     const campaignsPerPage = 10;
 
     const [searchTerm, setSearchTerm] = useState("");
     const [currentPage, setCurrentPage] = useState(1);
     const [sortType, setSortType] = useState<SortType>("alphabetique");
-    const [filteredCampaigns, setFilteredCampaigns] = useState<typeof fakeCampaigns>(campaigns);
-    const [currentCampaigns, setCurrentCampaigns] = useState<typeof fakeCampaigns>([]);
+    const [filteredCampaigns, setFilteredCampaigns] = useState<Campaign[]>(campaigns);
+    const [currentCampaigns, setCurrentCampaigns] = useState<Campaign[]>([]);
     const [totalPages, setTotalPages] = useState(0);
     const [isDrawerOpen, setIsDrawerOpen] = useState(false)
     const [campaignName, setCampaignName] = useState("")
@@ -70,13 +73,13 @@ const Campaigns = () => {
         setCurrentCampaigns(current);
     }, [currentPage, filteredCampaigns]);
 
-    const handleCreateCampaign = async (e: React.FormEvent) => {
+    const handleCreateCampaign = async (e: FormEvent) => {
         e.preventDefault()
 
     }
 
     const handleCloseDrawer = () => {
-        setIsDrawerOpen(false)
+        setIsDrawerOpen(false);
     }
 
     return (
@@ -100,11 +103,8 @@ const Campaigns = () => {
                         currentCampaigns.map((campaign, index) => (
                             <CampaignCard
                                 key={index}
-                                id={campaign.id}
-                                name={campaign.name}
-                                image={campaign.image}
-                                createdAt={campaign.createdAt}
-                                showDate={true}
+                                campaign={campaign}
+                                showDate={false}
                             />
                         ))
                     }

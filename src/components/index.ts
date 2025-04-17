@@ -19,4 +19,4 @@ import ProfileForm from "@/components/ProfileForm/ProfileForm";
 import LastActivities from "@/components/LastActivities/LastActivities";
 import DropDownProfil from "@/components/DropDownProfil/DropDownProfil";
 
-export {CampaignCard, Pagination, SearchBar, SignupForm, LoginForm, GSAPWrapper, CircularProgress, Sidebar, Button, FormInput, Drawer, LabelContent, SectionCampaign, ImageActionCard, ImageContentCard, TabList, TabItem, ProfileForm, LastActivities, TabItem, DropDownProfil};
+export {CampaignCard, Pagination, SearchBar, SignupForm, LoginForm, GSAPWrapper, CircularProgress, Sidebar, Button, FormInput, Drawer, LabelContent, SectionCampaign, ImageActionCard, ImageContentCard, TabList, TabItem, ProfileForm, LastActivities, DropDownProfil};

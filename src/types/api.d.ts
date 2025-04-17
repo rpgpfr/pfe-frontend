@@ -13,4 +13,13 @@ declare module "api" {
         characterCount: number;
         resourceCount: number;
     }
+
+    interface Campaign {
+        name: string,
+        slug: string,
+        description?: string,
+        type?: string,
+        mood?: string,
+        createdAt: Date,
+    }
 }

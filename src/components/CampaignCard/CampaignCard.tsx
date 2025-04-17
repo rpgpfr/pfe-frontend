@@ -5,17 +5,15 @@ import {Button} from "@/components/ui";
 import {cn} from "@/lib/utils";
 
 import styles from "./CampaignCard.module.css";
+import {Campaign} from "api";
 
 interface CampaignCardProps {
-    id: number,
-    name: string;
-    image: string;
-    createdAt: Date;
-    className?: string;
-    showDate?: boolean;
+    campaign: Campaign
+    showDate?: boolean
+    className?: string
 }
 
-export const CampaignCard = ({id, name, image, createdAt, className, showDate = true}: CampaignCardProps) => {
+export const CampaignCard = ({campaign, className, showDate = false}: CampaignCardProps) => {
 
     const formatDate = (date: Date) => {
         return date.toLocaleDateString("fr-FR", {
@@ -26,16 +24,16 @@ export const CampaignCard = ({id, name, image, createdAt, className, showDate = 
     };
 
     return (
-        <div id={`campaign-${id}`} className={cn(styles.card, className)}>
-            <h3 className={styles.title}>{name}</h3>
+        <div id={campaign.slug} className={cn(styles.card, className)}>
+            <h3 className={styles.title}>{campaign.name}</h3>
 
             {
                 showDate &&
-                <p className={styles.date}>Créée le {formatDate(createdAt)}</p>
+                <p className={styles.date}>Créée le {formatDate(campaign.createdAt)}</p>
             }
 
             <div className={styles.imageContainer}>
-                <Image src={image || "/placeholder.svg"} alt={name} fill/>
+                <Image src={"/placeholder.svg"} alt={campaign.name} fill/>
             </div>
 
             <div className={styles.action}>
