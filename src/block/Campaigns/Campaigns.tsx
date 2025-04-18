@@ -3,12 +3,12 @@
 import {useEffect, useRef, useState} from "react";
 import {useGSAP} from "@gsap/react";
 import {gsap} from "gsap";
+import TweenTarget = gsap.TweenTarget;
 
 import {Button, CampaignCard, CreateCampaignForm, Drawer, Pagination, SearchBar} from "@/components";
 import {Campaign} from "api";
 
 import styles from "./Campaigns.module.css";
-import TweenTarget = gsap.TweenTarget;
 
 type SortType = "alphabetique" | "date";
 
