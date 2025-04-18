@@ -1,5 +1,4 @@
 import {auth} from "@/lib/auth";
-import {Session} from "next-auth";
 import {NextRequest} from "next/server";
 
 export const GET = async (request: NextRequest) => {
@@ -28,7 +27,7 @@ export const GET = async (request: NextRequest) => {
     }
 };
 
-export const PATCH = async (request: NextRequest & { auth: Session | null }) => {
+export const PATCH = async (request: NextRequest) => {
     const session = await auth();
 
     if (!session?.token) {

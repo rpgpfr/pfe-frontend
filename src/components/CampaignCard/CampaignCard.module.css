@@ -19,13 +19,5 @@
 
     .action {
         @apply flex justify-end gap-2;
-
-        & > .button {
-            @apply p-1.5;
-
-            & > .icon {
-                @apply w-4 aspect-square;
-            }
-        }
     }
 }

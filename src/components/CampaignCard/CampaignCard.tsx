@@ -16,7 +16,7 @@ interface CampaignCardProps {
 export const CampaignCard = ({campaign, className, showDate = false}: CampaignCardProps) => {
 
     const formatDate = (date: Date) => {
-        return date.toLocaleDateString("fr-FR", {
+        return new Date(date).toLocaleDateString("fr-FR", {
             day: "numeric",
             month: "long",
             year: "numeric",
@@ -37,12 +37,12 @@ export const CampaignCard = ({campaign, className, showDate = false}: CampaignCa
             </div>
 
             <div className={styles.action}>
-                <Button variant="secondary" className={styles.button}>
-                    <Trash2 className={styles.icon}/>
+                <Button variant="secondary" className="aspect-square p-2">
+                    <Trash2 height={24} width={24}/>
                 </Button>
 
-                <Button variant="primary" className={styles.button}>
-                    <ArrowRight className={styles.icon}/>
+                <Button variant="primary" className="aspect-square p-2">
+                    <ArrowRight  height={24} width={24}/>
                 </Button>
             </div>
         </div>

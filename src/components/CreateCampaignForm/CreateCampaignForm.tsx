@@ -13,7 +13,7 @@ type CreateCampaignFormProps = {
 const CreateCampaignForm = ({handleCancel}: CreateCampaignFormProps) => {
 
     const [campaignName, setCampaignName] = useState<string>("");
-    const [submitError, setSubmitError] = useState<string>("")
+    const [submitError, setSubmitError] = useState<string>("");
 
     const router = useRouter();
 
@@ -35,6 +35,7 @@ const CreateCampaignForm = ({handleCancel}: CreateCampaignFormProps) => {
             const response = await fetch("/api/campaigns", options);
 
             if (response.ok) {
+                handleCancel();
                 router.refresh();
             } else {
                 const errorMessage = (await response.json()).error;

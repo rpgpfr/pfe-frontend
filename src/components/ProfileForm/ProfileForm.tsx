@@ -70,7 +70,7 @@ const ProfileForm = ({profile}: ProfileFormProps) => {
                 };
 
                 const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/api/profile`, options);
-                console.log(response)
+
                 if (response.ok) {
                     setIsEditing(false);
                     router.refresh();
@@ -90,7 +90,7 @@ const ProfileForm = ({profile}: ProfileFormProps) => {
         const newErrors: Map<string, string> = new Map<string, string>();
 
         const validation = profileFormSchema.safeParse(formData);
-        console.log(validation);
+
         if (!validation.success) {
             validation.error.issues.forEach(issue => {
                 newErrors.set(issue.path[0] as string, issue.message);

@@ -35,7 +35,6 @@ const SectionInfos = () => {
         e.preventDefault();
 
         if (validateForm()) {
-            console.log('test');
             handleClose();
         }
     };

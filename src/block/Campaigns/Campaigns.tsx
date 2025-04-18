@@ -1,14 +1,14 @@
 "use client";
 
-import {FormEvent, useEffect, useRef, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import {useGSAP} from "@gsap/react";
 import {gsap} from "gsap";
 
 import {Button, CampaignCard, CreateCampaignForm, Drawer, Pagination, SearchBar} from "@/components";
 import {Campaign} from "api";
-import TweenTarget = gsap.TweenTarget;
 
 import styles from "./Campaigns.module.css";
+import TweenTarget = gsap.TweenTarget;
 
 type SortType = "alphabetique" | "date";
 
@@ -17,8 +17,6 @@ type CampaignsProps = {
 }
 
 const Campaigns = ({campaigns}: CampaignsProps) => {
-
-    console.log(campaigns);
 
     const campaignsPerPage = 10;
 
@@ -53,7 +51,7 @@ const Campaigns = ({campaigns}: CampaignsProps) => {
             if (sortType === "alphabetique") {
                 return a.name.localeCompare(b.name, "fr", {sensitivity: "base"});
             } else {
-                return b.createdAt.getTime() - a.createdAt.getTime();
+                return new Date(b.createdAt).getDay() - new Date(a.createdAt).getDay();
             }
         });
 
