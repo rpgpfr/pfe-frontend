@@ -12,8 +12,6 @@ export const fetchUrl = async (url: string, method: string, isDataReturned: bool
             return NextResponse.json(data.error, {status: response.status});
         }
 
-        console.log(response);
-
         if (isDataReturned) {
             const data = (await response.json()).data;
 
