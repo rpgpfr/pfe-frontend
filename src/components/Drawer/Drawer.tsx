@@ -1,6 +1,6 @@
 "use client";
 
-import {useEffect, useRef} from "react"
+import {ReactNode, useEffect, useRef} from "react"
 import {X} from "lucide-react"
 import styles from "./Drawer.module.css"
 import {aladin} from "@/lib/utils";

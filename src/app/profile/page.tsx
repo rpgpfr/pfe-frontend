@@ -1,7 +1,7 @@
 import {headers} from "next/headers";
 import {redirect} from "next/navigation";
 
-import {ProfileBanner, ProfileInfo} from "@/block";
+import {ProfileBanner, ProfileInfo} from "@/block/Profile";
 import {LastActivities} from "@/components";
 import {UserProfile} from "rpg-project";
 

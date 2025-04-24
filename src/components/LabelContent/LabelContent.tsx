@@ -1,4 +1,5 @@
 import {cn} from "@/lib/utils";
+import {FC, HTMLAttributes, ReactNode} from "react";
 
 import styles from "./LabelContent.module.css";
 

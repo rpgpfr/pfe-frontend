@@ -7,6 +7,7 @@ import {cn} from "@/lib/utils";
 import {Button} from "@/components/ui";
 
 import styles from "./ImageActionCard.module.css";
+import {FC, HTMLAttributes} from "react";
 
 interface ImageActionCardProps extends HTMLAttributes<HTMLDivElement> {
     imageSrc: string
