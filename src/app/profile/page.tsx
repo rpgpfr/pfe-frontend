@@ -1,21 +1,22 @@
+import {headers} from "next/headers";
+import {redirect} from "next/navigation";
 
 import {ProfileBanner, ProfileInfo} from "@/block";
 import {LastActivities} from "@/components";
-import {redirect} from "next/navigation";
-import {headers} from "next/headers";
+import {UserProfile} from "rpg-project";
 
 import styles from "./styles.module.css";
 
 const ProfilePage = async () => {
 
-    const profile = await getUserProfile();
+    const profile: UserProfile = await getUserProfile();
 
     return (
         <main>
             <ProfileBanner/>
             <div className={styles.dashboard}>
                 <div className={styles.column}>
-                    <ProfileInfo profile={profile} />
+                    <ProfileInfo profile={profile}/>
                 </div>
 
                 <div className={styles.column}>
@@ -26,7 +27,7 @@ const ProfilePage = async () => {
     );
 };
 
-const getUserProfile = async () => {
+const getUserProfile = async (): Promise<UserProfile> => {
     try {
         const options = {
             method: "GET",
@@ -41,7 +42,7 @@ const getUserProfile = async () => {
             redirect("/error");
         }
 
-        return await response.json();
+        return (await response.json()) satisfies UserProfile;
     } catch (error) {
         console.error(error);
 

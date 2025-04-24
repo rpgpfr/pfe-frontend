@@ -1,4 +1,4 @@
-declare module "api" {
+declare module "rpg-project" {
 
     interface UserProfile {
         username: string;
@@ -14,12 +14,20 @@ declare module "api" {
         resourceCount: number;
     }
 
+}
+
+declare module "rpg-project/campaign" {
+    interface InfoSection {
+        description: string,
+        type: string,
+        ambiance: string,
+    }
+
     interface Campaign {
         name: string,
         slug: string,
-        description?: string,
-        type?: string,
-        mood?: string,
+        infoSection?: InfoSection,
+        mainQuest: Quest,
         createdAt: Date,
     }
 }

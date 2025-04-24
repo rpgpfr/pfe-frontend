@@ -1,12 +1,13 @@
-'use client'
+"use client";
 
 import {FC, memo, ReactNode} from "react";
 
 
 interface TabItemProps {
-    label:string
+    label: string
     children: ReactNode;
 }
+
 const TabItem: FC<TabItemProps> = ({children}) => {
 
     return (

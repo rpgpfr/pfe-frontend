@@ -1,9 +1,10 @@
-"use client"
+"use client";
 
-import { useState } from "react";
-import { Drawer, SectionCampaign, TabItem, TabList } from "@/components";
+import {useState} from "react";
 
-const SectionMap = () => {
+import {CampaignSection, Drawer, TabItem, TabList} from "@/components";
+
+const MapsSection = () => {
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
 
@@ -18,9 +19,10 @@ const SectionMap = () => {
 
     return (
         <div>
-            <SectionCampaign title="Carte utilisée dans la campagne"  onClick={handleEdit}>
-                <img className={'h-[290px] w-full object-cover'} src={'/images/placeholder.png'} alt="Carte de la campagne"/>
-            </SectionCampaign>
+            <CampaignSection title="Carte utilisée dans la campagne" onClick={handleEdit}>
+                <img className={'h-[290px] w-full object-cover'} src={'/images/placeholder.png'}
+                     alt="Carte de la campagne"/>
+            </CampaignSection>
 
             <Drawer
                 isOpen={isDrawerOpen}
@@ -45,4 +47,4 @@ const SectionMap = () => {
     );
 };
 
-export default SectionMap;
+export default MapsSection;

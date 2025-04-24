@@ -2,7 +2,7 @@ import {type ClassValue, clsx} from "clsx"
 import {twMerge} from "tailwind-merge"
 import {Aladin} from "next/font/google";
 
-export function cn(...inputs: ClassValue[]) {
+export const cn = (...inputs: ClassValue[]) => {
     return twMerge(clsx(inputs))
 };
 

@@ -1,9 +1,11 @@
-'use client'
+"use client";
+
 import {useState} from "react";
-import {ImageActionCard, ImageContentCard, Drawer, SectionCampaign, TabList, TabItem} from "@/components";
+
+import {CampaignSection, Drawer, ImageActionCard, ImageContentCard, TabItem, TabList} from "@/components";
 
 
-const SectionCharacters = () => {
+const CharactersSection = () => {
 
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
@@ -16,7 +18,7 @@ const SectionCharacters = () => {
     };
 
     return (
-        <SectionCampaign title={"Personnages assignés"} onClick={handleEdit}>
+        <CampaignSection title={"Personnages assignés"} onClick={handleEdit}>
             <div className={"h-full overflow-y-scroll w-full flex flex-col gap-4"}>
                 <ImageContentCard imageSrc={'/images/placeholder.png'} content={'Test'} title={'Test'}/>
                 <ImageContentCard imageSrc={'/images/placeholder.png'} content={'Test'} title={'Test'}/>
@@ -46,8 +48,8 @@ const SectionCharacters = () => {
 
             </Drawer>
 
-        </SectionCampaign>
+        </CampaignSection>
     )
 }
 
-export default SectionCharacters;
+export default CharactersSection;

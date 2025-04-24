@@ -2,10 +2,13 @@
 
 import {usePathname} from "next/navigation";
 import Link from 'next/link';
-import {aladin} from "@/lib/utils";
-import styles from './Header.module.css';
-import {Button, DropDownProfil} from '@/components';
 import {useSession} from "next-auth/react";
+
+import {aladin} from "@/lib/utils";
+import {DropDownProfil} from '@/components';
+import {Button} from "@/components/ui";
+
+import styles from './Header.module.css';
 
 const Header = () => {
 
@@ -18,7 +21,7 @@ const Header = () => {
                 !(pathname.includes("/login") || pathname.includes("/signup")) &&
                 <header className={styles.header}>
 
-                    <Link href="/" className={`${styles.title} ${aladin.className}`}>
+                    <Link href="/public" className={`${styles.title} ${aladin.className}`}>
                         Project RPG
                     </Link>
 

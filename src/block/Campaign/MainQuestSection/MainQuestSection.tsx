@@ -1,12 +1,11 @@
 "use client";
 
-import { ChangeEvent, FormEvent, useState } from "react";
-import { Button, Drawer, FormInput, LabelContent, SectionCampaign } from "@/components";
-import {questSchema} from "@/lib/schemas"
+import {ChangeEvent, FormEvent, useState} from "react";
 
+import {CampaignSection, Drawer, LabelContent} from "@/components";
+import {Button, FormInput} from "@/components/ui";
 
-
-const SectionQuest = () => {
+const MainQuestSection = () => {
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
     const [formData, setFormData] = useState({
         titre: "",
@@ -16,9 +15,9 @@ const SectionQuest = () => {
     const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
     const fields = [
-        { id: 'titre', label: 'Titre', content: 'Contenu' },
-        { id: 'description', label: 'Description du monde', content: 'Contenu', className: 'flex flex-col !items-start' },
-        { id: 'objectifs', label: 'Objectifs', content: 'Contenu', className: 'flex flex-col !items-start' },
+        {id: 'titre', label: 'Titre', content: 'Contenu'},
+        {id: 'description', label: 'Description du monde', content: 'Contenu', className: 'flex flex-col !items-start'},
+        {id: 'objectifs', label: 'Objectifs', content: 'Contenu', className: 'flex flex-col !items-start'},
     ];
 
     const handleEdit = () => {
@@ -30,15 +29,6 @@ const SectionQuest = () => {
     };
 
     const validateForm = () => {
-        const validation = questSchema.safeParse(formData);
-        if (!validation.success) {
-            const fieldErrors: { [key: string]: string } = {};
-            validation.error.issues.forEach((issue) => {
-                fieldErrors[issue.path[0]] = issue.message;
-            });
-            setErrors(fieldErrors);
-            return false;
-        }
         setErrors({});
         return true;
     };
@@ -61,7 +51,7 @@ const SectionQuest = () => {
 
     return (
         <div>
-            <SectionCampaign title="Quête principale de la campagne" onClick={handleEdit}>
+            <CampaignSection title="Quête principale de la campagne" onClick={handleEdit}>
                 {fields.map((field) => (
                     <LabelContent
                         key={field.id}
@@ -70,7 +60,7 @@ const SectionQuest = () => {
                         className={field.className}
                     />
                 ))}
-            </SectionCampaign>
+            </CampaignSection>
 
             <Drawer
                 isOpen={isDrawerOpen}
@@ -97,4 +87,4 @@ const SectionQuest = () => {
     );
 };
 
-export default SectionQuest;
+export default MainQuestSection;

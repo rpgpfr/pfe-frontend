@@ -1,13 +1,14 @@
-"use client"
+"use client";
 
-import type React from "react"
-import Image from "next/image"
-import { Eye, Plus } from "lucide-react"
-import { cn } from "@/lib/utils"
-import styles from "./ImageActionCard.module.css"
-import {Button} from "@/components";
+import Image from "next/image";
+import {Eye, Plus} from "lucide-react";
 
-interface ImageActionCardProps extends React.HTMLAttributes<HTMLDivElement> {
+import {cn} from "@/lib/utils";
+import {Button} from "@/components/ui";
+
+import styles from "./ImageActionCard.module.css";
+
+interface ImageActionCardProps extends HTMLAttributes<HTMLDivElement> {
     imageSrc: string
     imageAlt?: string
     imageSize?: number
@@ -18,14 +19,14 @@ interface ImageActionCardProps extends React.HTMLAttributes<HTMLDivElement> {
     addButtonClassName?: string
 }
 
-const ImageActionCard: React.FC<ImageActionCardProps> = ({
-    imageSrc,
-    imageAlt = "Image",
-    imageSize = 80,
-    className,
-    imageClassName,
-    ...props
-}) => {
+const ImageActionCard: FC<ImageActionCardProps> = ({
+                                                       imageSrc,
+                                                       imageAlt = "Image",
+                                                       imageSize = 80,
+                                                       className,
+                                                       imageClassName,
+                                                       ...props
+                                                   }) => {
     return (
         <div className={cn(styles.container, className)} {...props}>
             <div className={cn(styles.image, imageClassName)}>
@@ -39,10 +40,10 @@ const ImageActionCard: React.FC<ImageActionCardProps> = ({
             </div>
             <div className={styles.actions}>
                 <Button variant={'outline'} className={'p-[18px]'}>
-                    <Eye className="h-5 w-5 text-[#86ac87]" />
+                    <Eye className="h-5 w-5 text-[#86ac87]"/>
                 </Button>
                 <Button variant={'primary'} className={'p-[18px]'}>
-                    <Plus className="h-5 w-5" />
+                    <Plus className="h-5 w-5"/>
                 </Button>
             </div>
         </div>

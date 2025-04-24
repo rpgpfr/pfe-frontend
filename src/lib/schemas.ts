@@ -19,15 +19,3 @@ export const profileFormSchema = z.object({
     username: z.string({message: "Un nom d'utilisateur est invalide"}).min(4, {message: "Le nom d'utilisateur doit contenir au moins 4 caractères"}),
     email: z.string().email({message: "L'adresse email est invalide"})
 });
-
-export const infoSchema = z.object({
-    type: z.string().optional(),
-    ambiance: z.string().optional(),
-    description: z.string().optional(),
-})
-
-export const questSchema = z.object({
-        titre: z.string().optional(),
-        description: z.string().optional(),
-        objectifs: z.string().optional()
-    });

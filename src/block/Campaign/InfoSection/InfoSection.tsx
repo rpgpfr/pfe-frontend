@@ -1,22 +1,23 @@
-"use client"
+"use client";
 
 import {ChangeEvent, FormEvent, useState} from "react";
-import {Drawer, Button, FormInput, LabelContent, SectionCampaign} from "@/components/";
-import {infoSchema} from "@/lib/schemas"
 
-const SectionInfos = () => {
+import {CampaignSection, Drawer, LabelContent} from "@/components";
+import {Button, FormInput} from "@/components/ui";
+
+const InfoSection = () => {
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
     const [formData, setFormData] = useState({
         type: "",
         ambiance: "",
         description: "",
-    })
+    });
 
     const fields = [
-        { id: 'type', label: 'Type de monde', content: 'Contenu' },
-        { id: 'ambiance', label: 'Ambiance', content: 'Ambiance du monde' },
-        { id: 'description', label: 'Description du monde', content: 'Contenu', className: 'flex flex-col !items-start' }
+        {id: 'type', label: 'Type de monde', content: 'Contenu'},
+        {id: 'ambiance', label: 'Ambiance', content: 'Ambiance du monde'},
+        {id: 'description', label: 'Description du monde', content: 'Contenu', className: 'flex flex-col !items-start'}
     ];
 
     const handleEdit = () => {
@@ -26,17 +27,10 @@ const SectionInfos = () => {
     const handleClose = () => {
         setIsDrawerOpen(false);
     };
-
-    const validateForm = () => {
-        const validation = infoSchema.safeParse(formData);
-        return validation.success;
-    };
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
 
-        if (validateForm()) {
-            handleClose();
-        }
+        handleClose();
     };
 
     const handleFormChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -49,7 +43,7 @@ const SectionInfos = () => {
 
     return (
         <div>
-            <SectionCampaign title="Informations générales" onClick={handleEdit}>
+            <CampaignSection title="Informations générales" onClick={handleEdit}>
                 {fields.map((field) => (
                     <LabelContent
                         key={field.id}
@@ -58,7 +52,7 @@ const SectionInfos = () => {
                         className={field.className}
                     />
                 ))}
-            </SectionCampaign>
+            </CampaignSection>
 
             <Drawer
                 isOpen={isDrawerOpen}
@@ -83,4 +77,4 @@ const SectionInfos = () => {
     );
 };
 
-export default SectionInfos;
+export default InfoSection;

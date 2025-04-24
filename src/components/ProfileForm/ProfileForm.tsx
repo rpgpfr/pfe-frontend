@@ -2,13 +2,14 @@
 
 import {ChangeEvent, FormEvent, useState} from "react";
 import {Pen} from "lucide-react";
-import styles from "./ProfileForm.module.css";
-import {aladin} from "@/lib/utils";
-import {FormInput} from "../ui";
-import {UserProfile} from "api";
 import {useRouter} from "next/navigation";
+
+import {aladin} from "@/lib/utils";
+import {UserProfile} from "rpg-project";
 import {profileFormSchema} from "@/lib/schemas";
-import {Button} from "@/components";
+import {Button, FormInput} from "@/components/ui";
+
+import styles from "./ProfileForm.module.css";
 
 interface ProfileFormProps {
     profile: UserProfile

@@ -24,11 +24,11 @@ export default function RootLayout({children,}: { children: ReactNode }) {
         <html lang="fr">
         <SessionProvider>
             <body className={`${sourceSans.className}`}>
-                <Header/>
-                <GSAPWrapper>
-                    {children}
-                </GSAPWrapper>
-                <Footer/>
+            <Header/>
+            <GSAPWrapper>
+                {children}
+            </GSAPWrapper>
+            <Footer/>
             </body>
         </SessionProvider>
         </html>

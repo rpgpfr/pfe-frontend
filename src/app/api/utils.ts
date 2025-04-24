@@ -1,6 +1,6 @@
 import {NextResponse} from "next/server";
 
-export const fetchUrl = async (url: string, method: string, isDataReturned: boolean, body?: BodyInit, token?: string) => {
+export const fetchUrl = async (url: string, method: string, isDataReturned: boolean, body?: BodyInit, token?: string): Promise<Response> => {
     try {
         const options: RequestInit = buildRequestOptions(method, token, body);
 

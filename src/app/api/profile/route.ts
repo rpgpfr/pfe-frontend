@@ -2,7 +2,7 @@ import {auth} from "@/lib/auth";
 import {NextRequest} from "next/server";
 import {fetchUrl} from "@/app/api/utils";
 
-export const GET = async (request: NextRequest) => {
+export const GET = async (request: NextRequest): Promise<Response> => {
     const session = await auth();
 
     if (!session?.token) {
@@ -18,7 +18,7 @@ export const GET = async (request: NextRequest) => {
     );
 };
 
-export const PATCH = async (request: NextRequest) => {
+export const PATCH = async (request: NextRequest): Promise<Response> => {
     const session = await auth();
 
     if (!session?.token) {

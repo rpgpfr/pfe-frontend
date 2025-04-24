@@ -1,9 +1,10 @@
+import {headers} from "next/headers";
+import {redirect} from "next/navigation";
+
 import {Section} from "@/components/ui";
 import {Campaigns} from "@/block";
 import {aladin} from "@/lib/utils";
-import {headers} from "next/headers";
-import {redirect} from "next/navigation";
-import {Campaign} from "api";
+import {Campaign} from "rpg-project/campaign";
 
 const CampaignsPage = async () => {
 
@@ -17,7 +18,7 @@ const CampaignsPage = async () => {
                 </h1>
             </Section>
 
-            <Campaigns campaigns={campaigns} />
+            <Campaigns campaigns={campaigns}/>
         </main>
     );
 
@@ -38,7 +39,7 @@ const getCampaigns = async (): Promise<Campaign[]> => {
             redirect("/error");
         }
 
-        return await response.json();
+        return (await response.json()) satisfies Campaign[];
     } catch (error) {
         console.error(error);
 

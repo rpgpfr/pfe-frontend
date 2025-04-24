@@ -6,7 +6,7 @@ import {redirect, useRouter} from "next/navigation";
 
 import {Button} from "@/components/ui";
 import {cn} from "@/lib/utils";
-import {Campaign} from "api";
+import {Campaign} from "rpg-project/campaign";
 
 import styles from "./CampaignCard.module.css";
 
@@ -73,7 +73,7 @@ export const CampaignCard = ({campaign, className, showDate = false}: CampaignCa
                 </Button>
 
                 <Button href={`/campaigns/${campaign.slug}`} variant="primary" className="aspect-square p-2">
-                    <ArrowRight  height={24} width={24}/>
+                    <ArrowRight height={24} width={24}/>
                 </Button>
             </div>
         </div>

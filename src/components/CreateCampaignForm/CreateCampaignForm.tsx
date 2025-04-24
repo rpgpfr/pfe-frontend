@@ -1,8 +1,9 @@
 "use client";
 
-import {Button, FormInput} from "@/components";
 import {FormEvent, useState} from "react";
 import {useRouter} from "next/navigation";
+
+import {Button, FormInput} from "@/components/ui";
 
 import styles from "./CreateCampaignForm.module.css";
 

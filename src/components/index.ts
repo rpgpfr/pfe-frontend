@@ -6,11 +6,9 @@ import LoginForm from "@/components/LoginForm/LoginForm";
 import GSAPWrapper from "@/components/GSAPWrapper/GSAPWrapper";
 import CircularProgress from "@/components/CircularProgress/CircularProgress";
 import Sidebar from "@/components/Sidebar/Sidebar";
-import Button from "@/components/ui/Button/Button";
-import FormInput from "@/components/ui/FormInput/FormInput";
 import Drawer from "@/components/Drawer/Drawer";
 import LabelContent from "@/components/LabelContent/LabelContent";
-import SectionCampaign from "@/components/SectionCampaign/SectionCampaign";
+import CampaignSection from "@/components/CampaignSection/CampaignSection";
 import ImageActionCard from "@/components/ImageActionCard/ImageActionCard";
 import ImageContentCard from "@/components/ImageContentCard/ImageContentCard";
 import TabList from "@/components/Tabs/TabList/TabList";
@@ -19,5 +17,27 @@ import ProfileForm from "@/components/ProfileForm/ProfileForm";
 import LastActivities from "@/components/LastActivities/LastActivities";
 import DropDownProfil from "@/components/DropDownProfil/DropDownProfil";
 import CreateCampaignForm from "@/components/CreateCampaignForm/CreateCampaignForm";
+import HomeCard from "@/components/HomeCard/HomeCard";
 
-export {CampaignCard, Pagination, SearchBar, SignupForm, LoginForm, GSAPWrapper, CircularProgress, Sidebar, Button, FormInput, Drawer, LabelContent, SectionCampaign, ImageActionCard, ImageContentCard, TabList, TabItem, ProfileForm, LastActivities, DropDownProfil, CreateCampaignForm};
+export {
+    HomeCard,
+    CampaignCard,
+    Pagination,
+    SearchBar,
+    SignupForm,
+    LoginForm,
+    GSAPWrapper,
+    CircularProgress,
+    Sidebar,
+    Drawer,
+    LabelContent,
+    CampaignSection,
+    ImageActionCard,
+    ImageContentCard,
+    TabList,
+    TabItem,
+    ProfileForm,
+    LastActivities,
+    DropDownProfil,
+    CreateCampaignForm
+};

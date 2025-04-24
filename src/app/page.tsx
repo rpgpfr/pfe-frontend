@@ -1,8 +1,4 @@
-import Hero from "@/block/Home/Hero/Hero";
-import Presentation from "@/block/Home/Presentation/Presentation";
-import CampaignDemo from "@/block/Home/CampaignDemo/CampaignDemo";
-import HomeWorldDemo from "@/block/Home/WorldDemo/WorldDemo";
-import UsecaseDemo from "@/block/Home/UsecaseDemo/UsecaseDemo";
+import {CampaignDemo, Hero, Presentation, UsecaseDemo, WorldDemo} from "@/block/Home";
 
 const Home = () => {
 
@@ -11,7 +7,7 @@ const Home = () => {
             <Hero/>
             <Presentation/>
             <CampaignDemo/>
-            <HomeWorldDemo/>
+            <WorldDemo/>
             <UsecaseDemo/>
         </main>
     );

@@ -1,8 +1,10 @@
-import styles from './DropDownProfil.module.css';
-import Image from "next/image";
-import UserIcon from "/public/images/icons/user.svg";
-import Link from "next/link";
 import {signOut} from "next-auth/react";
+import Link from "next/link";
+import Image from "next/image";
+
+import UserIcon from "/public/images/icons/user.svg";
+
+import styles from './DropDownProfil.module.css';
 
 const DropDownProfil = () => {
     return (
