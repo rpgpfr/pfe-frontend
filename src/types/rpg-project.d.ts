@@ -17,16 +17,16 @@ declare module "rpg-project" {
 }
 
 declare module "rpg-project/campaign" {
-    interface InfoSection {
+    interface Info {
         description: string,
         type: string,
-        ambiance: string,
+        mood: string,
     }
 
     interface Campaign {
         name: string,
         slug: string,
-        infoSection?: InfoSection,
+        info?: Info,
         mainQuest: Quest,
         createdAt: Date,
     }

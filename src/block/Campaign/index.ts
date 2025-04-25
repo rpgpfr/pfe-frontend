@@ -1,11 +1,11 @@
-import CharactersSection from "@/block/Campaign/CharactersSection/CharactersSection";
-import InfoSection from "@/block/Campaign/InfoSection/InfoSection";
-import MapsSection from "@/block/Campaign/MapsSection/MapsSection";
-import MainQuestSection from "@/block/Campaign/MainQuestSection/MainQuestSection";
+import CharactersCard from "@/block/Campaign/CharactersCard/CharactersCard";
+import InfoCard from "@/block/Campaign/InfoCard/InfoCard";
+import MapsCard from "@/block/Campaign/MapsCard/MapsCard";
+import MainQuestCard from "@/block/Campaign/MainQuestCard/MainQuestCard";
 
 export {
-    CharactersSection,
-    InfoSection,
-    MapsSection,
-    MainQuestSection
+    CharactersCard,
+    InfoCard,
+    MapsCard,
+    MainQuestCard
 };

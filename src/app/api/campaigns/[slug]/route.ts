@@ -20,6 +20,26 @@ export const GET = async (request: NextRequest, {params}: { params: Promise<{ sl
     );
 };
 
+export const PATCH = async (request: NextRequest, {params}: {
+    params: Promise<{ slug: string }>
+}): Promise<Response> => {
+    const session = await auth();
+
+    if (!session?.token) {
+        return Response.redirect(new URL("/", request.url));
+    }
+
+    const {slug} = await params;
+
+    return await fetchUrl(
+        `${process.env.SPRING_API_URL}/campaigns/${slug}`,
+        "PATCH",
+        false,
+        await request.json(),
+        session.token
+    );
+}
+
 export const DELETE = async (request: NextRequest, {params}: {
     params: Promise<{ slug: string }>
 }): Promise<Response> => {

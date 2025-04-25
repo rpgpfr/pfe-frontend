@@ -4,7 +4,7 @@ import {redirect} from "next/navigation";
 
 import {aladin} from "@/lib/utils";
 import {CircularProgress} from "@/components";
-import {CharactersSection, InfoSection, MainQuestSection, MapsSection} from "@/block/Campaign";
+import {CharactersCard, InfoCard, MainQuestCard, MapsCard} from "@/block/Campaign";
 import {Campaign} from "rpg-project/campaign";
 
 import styles from './campaign.module.css'
@@ -21,7 +21,7 @@ const CampaignPage = async ({params}: { params: Promise<{ slug: string }> }) => 
                        alt="Campaign"/>
             </div>
             <div className={styles.header}>
-                <h1 className={`${aladin.className} text-h2`}>Nom de campagne</h1>
+                <h1 className={`${aladin.className} text-h2`}>{campaign.name}</h1>
                 <div className={styles.progress}>
                     <span><strong>encore 1 étape</strong> pour que la campagne soit jouable !</span>
                     <CircularProgress value={2} maxValue={6}/>
@@ -29,10 +29,10 @@ const CampaignPage = async ({params}: { params: Promise<{ slug: string }> }) => 
 
             </div>
             <div className={styles.infos}>
-                <InfoSection/>
-                <MainQuestSection/>
-                <MapsSection/>
-                <CharactersSection/>
+                <InfoCard info={campaign.info!} slug={slug}/>
+                <MainQuestCard/>
+                <MapsCard/>
+                <CharactersCard/>
             </div>
         </main>
 

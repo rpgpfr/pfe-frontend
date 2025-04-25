@@ -5,7 +5,7 @@ import {ChangeEvent, FormEvent, useState} from "react";
 import {CampaignSection, Drawer, LabelContent} from "@/components";
 import {Button, FormInput} from "@/components/ui";
 
-const MainQuestSection = () => {
+const MainQuestCard = () => {
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
     const [formData, setFormData] = useState({
         titre: "",
@@ -87,4 +87,4 @@ const MainQuestSection = () => {
     );
 };
 
-export default MainQuestSection;
+export default MainQuestCard;

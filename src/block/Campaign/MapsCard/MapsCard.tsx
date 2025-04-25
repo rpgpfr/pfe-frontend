@@ -4,7 +4,7 @@ import {useState} from "react";
 
 import {CampaignSection, Drawer, TabItem, TabList} from "@/components";
 
-const MapsSection = () => {
+const MapsCard = () => {
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
 
@@ -47,4 +47,4 @@ const MapsSection = () => {
     );
 };
 
-export default MapsSection;
+export default MapsCard;

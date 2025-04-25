@@ -118,7 +118,7 @@ const Campaigns = ({campaigns}: CampaignsProps) => {
                 }
 
                 <Drawer isOpen={isDrawerOpen} onClose={handleCloseDrawer} title="Créer une nouvelle campagne">
-                    <CreateCampaignForm handleCancel={handleCloseDrawer}/>
+                    <CreateCampaignForm handleClose={handleCloseDrawer}/>
                 </Drawer>
             </section>
 

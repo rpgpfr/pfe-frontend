@@ -18,6 +18,7 @@ import LastActivities from "@/components/LastActivities/LastActivities";
 import DropDownProfil from "@/components/DropDownProfil/DropDownProfil";
 import CreateCampaignForm from "@/components/CreateCampaignForm/CreateCampaignForm";
 import HomeCard from "@/components/HomeCard/HomeCard";
+import CampaignInfoForm from "@/components/CampaignInfoForm/CampaignInfoForm";
 
 export {
     HomeCard,
@@ -39,5 +40,6 @@ export {
     ProfileForm,
     LastActivities,
     DropDownProfil,
-    CreateCampaignForm
+    CreateCampaignForm,
+    CampaignInfoForm
 };

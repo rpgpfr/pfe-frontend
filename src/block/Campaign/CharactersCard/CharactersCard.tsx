@@ -5,7 +5,7 @@ import {useState} from "react";
 import {CampaignSection, Drawer, ImageActionCard, ImageContentCard, TabItem, TabList} from "@/components";
 
 
-const CharactersSection = () => {
+const CharactersCard = () => {
 
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
@@ -52,4 +52,4 @@ const CharactersSection = () => {
     )
 }
 
-export default CharactersSection;
+export default CharactersCard;

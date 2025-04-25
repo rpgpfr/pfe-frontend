@@ -8,10 +8,10 @@ import {Button, FormInput} from "@/components/ui";
 import styles from "./CreateCampaignForm.module.css";
 
 type CreateCampaignFormProps = {
-    handleCancel: () => void;
+    handleClose: () => void;
 }
 
-const CreateCampaignForm = ({handleCancel}: CreateCampaignFormProps) => {
+const CreateCampaignForm = ({handleClose}: CreateCampaignFormProps) => {
 
     const [campaignName, setCampaignName] = useState<string>("");
     const [submitError, setSubmitError] = useState<string>("");
@@ -36,7 +36,7 @@ const CreateCampaignForm = ({handleCancel}: CreateCampaignFormProps) => {
             const response = await fetch("/api/campaigns", options);
 
             if (response.ok) {
-                handleCancel();
+                handleClose();
                 router.refresh();
             } else {
                 const errorMessage = (await response.json()).error;
@@ -68,7 +68,7 @@ const CreateCampaignForm = ({handleCancel}: CreateCampaignFormProps) => {
                 <Button
                     type="button"
                     variant="outline"
-                    onClick={handleCancel}
+                    onClick={handleClose}
                     className="px-4 py-2"
                 >
                     Annuler
