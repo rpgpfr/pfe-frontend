@@ -21,8 +21,8 @@ const LabelContent: FC<LabelContentProps> = ({
                                              }) => {
     return (
         <div className={cn(styles.container, className)} {...props}>
-            <span className={cn(styles.label, labelClassName)}>{label}</span>
-            <span className={cn(styles.content, contentClassName)}>{content}</span>
+            <p className={cn(styles.label, labelClassName)}>{label}</p>
+            <p className={cn(styles.content, contentClassName)}>{content}</p>
         </div>
     )
 }

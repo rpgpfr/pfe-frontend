@@ -23,6 +23,18 @@ declare module "rpg-project/campaign" {
         mood: string,
     }
 
+    interface Quest {
+        title: string,
+        type: string,
+        description?: string,
+        goals?: Goal[]
+    }
+
+    interface Goal {
+        name: string,
+        completed: boolean,
+    }
+
     interface Campaign {
         name: string,
         slug: string,
