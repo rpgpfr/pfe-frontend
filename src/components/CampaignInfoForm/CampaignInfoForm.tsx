@@ -55,7 +55,7 @@ const CampaignInfoForm: FC<CampaignInfoFormProps> = ({handleClose, info, slug}) 
         } catch (error) {
             console.error(error);
 
-            setSubmitError(error instanceof Error ? error.message : "Une erreur s'est produite lors de l'inscription");
+            setSubmitError(error instanceof Error ? error.message : "Une erreur s'est produite lors de la mise à jour des informations");
         }
     };
 

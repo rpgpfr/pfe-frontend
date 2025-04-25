@@ -13,23 +13,13 @@ interface InfoCardProps {
 const InfoCard: FC<InfoCardProps> = ({info, slug}) => {
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
-    const handleEdit = () => {
-        setIsDrawerOpen(true);
-    };
-
-    const handleClose = () => {
-        setIsDrawerOpen(false);
+    const toggleEdit = () => {
+        setIsDrawerOpen(!isDrawerOpen);
     };
 
     return (
         <div>
-            <CampaignSection title="Informations générales" onClick={handleEdit}>
-                <LabelContent
-                    id="description-content"
-                    label="Description"
-                    content={info.description || ""}
-                />
-
+            <CampaignSection title="Informations générales" onClick={toggleEdit}>
                 <LabelContent
                     id="type-content"
                     label="Type"
@@ -41,14 +31,22 @@ const InfoCard: FC<InfoCardProps> = ({info, slug}) => {
                     label="Ambiance"
                     content={info.mood || ""}
                 />
+
+                <LabelContent
+                    id="description-content"
+                    label="Description"
+                    content={info.description || ""}
+                    className="flex flex-col !items-start"
+                />
+
             </CampaignSection>
 
             <Drawer
                 isOpen={isDrawerOpen}
-                onClose={handleClose}
+                onClose={toggleEdit}
                 title="Informations générales"
             >
-                <CampaignInfoForm handleClose={handleClose} info={info} slug={slug}/>
+                <CampaignInfoForm handleClose={toggleEdit} info={info} slug={slug}/>
             </Drawer>
         </div>
     );

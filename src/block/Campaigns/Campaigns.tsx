@@ -73,8 +73,8 @@ const Campaigns = ({campaigns}: CampaignsProps) => {
         setCurrentCampaigns(current);
     }, [currentPage, filteredCampaigns]);
 
-    const handleCloseDrawer = () => {
-        setIsDrawerOpen(false);
+    const toggleDrawer = () => {
+        setIsDrawerOpen(!isDrawerOpen);
     }
 
     return (
@@ -117,8 +117,8 @@ const Campaigns = ({campaigns}: CampaignsProps) => {
                     <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={setCurrentPage}/>
                 }
 
-                <Drawer isOpen={isDrawerOpen} onClose={handleCloseDrawer} title="Créer une nouvelle campagne">
-                    <CreateCampaignForm handleClose={handleCloseDrawer}/>
+                <Drawer isOpen={isDrawerOpen} onClose={toggleDrawer} title="Créer une nouvelle campagne">
+                    <CreateCampaignForm handleClose={toggleDrawer}/>
                 </Drawer>
             </section>
 
