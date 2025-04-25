@@ -63,7 +63,7 @@ const AnonymousNav = () => {
                 Se connecter
             </Link>
 
-            <Button href="/register" variant="primary">S&apos;inscrire</Button>
+            <Button href="/signup" variant="primary">S&apos;inscrire</Button>
         </nav>
     );
 
