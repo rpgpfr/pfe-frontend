@@ -9,7 +9,7 @@
     }
 
     & > .input {
-        @apply w-full rounded border border-gray-300 px-3 py-2;
+        @apply w-full rounded border border-gray-300 px-3 py-2 resize-none;
 
         &:focus {
             @apply border-primary-green outline-none ring-1 ring-primary-green;

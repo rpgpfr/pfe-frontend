@@ -59,7 +59,7 @@ const CampaignInfoForm: FC<CampaignInfoFormProps> = ({handleClose, info, slug}) 
         }
     };
 
-    const handleFormChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const handleFormChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData({
             ...formData,
             [event.target.id]: event.target.value
@@ -68,14 +68,6 @@ const CampaignInfoForm: FC<CampaignInfoFormProps> = ({handleClose, info, slug}) 
 
     return (
         <form className={styles.campaignInfoForm} onSubmit={handleSubmit}>
-            <FormInput
-                id="description"
-                label="Description"
-                type="text"
-                value={formData.description}
-                onChange={handleFormChange}
-            />
-
             <FormInput
                 id="type"
                 label="Type"
@@ -89,6 +81,14 @@ const CampaignInfoForm: FC<CampaignInfoFormProps> = ({handleClose, info, slug}) 
                 label="Ambiance"
                 type="text"
                 value={formData.mood}
+                onChange={handleFormChange}
+            />
+
+            <FormInput
+                id="description"
+                label="Description"
+                type="textarea"
+                value={formData.description}
                 onChange={handleFormChange}
             />
 
