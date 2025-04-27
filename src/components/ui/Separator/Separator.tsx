@@ -9,7 +9,7 @@ interface SeparatorProps {
 
 const Separator: FC<SeparatorProps> = ({children}) => {
 
-    const separatorClassNames = clsx(styles.separator, children ? "h-fit": "h-px");
+    const separatorClassNames = clsx(styles.separator, children ? "h-fit" : "h-px");
 
     return (
         <div className={separatorClassNames}>

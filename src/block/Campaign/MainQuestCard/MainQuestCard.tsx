@@ -5,7 +5,6 @@ import {FC, useState} from "react";
 import {CampaignSection, Drawer, LabelContent, MainQuestForm} from "@/components";
 import {Quest} from "rpg-project/campaign";
 import {Separator} from "@/components/ui";
-import {clsx} from "clsx";
 
 interface MainQuestCardProps {
     quest: Quest;

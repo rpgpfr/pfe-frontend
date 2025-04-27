@@ -32,7 +32,8 @@ const GoalInput: FC<GoalInputProps> = ({goal, index, handleChange, handleDelete}
                     }
                 </div>
 
-                <Button variant="secondary" className="aspect-square flex justify-center items-center" onClick={() => handleDelete(goal)}>
+                <Button variant="secondary" className="aspect-square flex justify-center items-center"
+                        onClick={() => handleDelete(goal)}>
                     <Trash2 className="w-6 h-6"/>
                 </Button>
             </div>

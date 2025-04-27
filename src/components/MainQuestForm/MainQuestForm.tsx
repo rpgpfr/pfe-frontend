@@ -92,7 +92,7 @@ const MainQuestForm: FC<CampaignInfoFormProps> = ({handleClose, quest, slug}) =>
                 </Separator>
             }
 
-            <GoalInputs formData={formData} setFormData={setFormData} />
+            <GoalInputs formData={formData} setFormData={setFormData}/>
 
             <Separator/>
 
@@ -118,7 +118,7 @@ interface GoalInputsProps {
         description: string;
         goals: Goal[];
     };
-    setFormData:  Dispatch<SetStateAction<{
+    setFormData: Dispatch<SetStateAction<{
         title: string
         description: string
         goals: Goal[]
