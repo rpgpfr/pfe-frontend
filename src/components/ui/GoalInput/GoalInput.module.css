@@ -1,0 +1,32 @@
+.goalInput {
+    @apply w-full h-10 flex gap-2;
+
+    & > input[type="text"] {
+        @apply w-full h-full rounded border border-gray-300 px-3 py-2 resize-none;
+
+        &:focus {
+            @apply border-primary-green outline-none ring-1 ring-primary-green;
+        }
+    }
+
+    & > .buttonsContainer {
+        @apply h-full flex gap-2;
+
+        & > .customCheckboxContainer {
+            @apply h-full aspect-square relative border border-gray-300 rounded-default;
+
+            & > input {
+                @apply h-full w-full absolute opacity-0;
+
+                &:hover {
+                    @apply cursor-pointer;
+                }
+            }
+        }
+
+        & > .completed {
+            @apply bg-primary-green;
+        }
+    }
+
+}
