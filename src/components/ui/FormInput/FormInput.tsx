@@ -6,10 +6,10 @@ import {cn} from "@/lib/utils";
 
 import styles from "./FormInput.module.css";
 
-interface FormInputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "id" | "onChange" | "value"> {
+interface FormInputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "id" | "onChange" | "value" | "type"> {
     label: string;
     id: string;
-    onChange: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+    onChange: ((e: ChangeEvent<HTMLInputElement>) => void) | ((e: ChangeEvent<HTMLTextAreaElement>) => void);
     value: string;
     type: string;
     error?: string;
@@ -28,15 +28,17 @@ const FormInput: FC<FormInputProps> = ({label, id, onChange, value, error, class
                     <textarea
                         id={id}
                         className={styles.input}
-                        onChange={onChange}
+                        onChange={onChange as (e: ChangeEvent<HTMLTextAreaElement>) => void}
                         value={value}
+                        disabled={props.disabled}
+                        placeholder={props.placeholder}
                         rows={8}
                     /> :
                     <input
                         id={id}
                         type={type}
                         className={styles.input}
-                        onChange={onChange}
+                        onChange={onChange as (e: ChangeEvent<HTMLInputElement>) => void}
                         value={value}
                         {...props}
                     />

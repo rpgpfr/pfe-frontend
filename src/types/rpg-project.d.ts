@@ -27,7 +27,7 @@ declare module "rpg-project/campaign" {
         title: string,
         type: string,
         description?: string,
-        goals?: Goal[]
+        goals: Goal[]
     }
 
     interface Goal {
@@ -39,7 +39,7 @@ declare module "rpg-project/campaign" {
         name: string,
         slug: string,
         info?: Info,
-        mainQuest: Quest,
+        mainQuest?: Quest,
         createdAt: Date,
     }
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import {FormEvent, useState} from "react";
+import {ChangeEvent, FormEvent, useState} from "react";
 import {useRouter} from "next/navigation";
 
 import {Button, FormInput} from "@/components/ui";
@@ -53,10 +53,11 @@ const CreateCampaignForm = ({handleClose}: CreateCampaignFormProps) => {
     return (
         <form onSubmit={handleCreateCampaign} className={styles.createCampaignForm}>
             <FormInput
-                label="Nom de la campagne"
                 id="campaignName"
+                type="text"
+                label="Nom de la campagne"
                 value={campaignName}
-                onChange={(e) => setCampaignName(e.target.value)}
+                onChange={(e: ChangeEvent<HTMLInputElement>) => setCampaignName(e.target.value)}
             />
 
             <p className={styles.information}>Vous pourrez modifier les détails de votre campagne
@@ -65,16 +66,12 @@ const CreateCampaignForm = ({handleClose}: CreateCampaignFormProps) => {
             {submitError && <p className={styles.error}>{submitError}</p>}
 
             <div className={styles.buttonsContainer}>
-                <Button
-                    type="button"
-                    variant="outline"
-                    onClick={handleClose}
-                    className="px-4 py-2"
-                >
-                    Annuler
-                </Button>
                 <Button type="submit" variant="primary" className="px-4 py-2">
                     Créer la campagne
+                </Button>
+
+                <Button variant="outline" className="px-4 py-2" onClick={handleClose}>
+                    Annuler
                 </Button>
             </div>
         </form>

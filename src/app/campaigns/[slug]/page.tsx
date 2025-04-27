@@ -30,7 +30,7 @@ const CampaignPage = async ({params}: { params: Promise<{ slug: string }> }) => 
             </div>
             <div className={styles.infos}>
                 <InfoCard info={campaign.info!} slug={slug}/>
-                <MainQuestCard quest={campaign.mainQuest} slug={slug}/>
+                <MainQuestCard quest={campaign.mainQuest!} slug={slug}/>
                 <MapsCard/>
                 <CharactersCard/>
             </div>

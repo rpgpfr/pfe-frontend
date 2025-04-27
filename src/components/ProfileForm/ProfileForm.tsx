@@ -32,7 +32,7 @@ const ProfileForm = ({profile}: ProfileFormProps) => {
 
     const router = useRouter();
 
-    const handleFormChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const handleFormChange = (e: ChangeEvent<HTMLInputElement>) => {
         setFormData({
             ...formData,
             [e.target.id]: e.target.value,
@@ -122,16 +122,14 @@ const ProfileForm = ({profile}: ProfileFormProps) => {
 
                 <form onSubmit={handleSubmit}>
                     <fieldset>
-                        <label htmlFor="description" className={styles.formLabel}>
-                            Description
-                        </label>
-                        <textarea
+                        <FormInput
                             id="description"
+                            type="textarea"
+                            label={"Description"}
+                            className="min-h-[80px] resize-y"
                             value={formData.description}
                             onChange={handleFormChange}
-                            className={styles.formTextarea}
                             placeholder="Dites-en un peu plus sur vous !"
-                            rows={3}
                             disabled={!isEditing}
                         />
                     </fieldset>
@@ -139,6 +137,7 @@ const ProfileForm = ({profile}: ProfileFormProps) => {
                     <fieldset className={styles.formRow}>
                         <FormInput
                             id="lastName"
+                            type="text"
                             label="Nom"
                             className="flex-1"
                             value={formData.lastName}
@@ -149,6 +148,7 @@ const ProfileForm = ({profile}: ProfileFormProps) => {
 
                         <FormInput
                             id="firstName"
+                            type="text"
                             label="Prénom"
                             className="flex-1"
                             value={formData.firstName}
@@ -161,6 +161,7 @@ const ProfileForm = ({profile}: ProfileFormProps) => {
                     <fieldset className={styles.formRow}>
                         <FormInput
                             id="username"
+                            type="text"
                             label="Nom d'utilisateur"
                             className="flex-1"
                             value={formData.username}
@@ -170,8 +171,8 @@ const ProfileForm = ({profile}: ProfileFormProps) => {
                         />
                         <FormInput
                             id="email"
-                            label="Adresse e-mail"
                             type="email"
+                            label="Adresse e-mail"
                             className="flex-1"
                             value={formData.email}
                             onChange={handleFormChange}

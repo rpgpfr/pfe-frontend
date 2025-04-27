@@ -21,8 +21,8 @@ const CampaignSection = ({title, onClick, children}: Props) => {
                 {children}
             </div>
 
-            <Button variant="primary" className={`${styles.button} mt-auto`} onClick={onClick}>
-                <Pencil className={styles.icon}/>
+            <Button variant="primary" className="mt-auto" onClick={onClick}>
+                <Pencil/>
             </Button>
         </div>
     );

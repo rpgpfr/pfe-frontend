@@ -95,17 +95,12 @@ const CampaignInfoForm: FC<CampaignInfoFormProps> = ({handleClose, info, slug}) 
             {submitError && <p className={styles.error}>{submitError}</p>}
 
             <div className={styles.buttonsContainer}>
-                <Button
-                    type="button"
-                    variant="outline"
-                    onClick={handleClose}
-                    className="px-4 py-2"
-                >
-                    Annuler
-                </Button>
-
                 <Button variant="primary" type="submit" className="px-4 py-2">
                     Enregistrer les informations
+                </Button>
+
+                <Button variant="outline" className="px-4 py-2" onClick={handleClose}>
+                    Annuler
                 </Button>
             </div>
         </form>
