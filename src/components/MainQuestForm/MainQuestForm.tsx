@@ -1,10 +1,11 @@
 "use client";
 
-import {ChangeEvent, FC, FormEvent, useState} from "react";
+import {ChangeEvent, Dispatch, FC, FormEvent, SetStateAction, useState} from "react";
 import {useRouter} from "next/navigation";
+import {Plus} from "lucide-react";
 
-import {Button, FormInput} from "@/components/ui";
-import {Quest} from "rpg-project/campaign";
+import {Button, FormInput, GoalInput, Separator} from "@/components/ui";
+import {Goal, Quest} from "rpg-project/campaign";
 
 import styles from "./MainQuestForm.module.css";
 
@@ -19,6 +20,7 @@ const MainQuestForm: FC<CampaignInfoFormProps> = ({handleClose, quest, slug}) =>
     const [formData, setFormData] = useState({
         title: quest.title || "",
         description: quest.description || "",
+        goals: quest.goals
     });
     const [submitError, setSubmitError] = useState<string>("");
 
@@ -38,7 +40,7 @@ const MainQuestForm: FC<CampaignInfoFormProps> = ({handleClose, quest, slug}) =>
                     title: formData.title,
                     description: formData.description,
                     type: quest.type,
-                    goals: []
+                    goals: formData.goals
                 })
             };
 
@@ -84,23 +86,98 @@ const MainQuestForm: FC<CampaignInfoFormProps> = ({handleClose, quest, slug}) =>
                 onChange={handleFormChange}
             />
 
+            {
+                <Separator>
+                    <p>Objectifs</p>
+                </Separator>
+            }
+
+            <GoalInputs formData={formData} setFormData={setFormData} />
+
+            <Separator/>
+
             {submitError && <p className={styles.error}>{submitError}</p>}
 
             <div className={styles.buttonsContainer}>
-                <Button
-                    type="button"
-                    variant="outline"
-                    onClick={handleClose}
-                    className="px-4 py-2"
-                >
-                    Annuler
-                </Button>
-
                 <Button variant="primary" type="submit" className="px-4 py-2">
                     Enregistrer les informations
                 </Button>
+
+                <Button variant="outline" className="px-4 py-2" onClick={handleClose}>
+                    Annuler
+                </Button>
             </div>
         </form>
+    );
+
+};
+
+interface GoalInputsProps {
+    formData: {
+        title: string;
+        description: string;
+        goals: Goal[];
+    };
+    setFormData:  Dispatch<SetStateAction<{
+        title: string
+        description: string
+        goals: Goal[]
+    }>>
+}
+
+const GoalInputs: FC<GoalInputsProps> = ({formData, setFormData}) => {
+
+    const handleAdd = () => {
+        const newGoal = {
+            name: "",
+            completed: false
+        };
+
+        setFormData({
+            ...formData,
+            goals: [...formData.goals, newGoal]
+        });
+    }
+
+    const handleDelete = (goal: Goal) => {
+        const updatedGoals = formData.goals.filter(g => g !== goal);
+
+        setFormData({
+            ...formData,
+            goals: updatedGoals
+        });
+    };
+
+    const handleChange = (event: ChangeEvent<HTMLInputElement>, index: number) => {
+        const updatedGoals = [...formData.goals];
+
+        if (event.target.type === "text") {
+            updatedGoals[index].name = event.target.value;
+        } else {
+            updatedGoals[index].completed = event.target.checked;
+        }
+
+        setFormData({
+            ...formData,
+            goals: updatedGoals
+        });
+    };
+
+    return (
+        <>
+            {
+                formData.goals.map((goal, index) => {
+                    return (
+                        <GoalInput key={index} goal={goal} index={index} handleChange={handleChange}
+                                   handleDelete={handleDelete}/>
+                    )
+                })
+            }
+
+            <Button variant="primary" className="w-full flex justify-center py-2" onClick={handleAdd}>
+                <Plus/>
+            </Button>
+        </>
     );
 
 };

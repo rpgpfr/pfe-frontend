@@ -4,6 +4,8 @@ import {FC, useState} from "react";
 
 import {CampaignSection, Drawer, LabelContent, MainQuestForm} from "@/components";
 import {Quest} from "rpg-project/campaign";
+import {Separator} from "@/components/ui";
+import {clsx} from "clsx";
 
 interface MainQuestCardProps {
     quest: Quest;
@@ -33,6 +35,26 @@ const MainQuestCard: FC<MainQuestCardProps> = ({quest, slug}) => {
                     content={quest.description || ""}
                     className="flex flex-col !items-start"
                 />
+
+                <Separator>
+                    <p>Objectifs</p>
+                </Separator>
+
+                {
+                    quest.goals?.map((goal, index) => {
+                            const goalContent = goal.completed ? "Terminé" : "Non terminé";
+
+                            return (
+                                <LabelContent
+                                    key={`goal-${index}`}
+                                    id={`goal-${index}`}
+                                    label={goal.name}
+                                    content={goalContent}
+                                />
+                            );
+                        }
+                    )
+                }
             </CampaignSection>
 
             <Drawer
