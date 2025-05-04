@@ -1,7 +1,9 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import {useEffect, useState} from "react";
+
 import styles from "./CircularProgress.module.css";
+
 interface CircularProgressProps {
     value: number
     maxValue: number
@@ -37,10 +39,11 @@ export default function CircularProgress({
     const center = size / 2
 
     return (
-        <div className={styles.container} style={{ width: size, height: size }}>
+        <div className={styles.container} style={{width: size, height: size}}>
             <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
 
-                <circle className={styles.backgroundCircle} cx={center} cy={center} r={radius} strokeWidth={strokeWidth} />
+                <circle className={styles.backgroundCircle} cx={center} cy={center} r={radius}
+                        strokeWidth={strokeWidth}/>
 
                 <circle
                     className={styles.progressCircle}

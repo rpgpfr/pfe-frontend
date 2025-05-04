@@ -1,6 +1,5 @@
-
 import {aladin} from "@/lib/utils";
-import HomeCard from "@/components/HomeCard/HomeCard";
+import {HomeCard} from "@/components";
 
 import styles from './UsecaseDemo.module.css';
 

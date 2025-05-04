@@ -1,0 +1,11 @@
+.container {
+    @apply flex h-[450px] p-5 flex-col items-center gap-5 flex-[1_0_0] rounded-default border-[1px] border-lightGrey bg-white relative;
+
+    & > .fieldContainer {
+        @apply w-full overflow-y-auto flex flex-col gap-5;
+    }
+
+    & > .title {
+        @apply text-h3;
+    }
+}

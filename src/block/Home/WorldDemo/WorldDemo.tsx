@@ -1,10 +1,9 @@
 import {aladin} from "@/lib/utils";
+import {HomeCard} from "@/components";
 
 import styles from './WorldDemo.module.css';
 
-import HomeCard from "@/components/HomeCard/HomeCard";
-
-const HomeWorldDemo = () => {
+const WorldDemo = () => {
     return (
         <section className={styles.section}>
             <h1 className={`${styles.title} ${aladin.className}`}>Construisez votre monde</h1>
@@ -18,7 +17,8 @@ const HomeWorldDemo = () => {
 
                 <HomeCard imageSrc="/placeholder.svg" imageAlt="Carte du monde">
                     <p className={styles.content}>
-                        Personnalisez la carte du monde : Importez votre carte ou choisissez parmi une sélection par défaut et ajoutez des marqueurs !
+                        Personnalisez la carte du monde : Importez votre carte ou choisissez parmi une sélection par
+                        défaut et ajoutez des marqueurs !
                     </p>
                 </HomeCard>
             </div>
@@ -26,4 +26,4 @@ const HomeWorldDemo = () => {
     );
 };
 
-export default HomeWorldDemo;
+export default WorldDemo;

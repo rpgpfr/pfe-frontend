@@ -9,7 +9,6 @@ interface SectionProps {
     title?: string;
     className?: string;
     pattern?: "dice" | "sword" | "checkerboard" | "none";
-    fullHeight?: boolean;
 }
 
 const patternClasses = {
@@ -19,16 +18,16 @@ const patternClasses = {
     none: "",
 };
 
-const Section = ({children, title, className, pattern, fullHeight}: SectionProps) => {
+const Section = ({children, title, className, pattern}: SectionProps) => {
 
     const sectionClasses = cn(
         styles.section,
-        fullHeight && styles.fullHeight,
+        "py-12 px-4 relative",
         className
     );
 
     const backgroundClasses = cn(
-        styles.background,
+        "absolute inset-0 z-0",
         (pattern && pattern !== "none") && patternClasses[pattern]
     )
 

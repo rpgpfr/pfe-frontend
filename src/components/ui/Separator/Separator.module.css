@@ -1,0 +1,11 @@
+.separator {
+    @apply w-full relative;
+
+    & > span {
+        @apply bg-lightGrey h-[1px] absolute inset-0 top-1/2;
+    }
+
+    & > *:not(span) {
+        @apply bg-white w-fit px-2 mx-auto relative z-10;
+    }
+}

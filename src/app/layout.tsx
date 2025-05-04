@@ -1,4 +1,3 @@
-
 import {ReactNode} from "react";
 import type {Metadata} from "next";
 import {Source_Sans_3} from "next/font/google";
@@ -25,11 +24,11 @@ export default function RootLayout({children,}: { children: ReactNode }) {
         <html lang="fr">
         <SessionProvider>
             <body className={`${sourceSans.className}`}>
-                <GSAPWrapper>
-                    <Header/>
-                    {children}
-                    <Footer/>
-                </GSAPWrapper>
+            <Header/>
+            <GSAPWrapper>
+                {children}
+            </GSAPWrapper>
+            <Footer/>
             </body>
         </SessionProvider>
         </html>

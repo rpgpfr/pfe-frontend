@@ -1,6 +1,7 @@
 import {ProfileForm} from "@/components";
+import {UserProfile} from "rpg-project";
+
 import styles from "./ProfileInfo.module.css";
-import {UserProfile} from "api";
 
 interface ProfileProps {
     profile: UserProfile

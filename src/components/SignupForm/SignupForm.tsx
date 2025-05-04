@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-
 import {ChangeEvent, FormEvent, useState} from "react";
 import {signIn} from "next-auth/react";
 import {useRouter} from "next/navigation";
@@ -54,7 +53,7 @@ const SignupForm = () => {
                     body: JSON.stringify(signupBody)
                 };
 
-                const signupResponse = await fetch("/api/auth/signup", options);
+                const signupResponse = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/auth/signup`, options);
 
                 if (signupResponse.ok) {
                     const loginResponse = await signIn("credentials", {
@@ -76,6 +75,8 @@ const SignupForm = () => {
                 }
             } catch (error) {
                 console.error(error);
+
+                setSubmitError(error instanceof Error ? error.message : "Une erreur s'est produite lors de l'inscription");
             }
         }
     };

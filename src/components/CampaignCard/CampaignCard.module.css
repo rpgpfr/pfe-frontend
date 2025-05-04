@@ -1,6 +1,4 @@
 .card {
-    @apply border rounded-default p-2 bg-white w-full h-full;
-
     & > .title {
         @apply text-base mb-1 truncate;
     }
@@ -19,13 +17,5 @@
 
     .action {
         @apply flex justify-end gap-2;
-
-        & > .button {
-            @apply p-1.5;
-
-            & > .icon {
-                @apply w-4 aspect-square;
-            }
-        }
     }
 }

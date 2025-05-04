@@ -7,6 +7,6 @@
 }
 
 .content {
-    @apply text-black;
+    @apply text-black max-w-full break-words;
 }
 

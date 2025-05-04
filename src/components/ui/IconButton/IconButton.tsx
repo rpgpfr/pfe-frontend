@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import {LucideIcon} from "lucide-react";
 import {ButtonHTMLAttributes} from "react";

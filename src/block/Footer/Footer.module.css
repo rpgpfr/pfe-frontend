@@ -1,0 +1,7 @@
+.footer {
+    @apply text-white bg-darkGreen w-full py-14 px-10 flex items-center justify-between shadow-md;
+
+    & > .title {
+        @apply text-4xl;
+    }
+}

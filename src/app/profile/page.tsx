@@ -1,21 +1,22 @@
-
-import {ProfileBanner, ProfileInfo} from "@/block";
-import {LastActivities} from "@/components";
-import {redirect} from "next/navigation";
 import {headers} from "next/headers";
+import {redirect} from "next/navigation";
+
+import {ProfileBanner, ProfileInfo} from "@/block/Profile";
+import {LastActivities} from "@/components";
+import {UserProfile} from "rpg-project";
 
 import styles from "./styles.module.css";
 
 const ProfilePage = async () => {
 
-    const profile = await getUserProfile();
+    const profile: UserProfile = await getUserProfile();
 
     return (
         <main>
             <ProfileBanner/>
             <div className={styles.dashboard}>
                 <div className={styles.column}>
-                    <ProfileInfo profile={profile} />
+                    <ProfileInfo profile={profile}/>
                 </div>
 
                 <div className={styles.column}>
@@ -26,14 +27,14 @@ const ProfilePage = async () => {
     );
 };
 
-const getUserProfile = async () => {
+const getUserProfile = async (): Promise<UserProfile> => {
     try {
         const options = {
             method: "GET",
             ...await headers()
         };
 
-        const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/api/profile`, options);
+        const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/profile`, options);
 
         if (!response.ok) {
             console.error((await response.json()).error);
@@ -41,7 +42,7 @@ const getUserProfile = async () => {
             redirect("/error");
         }
 
-        return await response.json();
+        return (await response.json()) satisfies UserProfile;
     } catch (error) {
         console.error(error);
 

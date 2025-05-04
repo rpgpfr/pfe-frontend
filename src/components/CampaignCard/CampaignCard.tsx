@@ -1,50 +1,79 @@
+"use client";
+
 import Image from "next/image";
 import {ArrowRight, Trash2} from "lucide-react";
+import {redirect, useRouter} from "next/navigation";
 
 import {Button} from "@/components/ui";
 import {cn} from "@/lib/utils";
+import {Campaign} from "rpg-project/campaign";
 
 import styles from "./CampaignCard.module.css";
 
 interface CampaignCardProps {
-    id: number,
-    name: string;
-    image: string;
-    createdAt: Date;
-    className?: string;
-    showDate?: boolean;
+    campaign: Campaign
+    showDate?: boolean
+    className?: string
 }
 
-export const CampaignCard = ({id, name, image, createdAt, className, showDate = true}: CampaignCardProps) => {
+export const CampaignCard = ({campaign, className, showDate = false}: CampaignCardProps) => {
+
+    const router = useRouter();
 
     const formatDate = (date: Date) => {
-        return date.toLocaleDateString("fr-FR", {
+        return new Date(date).toLocaleDateString("fr-FR", {
             day: "numeric",
             month: "long",
             year: "numeric",
         });
     };
 
+    const handleDelete = async () => {
+        try {
+            const options: RequestInit = {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json"
+                }
+            };
+
+            const response = await fetch(`/api/campaigns/${campaign.slug}`, options);
+
+            if (response.ok) {
+                router.refresh();
+            } else {
+                redirect("/error");
+            }
+        } catch (error) {
+            console.error(error);
+
+            redirect("/error");
+        }
+    }
+
+    const cardClassNames = cn(styles.card, "border rounded-default p-2 bg-white w-full h-full", className);
+
     return (
-        <div id={`campaign-${id}`} className={cn(styles.card, className)}>
-            <h3 className={styles.title}>{name}</h3>
+        <div id={campaign.slug} className={cardClassNames}>
+            <h3 className={styles.title}>{campaign.name}</h3>
 
             {
                 showDate &&
-                <p className={styles.date}>Créée le {formatDate(createdAt)}</p>
+                <p className={styles.date}>Créée le {formatDate(campaign.createdAt)}</p>
             }
 
             <div className={styles.imageContainer}>
-                <Image src={image || "/placeholder.svg"} alt={name} fill/>
+                <Image src={"/placeholder.svg"} alt={campaign.name} fill/>
             </div>
 
             <div className={styles.action}>
-                <Button variant="secondary" className={styles.button}>
-                    <Trash2 className={styles.icon}/>
+                <Button variant="secondary" className="aspect-square p-2" onClick={handleDelete}>
+                    <Trash2 height={24} width={24}/>
                 </Button>
 
-                <Button variant="primary" className={styles.button}>
-                    <ArrowRight className={styles.icon}/>
+                <Button href={`/campaigns/${campaign.slug}`} variant="primary" className="aspect-square p-2">
+                    <ArrowRight height={24} width={24}/>
                 </Button>
             </div>
         </div>

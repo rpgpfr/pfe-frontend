@@ -1,0 +1,41 @@
+.container {
+    @apply relative w-fit py-2 z-20;
+
+    & > .icon:hover {
+        @apply cursor-pointer;
+    }
+
+    & > .dropdownContainer {
+        @apply invisible opacity-0 absolute top-full -right-1/2;
+        transition-property: transform, opacity, left;
+        transition-duration: .2s;
+        transition-timing-function: ease-out;
+
+        & > .dropdown {
+            @apply w-48 bg-white border-lightGrey border px-[20px] py-[16px] rounded-[4px];
+
+            & > ul {
+                @apply flex flex-col gap-1 text-[16px];
+
+                & > li {
+                    @apply text-black py-1 rounded-default;
+                    transition-property: background-color, padding-left;
+                    transition-duration: .1s;
+                    transition-timing-function: ease-out;
+
+                    &:hover {
+                        @apply bg-gray-100 pl-5 font-bold cursor-pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.container:hover {
+
+    & > .dropdownContainer {
+        @apply visible opacity-100 translate-x-1/4;
+    }
+
+}

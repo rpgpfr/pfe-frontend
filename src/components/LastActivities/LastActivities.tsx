@@ -1,6 +1,8 @@
-import { ChevronRight } from "lucide-react";
-import styles from "./LastActivities.module.css";
+import {ChevronRight} from "lucide-react";
+
 import {aladin} from "@/lib/utils";
+
+import styles from "./LastActivities.module.css";
 
 interface Activity {
     title: string;
@@ -11,16 +13,16 @@ interface LastActivitiesProps {
     activities: Activity[];
 }
 
-export default function LastActivities({ activities = [] }: LastActivitiesProps) {
+export default function LastActivities({activities = []}: LastActivitiesProps) {
     const showedActivities: Activity[] =
         activities.length > 0
             ? activities
             : [
-                  { title: "Intitulé de l'activité", date: "22/07/2000" },
-                  { title: "Intitulé de l'activité", date: "22/07/2000" },
-                  { title: "Intitulé de l'activité", date: "22/07/2000" },
-                  { title: "Intitulé de l'activité", date: "22/07/2000" },
-              ];
+                {title: "Intitulé de l'activité", date: "22/07/2000"},
+                {title: "Intitulé de l'activité", date: "22/07/2000"},
+                {title: "Intitulé de l'activité", date: "22/07/2000"},
+                {title: "Intitulé de l'activité", date: "22/07/2000"},
+            ];
 
     return (
         <div className={styles.activitiesContainer}>
@@ -34,7 +36,7 @@ export default function LastActivities({ activities = [] }: LastActivitiesProps)
                         </div>
                         <div className={styles.activityMeta}>
                             <span className={styles.activityDate}>{activity.date}</span>
-                            <ChevronRight className={styles.activityIcon} size={18} />
+                            <ChevronRight className={styles.activityIcon} size={18}/>
                         </div>
                     </li>
                 ))}

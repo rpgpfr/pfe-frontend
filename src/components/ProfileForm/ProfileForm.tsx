@@ -2,13 +2,14 @@
 
 import {ChangeEvent, FormEvent, useState} from "react";
 import {Pen} from "lucide-react";
-import styles from "./ProfileForm.module.css";
-import {aladin} from "@/lib/utils";
-import {FormInput} from "../ui";
-import {UserProfile} from "api";
 import {useRouter} from "next/navigation";
+
+import {aladin} from "@/lib/utils";
+import {UserProfile} from "rpg-project";
 import {profileFormSchema} from "@/lib/schemas";
-import {Button} from "@/components";
+import {Button, FormInput} from "@/components/ui";
+
+import styles from "./ProfileForm.module.css";
 
 interface ProfileFormProps {
     profile: UserProfile
@@ -31,7 +32,7 @@ const ProfileForm = ({profile}: ProfileFormProps) => {
 
     const router = useRouter();
 
-    const handleFormChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const handleFormChange = (e: ChangeEvent<HTMLInputElement>) => {
         setFormData({
             ...formData,
             [e.target.id]: e.target.value,
@@ -69,8 +70,8 @@ const ProfileForm = ({profile}: ProfileFormProps) => {
                     body: JSON.stringify(formData),
                 };
 
-                const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/api/profile`, options);
-                console.log(response)
+                const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/profile`, options);
+
                 if (response.ok) {
                     setIsEditing(false);
                     router.refresh();
@@ -90,7 +91,7 @@ const ProfileForm = ({profile}: ProfileFormProps) => {
         const newErrors: Map<string, string> = new Map<string, string>();
 
         const validation = profileFormSchema.safeParse(formData);
-        console.log(validation);
+
         if (!validation.success) {
             validation.error.issues.forEach(issue => {
                 newErrors.set(issue.path[0] as string, issue.message);
@@ -121,16 +122,14 @@ const ProfileForm = ({profile}: ProfileFormProps) => {
 
                 <form onSubmit={handleSubmit}>
                     <fieldset>
-                        <label htmlFor="description" className={styles.formLabel}>
-                            Description
-                        </label>
-                        <textarea
+                        <FormInput
                             id="description"
+                            type="textarea"
+                            label={"Description"}
+                            className="min-h-[80px] resize-y"
                             value={formData.description}
                             onChange={handleFormChange}
-                            className={styles.formTextarea}
                             placeholder="Dites-en un peu plus sur vous !"
-                            rows={3}
                             disabled={!isEditing}
                         />
                     </fieldset>
@@ -138,6 +137,7 @@ const ProfileForm = ({profile}: ProfileFormProps) => {
                     <fieldset className={styles.formRow}>
                         <FormInput
                             id="lastName"
+                            type="text"
                             label="Nom"
                             className="flex-1"
                             value={formData.lastName}
@@ -148,6 +148,7 @@ const ProfileForm = ({profile}: ProfileFormProps) => {
 
                         <FormInput
                             id="firstName"
+                            type="text"
                             label="Prénom"
                             className="flex-1"
                             value={formData.firstName}
@@ -160,6 +161,7 @@ const ProfileForm = ({profile}: ProfileFormProps) => {
                     <fieldset className={styles.formRow}>
                         <FormInput
                             id="username"
+                            type="text"
                             label="Nom d'utilisateur"
                             className="flex-1"
                             value={formData.username}
@@ -169,8 +171,8 @@ const ProfileForm = ({profile}: ProfileFormProps) => {
                         />
                         <FormInput
                             id="email"
-                            label="Adresse e-mail"
                             type="email"
+                            label="Adresse e-mail"
                             className="flex-1"
                             value={formData.email}
                             onChange={handleFormChange}

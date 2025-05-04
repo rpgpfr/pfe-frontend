@@ -1,0 +1,11 @@
+.campaignInfoForm {
+    @apply space-y-6;
+
+    & > .error {
+        @apply text-sm w-full text-center text-red-600;
+    }
+
+    & > .buttonsContainer {
+        @apply flex flex-col justify-end gap-4 mt-8;
+    }
+}
