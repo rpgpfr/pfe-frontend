@@ -34,7 +34,7 @@ const getUserProfile = async (): Promise<UserProfile> => {
             ...await headers()
         };
 
-        const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/api/profile`, options);
+        const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/profile`, options);
 
         if (!response.ok) {
             console.error((await response.json()).error);

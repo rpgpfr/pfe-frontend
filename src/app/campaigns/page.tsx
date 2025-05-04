@@ -31,7 +31,7 @@ const getCampaigns = async (): Promise<Campaign[]> => {
             ...await headers()
         };
 
-        const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/api/campaigns`, options);
+        const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/campaigns`, options);
 
         if (!response.ok) {
             console.error((await response.json()).error);

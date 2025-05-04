@@ -33,7 +33,7 @@ const CreateCampaignForm = ({handleClose}: CreateCampaignFormProps) => {
                 })
             };
 
-            const response = await fetch("/api/campaigns", options);
+            const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/campaigns`, options);
 
             if (response.ok) {
                 handleClose();

@@ -53,7 +53,7 @@ const SignupForm = () => {
                     body: JSON.stringify(signupBody)
                 };
 
-                const signupResponse = await fetch("/api/auth/signup", options);
+                const signupResponse = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/auth/signup`, options);
 
                 if (signupResponse.ok) {
                     const loginResponse = await signIn("credentials", {

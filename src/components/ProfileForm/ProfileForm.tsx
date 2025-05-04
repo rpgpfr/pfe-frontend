@@ -70,7 +70,7 @@ const ProfileForm = ({profile}: ProfileFormProps) => {
                     body: JSON.stringify(formData),
                 };
 
-                const response = await fetch("/api/profile", options);
+                const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/profile`, options);
 
                 if (response.ok) {
                     setIsEditing(false);
