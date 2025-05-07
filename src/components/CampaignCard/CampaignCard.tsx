@@ -38,7 +38,7 @@ export const CampaignCard = ({campaign, className, showDate = false}: CampaignCa
                 }
             };
 
-            const response = await fetch(`/api/campaigns/${campaign.slug}`, options);
+            const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/campaigns/${campaign.slug}`, options);
 
             if (response.ok) {
                 router.refresh();

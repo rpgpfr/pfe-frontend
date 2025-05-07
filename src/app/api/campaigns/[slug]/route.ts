@@ -11,13 +11,17 @@ export const GET = async (request: NextRequest, {params}: { params: Promise<{ sl
 
     const {slug} = await params;
 
-    return await fetchUrl(
+    const response = await fetchUrl(
         `${process.env.SPRING_API_URL}/campaigns/${slug}`,
         "GET",
         true,
         undefined,
         session.token
     );
+
+    console.log("aaaaaa", response);
+
+    return response;
 };
 
 export const PATCH = async (request: NextRequest, {params}: {
