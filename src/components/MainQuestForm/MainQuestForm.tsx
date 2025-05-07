@@ -44,7 +44,7 @@ const MainQuestForm: FC<CampaignInfoFormProps> = ({handleClose, quest, slug}) =>
                 })
             };
 
-            const response = await fetch(`/api/campaigns/${slug}/mainQuest`, options);
+            const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/campaigns/${slug}/mainQuest`, options);
 
             if (response.ok) {
                 handleClose();

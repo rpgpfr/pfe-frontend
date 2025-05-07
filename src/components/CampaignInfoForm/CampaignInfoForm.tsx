@@ -42,7 +42,7 @@ const CampaignInfoForm: FC<CampaignInfoFormProps> = ({handleClose, info, slug}) 
                 })
             };
 
-            const response = await fetch(`/api/campaigns/${slug}`, options);
+            const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/campaigns/${slug}`, options);
 
             if (response.ok) {
                 handleClose();
