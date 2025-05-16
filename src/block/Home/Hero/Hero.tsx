@@ -7,7 +7,7 @@ const Hero = () => {
     return (
         <div className={styles.hero}>
             <p className={`${styles.title} ${aladin.className}`}>Projet RPG</p>
-            <Button variant="primary">Créer une nouvelle campagne</Button>
+            <Button variant="primary" href="/campaigns">Créer une nouvelle campagne</Button>
         </div>
     );
 }

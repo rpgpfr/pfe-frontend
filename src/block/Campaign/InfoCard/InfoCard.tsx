@@ -2,7 +2,7 @@
 
 import {FC, useState} from "react";
 
-import {CampaignInfoForm, CampaignSection, Drawer, LabelContent} from "@/components";
+import {CampaignInfoForm, Card, Drawer, LabelContent} from "@/components";
 import {Info} from "rpg-project/campaign";
 
 interface InfoCardProps {
@@ -19,7 +19,7 @@ const InfoCard: FC<InfoCardProps> = ({info, slug}) => {
 
     return (
         <div>
-            <CampaignSection title="Informations générales" onClick={toggleEdit}>
+            <Card title="Informations générales" onClick={toggleEdit}>
                 <LabelContent
                     id="type-content"
                     label="Type"
@@ -39,7 +39,7 @@ const InfoCard: FC<InfoCardProps> = ({info, slug}) => {
                     className="flex flex-col !items-start"
                 />
 
-            </CampaignSection>
+            </Card>
 
             <Drawer
                 isOpen={isDrawerOpen}

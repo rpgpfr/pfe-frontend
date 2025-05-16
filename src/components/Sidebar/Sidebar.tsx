@@ -1,6 +1,6 @@
 "use client";
 
-import {useState} from "react";
+import {FC, useState} from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {ChevronsLeft, ChevronsRight} from "lucide-react";
@@ -10,17 +10,21 @@ import CharacterIcon from "/public/images/icons/character.svg";
 import CastleIcon from "/public/images/icons/castle.svg";
 
 import styles from "./Sidebar.module.css";
+import {usePathname} from "next/navigation";
 
 interface SidebarProps {
     activePage?: "campaigns" | "character" | "map"
 }
 
-export default function Sidebar({activePage}: SidebarProps) {
-    const [isExpanded, setIsExpanded] = useState<boolean>(false)
+const Sidebar: FC<SidebarProps> = ({activePage}) => {
+
+    const slug = usePathname().split("/")[2];
+
+    const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
     const toggleSidebar = (): void => {
         setIsExpanded(!isExpanded)
-    }
+    };
 
     return (
         <div
@@ -43,7 +47,7 @@ export default function Sidebar({activePage}: SidebarProps) {
 
             <nav className={styles.navigation}>
                 <Link
-                    href="/dashboard"
+                    href={`/campaigns/${slug}`}
                     className={styles.navItem}
                 >
                     <div className={styles.iconContainer}>
@@ -53,7 +57,7 @@ export default function Sidebar({activePage}: SidebarProps) {
                 </Link>
 
                 <Link
-                    href="/characters"
+                    href={`/campaigns/${slug}/characters`}
                     className={styles.navItem}
                 >
                     <div className={styles.iconContainer}>
@@ -63,7 +67,7 @@ export default function Sidebar({activePage}: SidebarProps) {
                 </Link>
 
                 <Link
-                    href="/maps"
+                    href={`/campaigns/${slug}/maps`}
                     className={styles.navItem}
                 >
                     <div className={styles.iconContainer}>
@@ -73,5 +77,8 @@ export default function Sidebar({activePage}: SidebarProps) {
                 </Link>
             </nav>
         </div>
-    )
-}
+    );
+
+};
+
+export default Sidebar;
