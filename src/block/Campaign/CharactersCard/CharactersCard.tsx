@@ -83,12 +83,15 @@ const CharactersCard = () => {
                 headers: {
                     "Content-Type": "application/json",
                     "Accept": "application/json",
-                }
+                },
+                body: JSON.stringify({
+                    name: name
+                })
             };
 
             console.log(name);
 
-            const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/campaigns/${slug}/characters?name=${name}`, options);
+            const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/campaigns/${slug}/characters`, options);
 
             if (response.ok) {
                 setCharacters(prev => prev.filter(character => character.name !== name));

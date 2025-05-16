@@ -64,14 +64,12 @@ export const DELETE = async (request: NextRequest, {params}: { params: Promise<{
     }
 
     const {slug} = await params;
-    const name = request.nextUrl.searchParams.get("name");
-    console.log(name)
 
     return await fetchUrl(
-        `${process.env.SPRING_API_URL}/campaigns/${slug}/characters?name=${name}`,
+        `${process.env.SPRING_API_URL}/campaigns/${slug}/characters`,
         "DELETE",
         false,
-        undefined,
+        await request.json(),
         session.token
     );
 };
