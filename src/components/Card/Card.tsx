@@ -6,14 +6,14 @@ import {ButtonHTMLAttributes, ReactNode} from "react";
 import {aladin} from "@/lib/utils";
 import {Button} from "@/components/ui";
 
-import styles from './CampaignSection.module.css';
+import styles from './Card.module.css';
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
     title: string;
     children: ReactNode;
 }
 
-const CampaignSection = ({title, onClick, children}: Props) => {
+const Card = ({title, onClick, children}: Props) => {
     return (
         <div className={styles.container}>
             <h2 className={`${aladin.className} ${styles.title}`}>{title}</h2>
@@ -28,4 +28,4 @@ const CampaignSection = ({title, onClick, children}: Props) => {
     );
 }
 
-export default CampaignSection;
+export default Card;

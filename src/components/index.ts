@@ -8,7 +8,7 @@ import CircularProgress from "@/components/CircularProgress/CircularProgress";
 import Sidebar from "@/components/Sidebar/Sidebar";
 import Drawer from "@/components/Drawer/Drawer";
 import LabelContent from "@/components/LabelContent/LabelContent";
-import CampaignSection from "@/components/CampaignSection/CampaignSection";
+import Card from "@/components/Card/Card";
 import ImageActionCard from "@/components/ImageActionCard/ImageActionCard";
 import ImageContentCard from "@/components/ImageContentCard/ImageContentCard";
 import TabList from "@/components/Tabs/TabList/TabList";
@@ -33,7 +33,7 @@ export {
     Sidebar,
     Drawer,
     LabelContent,
-    CampaignSection,
+    Card,
     ImageActionCard,
     ImageContentCard,
     TabList,

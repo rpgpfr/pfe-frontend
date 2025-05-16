@@ -2,7 +2,7 @@
 
 import {FC, useState} from "react";
 
-import {CampaignSection, Drawer, LabelContent, MainQuestForm} from "@/components";
+import {Card, Drawer, LabelContent, MainQuestForm} from "@/components";
 import {Quest} from "rpg-project/campaign";
 import {Separator} from "@/components/ui";
 
@@ -21,7 +21,7 @@ const MainQuestCard: FC<MainQuestCardProps> = ({quest, slug}) => {
 
     return (
         <div>
-            <CampaignSection title="Quête principale de la campagne" onClick={toggleEdit}>
+            <Card title="Quête principale de la campagne" onClick={toggleEdit}>
                 <LabelContent
                     id="title-content"
                     label="Titre"
@@ -54,7 +54,7 @@ const MainQuestCard: FC<MainQuestCardProps> = ({quest, slug}) => {
                         }
                     )
                 }
-            </CampaignSection>
+            </Card>
 
             <Drawer
                 isOpen={isDrawerOpen}
