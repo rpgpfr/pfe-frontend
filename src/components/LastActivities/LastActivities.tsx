@@ -18,12 +18,15 @@ export default function LastActivities({activities = []}: LastActivitiesProps) {
         activities.length > 0
             ? activities
             : [
-                {title: "Intitulé de l'activité", date: "22/07/2000"},
-                {title: "Intitulé de l'activité", date: "22/07/2000"},
-                {title: "Intitulé de l'activité", date: "22/07/2000"},
-                {title: "Intitulé de l'activité", date: "22/07/2000"},
+                {title: "Création de la campagne 'Les Terres Oubliées'", date: "15/05/2025"},
+                {title: "Ajout du personnage Thalia, Elfe Druide niveau 3", date: "14/05/2025"},
+                {title: "Session #2 de 'La Crypte des Ombres'", date: "12/05/2025"},
+                {title: "Édition de la fiche de Grommash, Demi-Orc Barbare", date: "10/05/2025"},
+                {title: "Création de la quête 'Le Trésor du Roi Nain'", date: "08/05/2025"},
+                {title: "Session #1 de 'La Crypte des Ombres'", date: "05/05/2025"},
+                {title: "Ajout du personnage Grommash, Demi-Orc Barbare niveau 2", date: "03/05/2025"},
+                {title: "Création de la campagne 'La Crypte des Ombres'", date: "01/05/2025"},
             ];
-
     return (
         <div className={styles.activitiesContainer}>
             <h2 className={`${styles.activitiesHeader} ${aladin.className}`}>Dernières activités</h2>
