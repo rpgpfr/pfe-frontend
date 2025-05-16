@@ -23,7 +23,9 @@ const LabelContent: FC<LabelContentProps> = ({
     return (
         <div className={cn(styles.container, className)}>
             <p className={cn(styles.label, labelClassName)}>{label}</p>
-            <p className={cn(styles.content, contentClassName)}>{content}</p>
+            <p className={cn(styles.content, contentClassName, "whitespace-pre-line")}>
+                {content}
+            </p>
         </div>
     )
 }

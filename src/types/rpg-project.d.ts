@@ -42,4 +42,8 @@ declare module "rpg-project/campaign" {
         mainQuest?: Quest,
         createdAt: Date,
     }
+
+    interface Character {
+        name: string
+    }
 }

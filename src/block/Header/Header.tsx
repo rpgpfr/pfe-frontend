@@ -21,7 +21,7 @@ const Header = () => {
                 !(pathname.includes("/login") || pathname.includes("/signup")) &&
                 <header className={styles.header}>
 
-                    <Link href="/public" className={`${styles.title} ${aladin.className}`}>
+                    <Link href="/" className={`${styles.title} ${aladin.className}`}>
                         Project RPG
                     </Link>
 

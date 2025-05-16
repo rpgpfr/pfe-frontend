@@ -2,7 +2,7 @@
 
 import {useState} from "react";
 
-import {CampaignSection, Drawer, TabItem, TabList} from "@/components";
+import {Card, Drawer, TabItem, TabList} from "@/components";
 
 const MapsCard = () => {
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -19,10 +19,10 @@ const MapsCard = () => {
 
     return (
         <div>
-            <CampaignSection title="Carte utilisée dans la campagne" onClick={handleEdit}>
+            <Card title="Carte utilisée dans la campagne" onClick={handleEdit}>
                 <img className={'h-[290px] w-full object-cover'} src={'/images/placeholder.png'}
                      alt="Carte de la campagne"/>
-            </CampaignSection>
+            </Card>
 
             <Drawer
                 isOpen={isDrawerOpen}
