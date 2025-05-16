@@ -16,9 +16,8 @@ const Footer = () => {
                 !(pathname.includes("/login") || pathname.includes("/signup")) &&
                 <footer className={styles.footer}>
                     <ul>
-                        <li>Accueil</li>
-                        <li>Se connecter</li>
-                        <li>S&apos;inscrire</li>
+                        <li>Conditions générales d&apos;utilisation</li>
+                        <li>Confidentialité des données</li>
                     </ul>
 
                     <p className={`${styles.title} ${aladin.className}`}>PROJECT RPG</p>

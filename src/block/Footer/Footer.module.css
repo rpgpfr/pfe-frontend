@@ -4,4 +4,8 @@
     & > .title {
         @apply text-4xl;
     }
+
+    & > ul > li {
+        @apply font-bold mb-2;
+    }
 }
