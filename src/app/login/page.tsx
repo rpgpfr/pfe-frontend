@@ -11,9 +11,14 @@ const LoginPage = () => {
     return (
         <div className={styles.container}>
             <div className={styles.leftColumn}>
-                <Image src="/placeholder.svg?height=1080&width=1080" alt="Background" fill className="object-cover"/>
-
-                <div className={styles.backgroundOverlay}></div>
+                <div className={styles.backgroundWrapper}>
+                    <Image
+                        src="/images/login.jpg"
+                        alt=""
+                        fill
+                        className={styles.heroBackground}
+                    />
+                </div>
 
                 <div className={styles.leftContent}>
                     <h2 className={styles.welcomeTitle}>Nous sommes heureux de vous retrouver !</h2>

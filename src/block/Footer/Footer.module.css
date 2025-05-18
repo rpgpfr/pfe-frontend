@@ -1,11 +1,23 @@
 .footer {
     @apply text-white bg-darkGreen w-full py-14 px-10 flex items-center justify-between shadow-md;
 
-    & > .title {
-        @apply text-4xl;
+    & > * {
+        @apply flex-1;
     }
 
-    & > ul > li {
-        @apply font-bold mb-2;
+    & > ul {
+        @apply w-fit flex flex-col items-start;
+
+        & > li {
+            @apply font-bold mb-2;
+        }
+    }
+
+    & > .title {
+        @apply text-center text-4xl;
+    }
+
+    & > .coords {
+        @apply text-end;
     }
 }
