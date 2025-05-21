@@ -28,7 +28,7 @@ const SignupPage = () => {
             <div className={styles.rightColumn}>
                 <div className={styles.logoContainer}>
                     <Link href="/" className={styles.logo}>
-                        <h1 className={`${styles.logoText} ${aladin.className}`}>Project RPG</h1>
+                        <h1 className={`${styles.logoText} ${aladin.className}`}>RPG Project</h1>
                     </Link>
                 </div>
 

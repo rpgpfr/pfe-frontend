@@ -22,7 +22,7 @@ const Header = () => {
                 <header className={styles.header}>
 
                     <Link href="/" className={`${styles.title} ${aladin.className}`}>
-                        Project RPG
+                        RPG Project
                     </Link>
 
                     {

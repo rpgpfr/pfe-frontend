@@ -15,7 +15,7 @@ const sourceSans = Source_Sans_3({
 });
 
 export const metadata: Metadata = {
-    title: "Project RPG",
+    title: "RPG Project",
     description: "Créez votre univers de jeu de rôle",
 }
 
