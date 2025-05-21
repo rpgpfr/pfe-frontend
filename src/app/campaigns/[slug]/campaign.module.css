@@ -2,10 +2,10 @@
     @apply flex flex-col w-full;
 
     .banner {
-        @apply h-[290px] w-full relative;
+        @apply h-[290px] w-full relative overflow-hidden;
 
         .bannerImg {
-            @apply h-full w-full object-cover object-center;
+            @apply h-full w-full absolute object-cover object-center;
         }
     }
 
