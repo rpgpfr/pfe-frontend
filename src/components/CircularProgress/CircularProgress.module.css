@@ -10,7 +10,15 @@
     @apply fill-transparent transition-all duration-700 ease-in-out stroke-brown;
 }
 
+.progressCircleGreen {
+    @apply fill-transparent transition-all duration-700 ease-in-out stroke-primary-green;
+}
+
 .label {
     @apply absolute text-2xl font-medium text-[#C0A87F];
+}
+
+.labelGreen {
+    @apply absolute text-2xl font-medium text-primary-green;
 }
 

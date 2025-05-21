@@ -13,15 +13,50 @@ const CampaignPage = async ({params}: { params: Promise<{ slug: string }> }) => 
     const {slug} = await params;
 
     let completedSteps = 0;
-    const stepsToComplete = 6;
+    const stepsToComplete = 5;
+
+    const tips = [
+        "Ajoutez une description à la campagne.",
+        "Définissez le type de la campagne.",
+        "Ajoutez une ambiance (mood) à la campagne.",
+        "Ajoutez un titre à la quête principale.",
+        "Ajoutez une description à la quête principale."
+    ];
+
+    const missingTips: string[] = [];
 
     const campaign: Campaign = await getCampaign(slug).then((data) => {
-        if (data.info?.description) completedSteps++;
-        if (data.info?.type) completedSteps++;
-        if (data.info?.mood) completedSteps++;
-        if (data.mainQuest?.title) completedSteps++;
-        if (data.mainQuest?.description) completedSteps++;
-        return data
+        if (data.info?.description) {
+            completedSteps++;
+        } else {
+            missingTips.push(tips[0]);
+        }
+
+        if (data.info?.type) {
+            completedSteps++;
+        } else {
+            missingTips.push(tips[1]);
+        }
+
+        if (data.info?.mood) {
+            completedSteps++;
+        } else {
+            missingTips.push(tips[2]);
+        }
+
+        if (data.mainQuest?.title) {
+            completedSteps++;
+        } else {
+            missingTips.push(tips[3]);
+        }
+
+        if (data.mainQuest?.description) {
+            completedSteps++;
+        } else {
+            missingTips.push(tips[4]);
+        }
+
+        return data;
     });
 
     const remainingSteps = stepsToComplete - completedSteps;
@@ -42,12 +77,17 @@ const CampaignPage = async ({params}: { params: Promise<{ slug: string }> }) => 
                 <div className={styles.progress}>
                     {remainingSteps === 0 ? (
                         <span>
-            <strong>Campagne jouable !</strong>
-        </span>
+                            <strong>Campagne jouable !</strong>
+                        </span>
                     ) : (
                         <span>
-            <strong>encore {remainingSteps} étape(s)</strong> pour que la campagne soit jouable !
-        </span>
+                            <strong>encore {remainingSteps} étape(s)</strong> pour que la campagne soit jouable ! <br/>
+                            {remainingSteps > 0 && missingTips.length > 0 && (
+                                <p className={styles.tip}>
+                                    {missingTips[0]}
+                                </p>
+                            )}
+                        </span>
                     )}
                     <CircularProgress value={completedSteps} maxValue={stepsToComplete}/>
                 </div>
@@ -62,7 +102,6 @@ const CampaignPage = async ({params}: { params: Promise<{ slug: string }> }) => 
         </main>
     );
 };
-
 const getCampaign = async (slug: string): Promise<Campaign> => {
     try {
         const options = {

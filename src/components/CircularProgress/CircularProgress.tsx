@@ -46,7 +46,7 @@ export default function CircularProgress({
                         strokeWidth={strokeWidth}/>
 
                 <circle
-                    className={styles.progressCircle}
+                    className={`${progress === maxValue ? styles.progressCircleGreen : styles.progressCircle}`}
                     cx={center}
                     cy={center}
                     r={radius}
@@ -60,7 +60,7 @@ export default function CircularProgress({
             </svg>
 
             {showLabel && (
-                <div className={styles.label}>
+                <div className={`${progress === maxValue ? styles.labelGreen : styles.label}`}>
                     {progress}/{maxValue}
                 </div>
             )}
