@@ -10,3 +10,10 @@ export const aladin = Aladin({
     subsets: ['latin'],
     weight: '400',
 });
+
+export const randomInt = (min: number, max: number) => {
+    const minCeiled = Math.ceil(min);
+    const maxFloored = Math.floor(max);
+
+    return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled);
+}

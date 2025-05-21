@@ -1,6 +1,13 @@
 .hero {
-    @apply text-white bg-cover bg-center h-screen flex flex-col justify-center items-center;
-    background-image: url('/images/hero.jpg');
+    @apply bg-black/30 text-white h-screen flex flex-col justify-center items-center;
+
+    & > .backgroundWrapper {
+        @apply w-full h-full overflow-hidden absolute -z-10;
+
+        & > .heroBackground {
+            @apply object-cover object-center absolute inset-0 w-full h-full;
+        }
+    }
 
     & > .title {
         @apply text-7xl mb-8;

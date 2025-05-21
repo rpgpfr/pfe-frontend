@@ -5,7 +5,7 @@ import {ArrowRight, Trash2} from "lucide-react";
 import {redirect, useRouter} from "next/navigation";
 
 import {Button} from "@/components/ui";
-import {cn} from "@/lib/utils";
+import {cn, randomInt} from "@/lib/utils";
 import {Campaign} from "rpg-project/campaign";
 
 import styles from "./CampaignCard.module.css";
@@ -64,7 +64,7 @@ export const CampaignCard = ({campaign, className, showDate = false}: CampaignCa
             }
 
             <div className={styles.imageContainer}>
-                <Image src={"/placeholder.svg"} alt={campaign.name} fill/>
+                <Image src={`/images/campaign-${randomInt(1, 6)}.webp`} alt="" fill/>
             </div>
 
             <div className={styles.action}>

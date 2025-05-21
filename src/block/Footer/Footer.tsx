@@ -22,7 +22,7 @@ const Footer = () => {
 
                     <p className={`${styles.title} ${aladin.className}`}>PROJECT RPG</p>
 
-                    <p>pfe@gmail.com</p>
+                    <p className={styles.coords}>pfe@gmail.com</p>
                 </footer>
             }
         </>
