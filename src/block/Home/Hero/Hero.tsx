@@ -1,9 +1,8 @@
 import {Button} from "@/components/ui";
-import {aladin} from "@/lib/utils";
+import {aladin, randomInt} from "@/lib/utils";
 
 import styles from './Hero.module.css';
 import Image from "next/image";
-import {randomInt} from "node:crypto";
 
 const Hero = () => {
     return (

@@ -134,7 +134,8 @@ const CharactersCard = () => {
             <div className={"h-full overflow-y-scroll w-full flex flex-col gap-4"}>
                 {
                     characters?.map((character: Character) => (
-                        <ImageContentCard key={character.name} imageSrc={"/images/placeholder.png"} content={character.name}/>
+                        <ImageContentCard key={character.name} imageSrc="/images/character-1.webp"
+                                          content={character.name}/>
                     ))
                 }
             </div>
@@ -149,7 +150,7 @@ const CharactersCard = () => {
                         characters?.map((character: Character) => (
                             <ImageActionCard
                                 key={character.name}
-                                imageSrc={"/images/placeholder.png"}
+                                imageSrc="/images/character-1.webp"
                                 imageAlt={character.name}
                                 imageSize={80}
                                 className={'w-full flex'}
@@ -174,7 +175,8 @@ const CharactersCard = () => {
                             value={newCharacterName}
                         />
 
-                        <Button variant="primary" className="flex justify-center items-center py-2" onClick={handleCreate}>
+                        <Button variant="primary" className="flex justify-center items-center py-2"
+                                onClick={handleCreate}>
                             <Plus/>
                         </Button>
                     </form>
