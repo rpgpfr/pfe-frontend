@@ -48,9 +48,16 @@ const Header = () => {
 const ConnectedNav = () => {
 
     return (
-        <nav className={styles.nav}>
-            <DropDownProfil/>
-        </nav>
+        <>
+            <nav className={styles.nav}>
+                <Link href="/campaigns">Campagnes</Link>
+            </nav>
+
+            <div>
+                <DropDownProfil/>
+            </div>
+        </>
+
     );
 
 };
@@ -59,11 +66,13 @@ const AnonymousNav = () => {
 
     return (
         <nav className={styles.nav}>
-            <Link href="/login" className={styles.link}>
+            <Button href="/login" variant="outline">
                 Se connecter
-            </Link>
+            </Button>
 
-            <Button href="/signup" variant="primary">S&apos;inscrire</Button>
+            <Button href="/signup" variant="primary">
+                S&apos;inscrire
+            </Button>
         </nav>
     );
 

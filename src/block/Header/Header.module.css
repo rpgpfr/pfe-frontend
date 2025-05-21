@@ -1,15 +1,27 @@
 .header {
-    @apply bg-[#ffffff] h-24 py-6 px-10 flex items-center justify-between shadow-md;
+    @apply bg-[#ffffff] h-24 py-6 px-24 flex items-center justify-between shadow-md;
+
+    & > * {
+        @apply flex-1 flex justify-end items-center;
+    }
 
     & > .title {
-        @apply pl-20 text-3xl;
+        @apply text-3xl justify-start;
     }
 
     & > .nav {
-        @apply flex justify-center items-center pr-20 space-x-4;
+        @apply flex-1 flex justify-center items-center space-x-4;
 
-        & > .link {
-            @apply text-[#0b0e14] font-medium text-base px-6 py-3 rounded-full transition duration-300 hover:bg-white hover:text-[#0b0e14];
+        & > a {
+            @apply text-black w-fit px-2 py-1 rounded-default;
+
+            transition-property: background-color, padding-left;
+            transition-duration: .1s;
+            transition-timing-function: ease-out;
+
+            &:hover {
+                @apply bg-gray-100 font-bold cursor-pointer;
+            }
         }
     }
 }
