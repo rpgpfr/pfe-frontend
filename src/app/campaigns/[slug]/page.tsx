@@ -6,13 +6,25 @@ import {aladin, randomInt} from "@/lib/utils";
 import {CircularProgress} from "@/components";
 import {CharactersCard, InfoCard, MainQuestCard, MapsCard} from "@/block/Campaign";
 import {Campaign} from "rpg-project/campaign";
-
 import styles from './campaign.module.css'
 
 const CampaignPage = async ({params}: { params: Promise<{ slug: string }> }) => {
 
     const {slug} = await params;
-    const campaign: Campaign = await getCampaign(slug);
+
+    let completedSteps = 0;
+    const stepsToComplete = 6;
+
+    const campaign: Campaign = await getCampaign(slug).then((data) => {
+        if (data.info?.description) completedSteps++;
+        if (data.info?.type) completedSteps++;
+        if (data.info?.mood) completedSteps++;
+        if (data.mainQuest?.title) completedSteps++;
+        if (data.mainQuest?.description) completedSteps++;
+        return data
+    });
+
+    const remainingSteps = stepsToComplete - completedSteps;
 
     return (
         <main className={styles.campaign}>
@@ -28,8 +40,16 @@ const CampaignPage = async ({params}: { params: Promise<{ slug: string }> }) => 
             <div className={styles.header}>
                 <h1 className={`${aladin.className} text-h2`}>{campaign.name}</h1>
                 <div className={styles.progress}>
-                    <span><strong>encore 1 étape</strong> pour que la campagne soit jouable !</span>
-                    <CircularProgress value={2} maxValue={6}/>
+                    {remainingSteps === 0 ? (
+                        <span>
+            <strong>Campagne jouable !</strong>
+        </span>
+                    ) : (
+                        <span>
+            <strong>encore {remainingSteps} étape(s)</strong> pour que la campagne soit jouable !
+        </span>
+                    )}
+                    <CircularProgress value={completedSteps} maxValue={stepsToComplete}/>
                 </div>
             </div>
 
@@ -40,7 +60,6 @@ const CampaignPage = async ({params}: { params: Promise<{ slug: string }> }) => 
                 <CharactersCard/>
             </div>
         </main>
-
     );
 };
 
