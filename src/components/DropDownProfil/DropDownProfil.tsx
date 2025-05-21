@@ -12,7 +12,7 @@ const DropDownProfil = () => {
             <Image
                 className={styles.icon}
                 src={UserIcon}
-                alt="Icône du profil"
+                alt="Profil"
                 width={36}
                 height={36}
             />
