@@ -15,7 +15,7 @@ const Hero = () => {
                 />
             </div>
 
-            <p className={`${styles.title} ${aladin.className}`}>RPG Project</p>
+            <p className={`${styles.title} ${aladin.className}`}>RPGine</p>
             <Button variant="primary" href="/campaigns">Créer une nouvelle campagne</Button>
         </div>
     );
