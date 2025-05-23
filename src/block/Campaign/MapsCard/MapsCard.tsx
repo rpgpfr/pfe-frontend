@@ -3,6 +3,7 @@
 import {useState} from "react";
 
 import {Card, Drawer, TabItem, TabList} from "@/components";
+import Image from "next/image";
 
 const MapsCard = () => {
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -20,7 +21,7 @@ const MapsCard = () => {
     return (
         <div>
             <Card title="Carte utilisée dans la campagne" onClick={handleEdit}>
-                <img className={'h-[290px] w-full object-cover'} src={'/images/placeholder.png'}
+                <Image className={'h-[290px] w-full object-cover'} src={'/images/placeholder.png'}
                      alt="Carte de la campagne"/>
             </Card>
 

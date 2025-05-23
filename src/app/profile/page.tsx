@@ -8,6 +8,8 @@ import {UserProfile} from "rpg-project";
 
 import styles from "./styles.module.css";
 
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
     title: "RPGine - Profil",
     description: "Gérez vos informations personnelles, préférences et paramètres de votre compte RPGine.",
