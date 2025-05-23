@@ -1,10 +1,16 @@
 import {headers} from "next/headers";
 import {redirect} from "next/navigation";
+import type {Metadata} from "next";
 
 import {Section} from "@/components/ui";
 import {Campaigns} from "@/block";
 import {aladin} from "@/lib/utils";
 import {Campaign} from "rpg-project/campaign";
+
+export const metadata: Metadata = {
+    title: "RPGine - Campagnes",
+    description: "Créez, consultez et organisez vos campagnes de jeu de rôle. Suivez le fil narratif et structurez vos univers RPG facilement.",
+};
 
 const CampaignsPage = async () => {
 

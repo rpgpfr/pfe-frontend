@@ -1,10 +1,16 @@
 import Link from "next/link";
 import Image from "next/image";
+import {Metadata} from "next";
 
 import {LoginForm} from "@/components";
 import {aladin} from "@/lib/utils";
 
 import styles from "./login.module.css";
+
+export const metadata: Metadata = {
+    title: "RPGine - Connexion",
+    description: "Connectez-vous à votre compte pour accéder à vos campagnes, personnages et cartes de jeu de rôle.",
+};
 
 const LoginPage = () => {
 
@@ -13,7 +19,7 @@ const LoginPage = () => {
             <div className={styles.leftColumn}>
                 <div className={styles.backgroundWrapper}>
                     <Image
-                        src="/images/login.jpg"
+                        src="/images/login.webp"
                         alt=""
                         fill
                         className={styles.heroBackground}

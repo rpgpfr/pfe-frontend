@@ -79,7 +79,8 @@ const ImageActionCard: FC<ImageActionCardProps> = ({
                 {
                     isEditMode &&
                     <>
-                        <Button variant={'primary'} className={'p-4'} onClick={() => handleUpdate(characterName, props.content ?? "")}>
+                        <Button variant={'primary'} className={'p-4'}
+                                onClick={() => handleUpdate(characterName, props.content ?? "")}>
                             <Check className="h-5 w-5"/>
                         </Button>
                         <Button variant={'secondary'} className={'p-4'} onClick={handleCancel}>
