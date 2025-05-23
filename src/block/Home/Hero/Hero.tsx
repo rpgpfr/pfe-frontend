@@ -9,13 +9,13 @@ const Hero = () => {
         <div className={styles.hero}>
             <div className={styles.backgroundWrapper}>
                 <Image
-                    src={`/images/hero-${randomInt(1, 4)}.png`}
+                    src={`/images/hero-${randomInt(1, 4)}.webp`}
                     alt=""
                     fill
                 />
             </div>
 
-            <p className={`${styles.title} ${aladin.className}`}>Projet RPG</p>
+            <p className={`${styles.title} ${aladin.className}`}>RPGine</p>
             <Button variant="primary" href="/campaigns">Créer une nouvelle campagne</Button>
         </div>
     );

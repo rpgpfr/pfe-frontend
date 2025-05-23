@@ -1,8 +1,7 @@
-import Image from "next/image";
-
 import {aladin} from "@/lib/utils";
 
 import styles from './CampaignDemo.module.css';
+import {HomeCard} from "@/components";
 
 const CampaignDemo = () => {
     return (
@@ -10,15 +9,7 @@ const CampaignDemo = () => {
             <h1 className={`${styles.title} ${aladin.className}`}>Créez votre campagne</h1>
 
             <div className={styles.sectionGrid}>
-                <div className={styles.imageContainer}>
-                    <Image
-                        src="/placeholder.svg?height=400&width=400"
-                        alt="Image de campagne"
-                        width={400}
-                        height={400}
-                        className={styles.image}
-                    />
-                </div>
+                <HomeCard imageSrc={"/images/placeholder.png"} imageAlt={""}/>
 
                 <div className={styles.content}>
                     <p><span>Plongez dans l&apos;aventure</span> en commençant par créer votre propre campagne :</p>

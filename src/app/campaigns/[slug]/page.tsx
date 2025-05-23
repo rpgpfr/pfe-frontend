@@ -9,6 +9,16 @@ import {Campaign} from "rpg-project/campaign";
 
 import styles from './campaign.module.css'
 
+export const generateMetadata = async ({params}: { params: Promise<{ slug: string }> }) => {
+    const {slug} = await params;
+    const campaign: Campaign = await getCampaign(slug);
+
+    return {
+        title: `RPGine - ${campaign.name}`,
+        description: `Explorez la campagne "${campaign.name}". Accédez aux personnages, cartes, événements et notes de votre aventure RPG personnalisée.`
+    };
+}
+
 const CampaignPage = async ({params}: { params: Promise<{ slug: string }> }) => {
 
     const {slug} = await params;
@@ -19,7 +29,7 @@ const CampaignPage = async ({params}: { params: Promise<{ slug: string }> }) => 
 
             <div className={styles.banner}>
                 <Image
-                    src={`/images/campaign-${randomInt(1,6)}.webp`}
+                    src={`/images/campaign-${randomInt(1, 6)}.webp`}
                     alt=""
                     fill
                     className={styles.bannerImg}

@@ -8,14 +8,6 @@
     & > .sectionGrid {
         @apply grid grid-cols-2 gap-8 items-center;
 
-        & > .imageContainer {
-            @apply aspect-square bg-gray-100 rounded-lg flex items-center justify-center;
-
-            & > .image {
-                @apply w-full h-full object-cover;
-            }
-        }
-
         & > .content {
             @apply text-lg space-y-4;
 

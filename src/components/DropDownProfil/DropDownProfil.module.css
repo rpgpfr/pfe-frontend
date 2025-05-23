@@ -23,6 +23,10 @@
                     transition-duration: .1s;
                     transition-timing-function: ease-out;
 
+                    & > a {
+                        @apply block w-full;
+                    }
+
                     &:hover {
                         @apply bg-gray-100 pl-5 font-bold cursor-pointer;
                     }

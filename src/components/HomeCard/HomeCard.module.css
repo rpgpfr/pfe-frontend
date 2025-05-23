@@ -1,11 +1,13 @@
 .card {
     @apply relative rounded-lg overflow-hidden w-full;
 
+    background: linear-gradient(to top, gray 0%, rgba(0, 0, 0, 2%) 45%, transparent 50%);
+
     & > .imageContainer {
-        @apply aspect-square bg-gray-100;
+        @apply relative -z-10 aspect-square bg-gray-100;
 
         & > img {
-            @apply w-full h-full inset-0 block object-cover object-center;
+            @apply w-full h-full absolute object-cover object-center;
         }
     }
 
