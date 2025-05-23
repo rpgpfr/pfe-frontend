@@ -9,7 +9,7 @@
         @apply w-full grid grid-cols-3 gap-8;
 
         .content {
-            @apply text-black text-center;
+            @apply text-white text-center;
         }
     }
 }

@@ -20,7 +20,9 @@ export const GET = async (request: NextRequest, {params}: { params: Promise<{ sl
     );
 };
 
-export const POST = async (request: NextRequest, {params}: { params: Promise<{ slug: string }> }): Promise<Response> => {
+export const POST = async (request: NextRequest, {params}: {
+    params: Promise<{ slug: string }>
+}): Promise<Response> => {
     const session = await auth();
 
     if (!session?.token) {
@@ -38,7 +40,9 @@ export const POST = async (request: NextRequest, {params}: { params: Promise<{ s
     );
 };
 
-export const PATCH = async (request: NextRequest, {params}: { params: Promise<{ slug: string }> }): Promise<Response> => {
+export const PATCH = async (request: NextRequest, {params}: {
+    params: Promise<{ slug: string }>
+}): Promise<Response> => {
     const session = await auth();
 
     if (!session?.token) {
@@ -56,7 +60,9 @@ export const PATCH = async (request: NextRequest, {params}: { params: Promise<{ 
     );
 };
 
-export const DELETE = async (request: NextRequest, {params}: { params: Promise<{ slug: string }> }): Promise<Response> => {
+export const DELETE = async (request: NextRequest, {params}: {
+    params: Promise<{ slug: string }>
+}): Promise<Response> => {
     const session = await auth();
 
     if (!session?.token) {

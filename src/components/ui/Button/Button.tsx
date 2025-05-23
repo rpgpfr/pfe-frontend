@@ -26,7 +26,7 @@ const Button = ({children, className, href, type, onClick, variant}: ButtonProps
     }
 
     return (
-        <button type={type || "button"} onClick={onClick} className={buttonClasses}>
+        <button type={type ?? "button"} onClick={onClick} className={buttonClasses}>
             {children}
         </button>
     );
