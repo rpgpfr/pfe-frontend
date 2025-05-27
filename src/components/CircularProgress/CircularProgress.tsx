@@ -1,6 +1,8 @@
 "use client"
 
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
+import { progressCircleVariants, labelVariants } from "@/components/CircularProgress/CircularProgressVariants";
 
 import styles from "./CircularProgress.module.css";
 
@@ -19,52 +21,56 @@ export default function CircularProgress({
                                              strokeWidth = 20,
                                              showLabel = true,
                                          }: CircularProgressProps) {
-    const [progress, setProgress] = useState(0)
+    const [progress, setProgress] = useState(0);
 
     useEffect(() => {
-        setProgress(0)
+        setProgress(0);
         const timer = setTimeout(() => {
-            setProgress(value)
-        }, 100)
+            setProgress(value);
+        }, 100);
 
-        return () => clearTimeout(timer)
-    }, [value])
+        return () => clearTimeout(timer);
+    }, [value]);
 
-    const radius = (size - strokeWidth) / 2
-    const circumference = 2 * Math.PI * radius
-    const progressValue = Math.min(Math.max(progress, 0), maxValue)
-    const progressPercent = progressValue / maxValue
-    const strokeDashoffset = circumference - progressPercent * circumference
+    const radius = (size - strokeWidth) / 2;
+    const circumference = 2 * Math.PI * radius;
+    const progressValue = Math.min(Math.max(progress, 0), maxValue);
+    const progressPercent = progressValue / maxValue;
+    const strokeDashoffset = circumference - progressPercent * circumference;
+    const center = size / 2;
 
-    const center = size / 2
+    const isComplete = progress === maxValue;
 
     return (
-        <div className={styles.container} style={{width: size, height: size}}>
+        <div className={styles.container} style={{ width: size, height: size }}>
             <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
-
-                <circle className={styles.backgroundCircle} cx={center} cy={center} r={radius}
-                        strokeWidth={strokeWidth}/>
+                <circle
+                    className={styles.backgroundCircle}
+                    cx={center}
+                    cy={center}
+                    r={radius}
+                    strokeWidth={strokeWidth}
+                />
 
                 <circle
-                    className={styles.progressCircle}
+                    className={cn(progressCircleVariants({ status: isComplete ? "complete" : "default" }))}
                     cx={center}
                     cy={center}
                     r={radius}
                     strokeWidth={strokeWidth}
                     style={{
                         strokeDasharray: circumference,
-                        strokeDashoffset: strokeDashoffset,
+                        strokeDashoffset,
                     }}
                     transform={`rotate(-90 ${center} ${center})`}
                 />
             </svg>
 
             {showLabel && (
-                <div className={styles.label}>
+                <div className={cn(labelVariants({ status: isComplete ? "complete" : "default" }))}>
                     {progress}/{maxValue}
                 </div>
             )}
         </div>
-    )
+    );
 }
-
