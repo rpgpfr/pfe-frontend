@@ -1,12 +1,15 @@
-
 .container {
-    @apply text-center p-8 bg-[#f9f9f9] border-[1px] border-[solid] border-[#ddd] rounded-[8px]
+    @apply text-center p-8 bg-[#f9f9f9] border-[1px] border-[solid] border-[#ddd] rounded-[8px];
+
+    .title {
+        @apply text-[1.5rem] text-[#333]
+    }
+
+    .image {
+        @apply mx-auto block mt-2 mb-2;
+    }
+    .text {
+        @apply text-[1rem] text-[#666]
+    }
 }
 
-.title {
-    @apply text-[1.5rem] text-[#333]
-}
-
-.text {
-    @apply text-[1rem] text-[#666]
-}
