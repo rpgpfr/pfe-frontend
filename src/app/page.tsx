@@ -6,9 +6,11 @@ const Home = () => {
         <main className="flex flex-col min-h-screen">
             <Hero/>
             <Presentation/>
+            <div className="mx-[8%]">
             <CampaignDemo/>
             <WorldDemo/>
             <UsecaseDemo/>
+            </div>
         </main>
     );
 
