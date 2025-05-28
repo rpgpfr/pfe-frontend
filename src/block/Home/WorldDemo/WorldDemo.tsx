@@ -9,13 +9,13 @@ const WorldDemo = () => {
             <h1 className={`${styles.title} ${aladin.className}`}>Construisez votre monde</h1>
 
             <div className={styles.sectionGrid}>
-                <HomeCard imageSrc="/placeholder.svg" imageAlt="Création de personnage">
+                <HomeCard imageSrc="/images/character-1.webp" imageAlt="Création de personnage">
                     <p className={styles.content}>
                         Créez vos personnages : Personnalisez son histoire, apparence et ses caractéristiques !
                     </p>
                 </HomeCard>
 
-                <HomeCard imageSrc="/placeholder.svg" imageAlt="Carte du monde">
+                <HomeCard imageSrc="/images/demo-map.webp" imageAlt="Carte du monde">
                     <p className={styles.content}>
                         Personnalisez la carte du monde : Importez votre carte ou choisissez parmi une sélection par
                         défaut et ajoutez des marqueurs !

@@ -9,7 +9,7 @@ const CampaignDemo = () => {
             <h1 className={`${styles.title} ${aladin.className}`}>Créez votre campagne</h1>
 
             <div className={styles.sectionGrid}>
-                <HomeCard imageSrc={"/images/placeholder.png"} imageAlt={""}/>
+                <HomeCard imageSrc={"/images/demo.webp"} imageAlt={""}/>
 
                 <div className={styles.content}>
                     <p><span>Plongez dans l&apos;aventure</span> en commençant par créer votre propre campagne :</p>

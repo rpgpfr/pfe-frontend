@@ -49,7 +49,7 @@ const ConnectedNav = () => {
 
     return (
         <>
-            <nav className={styles.nav}>
+            <nav className={styles.connectedNav}>
                 <Link href="/campaigns">Campagnes</Link>
             </nav>
 
@@ -65,7 +65,7 @@ const ConnectedNav = () => {
 const AnonymousNav = () => {
 
     return (
-        <nav className={styles.nav}>
+        <nav className={styles.anonymousNav}>
             <Button href="/login" variant="outline">
                 Se connecter
             </Button>
