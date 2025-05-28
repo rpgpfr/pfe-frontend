@@ -9,7 +9,7 @@
         @apply text-3xl justify-start;
     }
 
-    & > .nav {
+    & > .connectedNav {
         @apply flex-1 flex justify-center items-center space-x-4;
 
         & > a {
@@ -23,5 +23,9 @@
                 @apply bg-gray-100 font-bold cursor-pointer;
             }
         }
+    }
+
+    & > .anonymousNav {
+        @apply flex-1 flex justify-end items-center space-x-4;
     }
 }
