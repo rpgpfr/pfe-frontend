@@ -21,7 +21,7 @@ const MapsCard = () => {
     return (
         <div>
             <Card title="Carte utilisée dans la campagne" onClick={handleEdit}>
-                <Image className={'h-[290px] w-full object-cover'} src={'/images/placeholder.png'}
+                <img className={'h-[290px] w-full object-cover'} src={'/images/placeholder.png'}
                      alt="Carte de la campagne"/>
             </Card>
 
