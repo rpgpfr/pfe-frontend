@@ -1,13 +1,10 @@
 "use client";
 
 import {useState} from "react";
-
-import {Card, Drawer, TabItem, TabList} from "@/components";
-import Image from "next/image";
+import {Card, ComingSoon, Drawer, TabItem, TabList} from "@/components";
 
 const MapsCard = () => {
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-
 
     const handleEdit = () => {
         setIsDrawerOpen(true);
@@ -17,17 +14,11 @@ const MapsCard = () => {
         setIsDrawerOpen(false);
     };
 
-
     return (
         <div>
             <Card title="Carte utilisée dans la campagne" onClick={handleEdit}>
                 <div className="h-[290px] w-full relative overflow-hidden">
-                    <Image
-                        className={'absolute object-cover'}
-                        fill
-                        src="/images/placeholder.png"
-                        alt="Carte de la campagne"
-                    />
+                    <ComingSoon/>
                 </div>
             </Card>
 

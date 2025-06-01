@@ -20,6 +20,7 @@ import CreateCampaignForm from "@/components/CreateCampaignForm/CreateCampaignFo
 import HomeCard from "@/components/HomeCard/HomeCard";
 import CampaignInfoForm from "@/components/CampaignInfoForm/CampaignInfoForm";
 import MainQuestForm from "@/components/MainQuestForm/MainQuestForm";
+import ComingSoon from "@/components/ComingSoon/ComingSoon";
 
 export {
     HomeCard,
@@ -43,5 +44,7 @@ export {
     DropDownProfil,
     CreateCampaignForm,
     CampaignInfoForm,
-    MainQuestForm
+    MainQuestForm,
+    ComingSoon
+
 };
