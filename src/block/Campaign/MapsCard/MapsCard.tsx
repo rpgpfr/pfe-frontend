@@ -2,7 +2,7 @@
 
 import {useState} from "react";
 
-import {Card, Drawer, TabItem, TabList} from "@/components";
+import {Card, ComingSoon, Drawer, TabItem, TabList} from "@/components";
 import Image from "next/image";
 
 const MapsCard = () => {
@@ -22,12 +22,13 @@ const MapsCard = () => {
         <div>
             <Card title="Carte utilisée dans la campagne" onClick={handleEdit}>
                 <div className="h-[290px] w-full relative overflow-hidden">
-                    <Image
-                        className={'absolute object-cover'}
-                        fill
-                        src="/images/placeholder.png"
-                        alt="Carte de la campagne"
-                    />
+                    {/*<Image*/}
+                    {/*    className={'absolute object-cover'}*/}
+                    {/*    fill*/}
+                    {/*    src="/images/placeholder.png"*/}
+                    {/*    alt="Carte de la campagne"*/}
+                    {/*/>*/}
+                    <ComingSoon/>
                 </div>
             </Card>
 
