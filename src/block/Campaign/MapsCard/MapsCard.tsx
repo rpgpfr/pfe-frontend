@@ -2,11 +2,9 @@
 
 import {useState} from "react";
 import {Card, ComingSoon, Drawer, TabItem, TabList} from "@/components";
-import Image from "next/image";
 
 const MapsCard = () => {
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-
 
     const handleEdit = () => {
         setIsDrawerOpen(true);
@@ -16,14 +14,11 @@ const MapsCard = () => {
         setIsDrawerOpen(false);
     };
 
-
     return (
         <div>
             <Card title="Carte utilisée dans la campagne" onClick={handleEdit}>
                 <div className="h-[290px] w-full relative overflow-hidden">
-
                     <ComingSoon/>
-
                 </div>
             </Card>
 
