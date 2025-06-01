@@ -1,5 +1,4 @@
 import {headers} from "next/headers";
-import {redirect} from "next/navigation";
 import type {Metadata} from "next";
 
 import {Section} from "@/components/ui";
@@ -33,26 +32,18 @@ const CampaignsPage = async () => {
 };
 
 const getCampaigns = async (): Promise<Campaign[]> => {
-    try {
-        const options = {
-            method: "GET",
-            ...await headers()
-        };
+    const options = {
+        method: "GET",
+        ...await headers()
+    };
 
-        const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/campaigns`, options);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/campaigns`, options);
 
-        if (!response.ok) {
-            console.error((await response.json()).error);
-
-            redirect("/error");
-        }
-
-        return (await response.json()) satisfies Campaign[];
-    } catch (error) {
-        console.error(error);
-
-        redirect("/error");
+    if (!response.ok) {
+        throw new Error();
     }
+
+    return (await response.json()) satisfies Campaign[];
 }
 
 export default CampaignsPage;
