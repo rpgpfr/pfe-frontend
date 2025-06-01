@@ -1,5 +1,4 @@
 import {headers} from "next/headers";
-import {redirect} from "next/navigation";
 import {Metadata} from "next";
 
 import {ProfileBanner, ProfileInfo} from "@/block/Profile";
@@ -36,26 +35,18 @@ const ProfilePage = async () => {
 };
 
 const getUserProfile = async (): Promise<UserProfile> => {
-    try {
-        const options = {
-            method: "GET",
-            ...await headers()
-        };
+    const options = {
+        method: "GET",
+        ...await headers()
+    };
 
-        const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/profile`, options);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/profile`, options);
 
-        if (!response.ok) {
-            console.error((await response.json()).error);
-
-            redirect("/error");
-        }
-
-        return (await response.json()) satisfies UserProfile;
-    } catch (error) {
-        console.error(error);
-
-        redirect("/error");
+    if (!response.ok) {
+        throw new Error();
     }
+
+    return (await response.json()) satisfies UserProfile;
 };
 
 export default ProfilePage;
